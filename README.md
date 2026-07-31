@@ -1,1 +1,67 @@
-# fch-website
+ # FCH - Faculdade de Ciências Humanas
+
+Site institucional completo para a Faculdade de Ciências  Humanas (FCH).
+
+##  Tecnologias
+
+- **Framework:** Next.js 14 (App Router)
+- **Linguagem:** TypeScript
+- **Estilização:** Tailwind CSS
+- **Ícones:** Lucide React
+- **Formulários:** React Hook Form + Zod
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/                    # Páginas (App Router)
+│   ├── sobre/             # Páginas sobre a faculdade
+│   ├── cursos/            # Cursos de graduação e pós-graduação
+│   ├── corpo-docente/     # Lista de docentes
+│   ├── eventos/           # Eventos futuros e realizados
+│   ├── associacao-estudantes/  # Associação de estudantes
+│   ├── coordenacao-extracurricular/  # Atividades extracurriculares
+│   ├── estagios/          # Informações sobre estágios
+│   ├── ciei/              # Centro de investigação
+│   ├── extensao/          # Cursos de extensão
+│   ├── laboratorio-psicologia/  # Serviços de psicologia
+│   ├── admissoes/         # Processo de admissão
+│   ├── links-uteis/       # Links úteis
+│   └── contato/           # Página de contato
+├── components/            # Componentes reutilizáveis
+│   ├── layout/            # Header, Footer, Navigation
+│   ├── home/              # Componentes da página inicial
+│   ├── ui/                # Componentes de UI (Button, Card, Input)
+│   └── shared/            # Componentes compartilhados
+├── data/                  # Dados mockados
+├── lib/                   # Utilitários
+└── types/                 # Definições de tipos TypeScript
+```
+
+##  Como Executar
+
+### Pré-requisitos
+
+- Node.js 18.x ou superior
+- npm ou yarn
+
+### Instalação
+
+1. Instale as dependências:
+```bash
+npm install
+```
+
+3. Execute o servidor de desenvolvimento:
+```bash
+npm run dev
+```
+
+4. Acesse o site em [http://localhost:3000](http://localhost:3000)
+
+### Scripts Disponíveis
+
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Cria a build de produção
+- `npm run start` - Inicia o servidor de produção
+- `npm run lint` - Executa o linter
