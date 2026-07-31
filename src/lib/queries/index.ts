@@ -1,0 +1,6 @@
+export * from './professores'
+export * from './cursos'
+export * from './disciplinas'
+export * from './decana'
+export * from './eventos'
+export * from './noticias'
