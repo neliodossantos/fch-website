@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Clock, Users, Calendar } from 'lucide-react'
+import { Clock, Globe, Mail } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
@@ -11,54 +11,26 @@ export const metadata: Metadata = {
   description: 'Cursos complementares e de formação contínua da FCH.',
 }
 
-const cursos = [
+const areasFormacao = [
+  'Metodologias de Investigação',
+  'Línguas',
+  'Linguística',
+  'Psicologia',
+  'Áreas afins das Ciências Humanas',
+]
+
+const formacoesRealizadas = [
   {
-    titulo: 'Avaliação Psicológica: Técnicas e Instrumentos',
-    area: 'Psicologia',
-    duracao: '40 horas',
-    vagas: 25,
-    inicio: 'Março 2024',
-    valor: '15.000 Kz',
+    titulo: 'Língua e Cultura Italiana',
+    descricao: 'Curso lecionado em parceria com a Embaixada da Itália.',
   },
   {
-    titulo: 'Gestão de Projetos Sociais',
-    area: 'Serviço Social',
-    duracao: '30 horas',
-    vagas: 30,
-    inicio: 'Abril 2024',
-    valor: '12.000 Kz',
+    titulo: 'Mini-curso de Psicoterapia de Grupo para Pessoas Enlutadas',
+    descricao: 'Formação organizada em parceria com o Laboratório de Psicologia, com carga horária de 16 horas.',
   },
   {
-    titulo: 'Metodologia de Pesquisa Social',
-    area: 'Sociologia',
-    duracao: '35 horas',
-    vagas: 25,
-    inicio: 'Março 2024',
-    valor: '14.000 Kz',
-  },
-  {
-    titulo: 'Marketing Digital e Redes Sociais',
-    area: 'Comunicação',
-    duracao: '25 horas',
-    vagas: 35,
-    inicio: 'Maio 2024',
-    valor: '10.000 Kz',
-  },
-  {
-    titulo: 'Intervenção em Crise',
-    area: 'Psicologia',
-    duracao: '20 horas',
-    vagas: 20,
-    inicio: 'Abril 2024',
-    valor: '8.000 Kz',
-  },
-  {
-    titulo: 'Redação Jornalística',
-    area: 'Comunicação',
-    duracao: '30 horas',
-    vagas: 25,
-    inicio: 'Junho 2024',
-    valor: '12.000 Kz',
+    titulo: 'Curso de Avaliação e Intervenção no Abuso Sexual',
+    descricao: 'Formação presencial destinada a psicólogos clínicos, organizada em parceria com o Laboratório de Psicologia.',
   },
 ]
 
@@ -69,56 +41,69 @@ export default function CursosComplementaresPage() {
         title="Cursos Complementares"
         description="Cursos de curta duração para atualização e formação contínua."
       />
-      
+
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Próximos Cursos" 
-            subtitle="Confira os cursos disponíveis para inscrição"
+          <div className="max-w-3xl mx-auto mb-12">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              No contexto da formação ao longo da vida, além dos cursos de graduação e pós-graduação, a
+              FCH também oferece cursos de formação complementar de 16 a 32 horas, no decorrer de cada
+              ano académico, nos domínios das Metodologias de Investigação, Línguas, Linguística,
+              Psicologia e áreas afins.
+            </p>
+            <div className="bg-primary/5 rounded-lg p-6 flex items-start">
+              <Globe className="w-6 h-6 text-primary mr-3 flex-shrink-0" />
+              <p className="text-gray-700 text-sm">
+                Em parceria com a Embaixada da Itália, a Faculdade lecciona o curso de Língua e Cultura
+                Italiana.
+              </p>
+            </div>
+          </div>
+
+          <SectionTitle
+            title="Domínios de Formação"
+            subtitle="Áreas em que são organizados cursos de curta duração ao longo do ano académico"
           />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {cursos.map((curso, index) => (
-              <Card key={index} className="h-full">
-                <CardHeader>
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded w-fit mb-2">
-                    {curso.area}
-                  </span>
-                  <CardTitle className="text-lg">{curso.titulo}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-200 mb-4">
-                    <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500" />
-                      {curso.duracao}
-                    </div>
-                    <div className="flex items-center">
-                      <Users className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500" />
-                      {curso.vagas} vagas
-                    </div>
-                    <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500" />
-                      Início: {curso.inicio}
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg font-semibold text-gray-900 dark:text-white">{curso.valor}</span>
-                    <Link href="/extensao/inscricao">
-                      <Button size="sm">Inscrever-se</Button>
-                    </Link>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+            {areasFormacao.map((area, index) => (
+              <Card key={index}>
+                <CardContent className="py-4 flex items-center space-x-3">
+                  <Clock className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="text-sm text-gray-700">{area}</span>
                 </CardContent>
               </Card>
             ))}
           </div>
-          
+
+          <SectionTitle title="Exemplos de Formações Realizadas" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {formacoesRealizadas.map((curso, index) => (
+              <Card key={index} className="h-full">
+                <CardHeader>
+                  <CardTitle className="text-lg">{curso.titulo}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 dark:text-gray-200 text-sm">{curso.descricao}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
           <div className="bg-primary/5 dark:bg-primary/10 rounded-lg p-6 text-center">
+            <p className="text-gray-600 dark:text-gray-200 mb-2">
+              A coordenação dos Cursos de Formação Complementar está a cargo do Dr. Manassés Apolinário.
+            </p>
             <p className="text-gray-600 dark:text-gray-200 mb-4 text-justify">
               Quer propor um curso ou tem interesse em áreas específicas?
             </p>
-            <Link href="/contato">
-              <Button variant="outline">Entre em contacto</Button>
-            </Link>
+            <div className="flex items-center justify-center gap-4 flex-wrap">
+              <Link href="/contato">
+                <Button variant="outline">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Entre em contacto
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

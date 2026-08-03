@@ -10,7 +10,7 @@ export const revalidate = 60 // Revalida cache a cada 60 segundos
 
 export const metadata: Metadata = {
   title: 'Cursos de Pós-Graduação',
-  description: 'Mestrados oferecidos pela FCH - Psicologia Clínica e Gestão Social.',
+  description: 'Especialização em Gestão do Ensino Superior, Capacitação Pedagógica, Gestão de Pessoas 360º e Consulta Psicológica.',
 }
 
 export default async function PosGraduacaoPage() {
@@ -20,7 +20,7 @@ export default async function PosGraduacaoPage() {
     <>
       <PageHeader
         title="Cursos de Pós-Graduação"
-        description="Mestrados com duração de 2 anos para aprofundamento de conhecimentos."
+        description="Especializações e pós-graduações profissionais de capacitação avançada."
       />
       
       <section className="py-16">
@@ -71,12 +71,12 @@ export default async function PosGraduacaoPage() {
           )}
           
           <div className="mt-12 bg-gray-50 rounded-lg p-8">
-            <h3 className="text-xl font-semibold text-primary mb-4">Requisitos para Mestrado</h3>
+            <h3 className="text-xl font-semibold text-primary mb-4">Requisitos Gerais</h3>
             <ul className="text-gray-600 space-y-2 mb-6">
-              <li>• Licenciatura concluída em área afim</li>
-              <li>• Média mínima de 14 valores na licenciatura</li>
-              <li>• Disponibilidade para dedicação ao programa</li>
-              <li>• Projeto de investigação preliminar</li>
+              <li>• Licenciatura concluída em área afim ao programa pretendido</li>
+              <li>• Certificado de Habilitações (com homologação pelo INAAREES, quando aplicável)</li>
+              <li>• Curriculum vitae actualizado</li>
+              <li>• Cópia do Bilhete de Identidade</li>
             </ul>
             <Link href="/admissoes">
               <Button>

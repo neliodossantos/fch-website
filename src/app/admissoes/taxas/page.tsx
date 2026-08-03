@@ -99,9 +99,8 @@ export default function TaxasPage() {
               <div>
                 <h4 className="font-medium text-gray-900 mb-2">Transferência Bancária</h4>
                 <p className="text-sm text-gray-600">
-                  Banco: Banco XYZ<br />
-                  Conta: 1234567890<br />
-                  IBAN: AO00 1234 5678 9012 3456
+                  Os dados bancários da Faculdade são fornecidos pela Secretaria no acto da
+                  candidatura ou matrícula.
                 </p>
               </div>
             </div>

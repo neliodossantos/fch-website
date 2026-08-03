@@ -39,7 +39,7 @@ export default function ContatoPage() {
     <>
       <PageHeader
         title="Contacto"
-        description="Entre em contacto com a Faculdade de CiênciasHumanas."
+        description="Entre em contacto com a Faculdade de Ciências Humanas."
       />
       
       <section className="py-16">
@@ -58,14 +58,13 @@ export default function ContatoPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600">
-                      Av. Pedro de Castro<br />
-                      Van-Dúnem nº24<br />
-                      Caixa Postal 2064<br />
-                      Palanca, Luanda
+                      Av. Pedro de Castro Van-Dúnem, 24<br />
+                      Palanca, Kilamba Kiaxi<br />
+                      C.P. 2064, Luanda - Angola
                     </p>
                   </CardContent>
                 </Card>
-                
+
                 <Card>
                   <CardHeader>
                     <div className="flex items-center space-x-3">
@@ -77,13 +76,13 @@ export default function ContatoPage() {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-gray-600">
-                      <li><strong>Geral:</strong> +244 222 123 456</li>
-                      <li><strong>Secretaria:</strong> +244 222 123 457</li>
-
+                      <li><strong>Laboratório de Psicologia:</strong> +244 923 820 314</li>
+                      <li><strong>Coordenação de Estágios:</strong> +244 928 001 050</li>
+                      <li><strong>Secretaria de Pós-Graduações:</strong> +244 927 609 890</li>
                     </ul>
                   </CardContent>
                 </Card>
-                
+
                 <Card>
                   <CardHeader>
                     <div className="flex items-center space-x-3">
@@ -95,13 +94,14 @@ export default function ContatoPage() {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-gray-600">
-                      <li><strong>Geral:</strong> <a href="mailto:info@FCH.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">fch@ucan.edu</a></li>
-                      <li><strong>Secretaria:</strong> <a href="mailto:secretaria@FCH.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">secretaria@FCH.edu</a></li>
-                      
+                      <li><strong>Geral:</strong> <a href="mailto:fch@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">fch@ucan.edu</a></li>
+                      <li><strong>Laboratório de Psicologia:</strong> <a href="mailto:laboratorio.psicologia@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">laboratorio.psicologia@ucan.edu</a></li>
+                      <li><strong>Estágios:</strong> <a href="mailto:arieth.andrade@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">arieth.andrade@ucan.edu</a></li>
+                      <li><strong>Pós-Graduações:</strong> <a href="mailto:yola.filipe@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">yola.filipe@ucan.edu</a></li>
                     </ul>
                   </CardContent>
                 </Card>
-                
+
                 <Card>
                   <CardHeader>
                     <div className="flex items-center space-x-3">
@@ -113,8 +113,8 @@ export default function ContatoPage() {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-gray-600">
-                      <li><strong>Segunda a Quinta:</strong> 08:00 - 17:00</li>
-                      <li><strong>Sexta-feira:</strong> 08:00 - 12:00</li>
+                      <li><strong>Segunda a Sexta:</strong> 08:00 - 16:00</li>
+                      <li><strong>Secretaria de Pós-Graduações:</strong> 08:00 - 16:30 (pausa 13:00-14:00)</li>
                       <li><strong>Sábado e Domingo:</strong> Fechado</li>
                     </ul>
                   </CardContent>

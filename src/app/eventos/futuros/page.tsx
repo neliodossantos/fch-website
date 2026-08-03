@@ -21,7 +21,7 @@ export default async function EventosFuturosPage() {
     <>
       <PageHeader
         title="Eventos Futuros"
-        description="Confira os próximos eventos da Faculdade de Ciências Sociais e Humanas."
+        description="Confira os próximos eventos da Faculdade de Ciências Humanas."
       />
       
       <section className="py-16">

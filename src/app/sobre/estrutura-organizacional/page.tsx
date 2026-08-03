@@ -5,52 +5,60 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Estrutura Organizacional',
-  description: 'Conheça a estrutura organizacional da Faculdade de Ciências Sociais e Humanas.',
+  description: 'Conheça a estrutura organizacional da Faculdade de Ciências Humanas da UCAN.',
 }
 
 const departamentos = [
   {
-    nome: 'Departamento de Psicologia',
-    coordenador: 'Prof. Dr. António Silva',
-    cursos: ['Licenciatura em Psicologia', 'Mestrado em Psicologia Clínica'],
+    nome: 'Departamento de Psicologia Clínica',
+    coordenador: 'Doutora Helena Veloso',
+    descricao:
+      'Responsável pela coordenação das actividades académicas, científicas e de extensão relacionadas com a formação dos futuros psicólogos clínicos, promovendo competências em avaliação psicológica, diagnóstico, intervenção clínica, psicoterapia, saúde mental e investigação científica.',
   },
   {
-    nome: 'Departamento de Serviço Social',
-    coordenador: 'Prof.ª Dr.ª Maria Santos',
-    cursos: ['Licenciatura em Serviço Social', 'Mestrado em Gestão Social'],
+    nome: 'Departamento de Psicologia do Trabalho e das Organizações',
+    coordenador: 'Mestre Manuel Armando Dala',
+    descricao:
+      'Dedica-se à formação de profissionais capazes de intervir em contextos organizacionais, empresariais e institucionais, nas áreas de gestão de recursos humanos, desenvolvimento organizacional, saúde ocupacional, liderança e comportamento organizacional.',
   },
   {
-    nome: 'Departamento de Sociologia',
-    coordenador: 'Prof. Dr. João Costa',
-    cursos: ['Licenciatura em Sociologia'],
+    nome: 'Departamento de Línguas Românicas e Literaturas Modernas',
+    coordenador: 'Doutor Domingos Carlos Pascoal',
+    descricao:
+      'Coordena a formação linguística e cultural relacionada com a Língua Portuguesa, Francesa, Latim, Italiano e outras áreas da Linguística, desenvolvendo actividades de ensino, investigação e extensão em Linguística, Literatura, Tradução, Comunicação e Ensino de Línguas.',
   },
   {
-    nome: 'Departamento de Comunicação Social',
-    coordenador: 'Prof.ª Dr.ª Ana Rodrigues',
-    cursos: ['Licenciatura em Comunicação Social'],
+    nome: 'Departamento de Línguas Germânicas e Literaturas Modernas',
+    coordenador: 'Doutor Francisco Matete',
+    descricao:
+      'Assegura a formação linguística nas áreas da Língua Inglesa e dos estudos interculturais, promovendo a tradução e interpretação e a investigação em linguística aplicada e ensino de línguas estrangeiras.',
   },
 ]
 
 const unidades = [
   {
-    nome: 'Centro de Investigação e Estudos Interdisciplinares (CIEI)',
-    descricao: 'Unidade dedicada à investigação científica nas áreas das Ciências Sociais e Humanas.',
+    nome: 'Centro Interdisciplinar de Ensino e Investigação (CIEI)',
+    descricao: 'Unidade de pesquisa vinculada à FCH e ao Instituto Superior de Ciências da Saúde, criada em Outubro de 2020, responsável pela investigação científica e pelo Programa de Iniciação Científica.',
   },
   {
-    nome: 'Laboratório de Psicologia',
-    descricao: 'Espaço para prática supervisionada de estudantes e atendimento à comunidade.',
+    nome: 'Laboratório de Psicologia (LaP_FCH_UCAN)',
+    descricao: 'Espaço de articulação entre formação prática, investigação e intervenção psicológica aplicada, com prestação de serviços psicológicos gratuitos à comunidade.',
   },
   {
     nome: 'Coordenação de Estágios',
-    descricao: 'Gestão dos estágios curriculares e parcerias com instituições.',
+    descricao: 'Gestão dos estágios curriculares e da ampla rede de instituições parceiras que acolhem os estudantes.',
   },
   {
-    nome: 'Coordenação de Extensão',
-    descricao: 'Organização de cursos complementares e atividades de formação contínua.',
+    nome: 'Coordenação de Cursos de Formação Complementar',
+    descricao: 'Organização de cursos de curta duração (16 a 32 horas) em Metodologias de Investigação, Línguas, Linguística, Psicologia e áreas afins.',
   },
   {
-    nome: 'Secretaria Académica',
-    descricao: 'Serviços administrativos e atendimento aos estudantes.',
+    nome: 'Conselhos Científico e Pedagógico',
+    descricao: 'Órgãos consultivos responsáveis pela orientação científica e pedagógica das actividades da Faculdade.',
+  },
+  {
+    nome: 'Clube de Leitura',
+    descricao: 'Espaço de promoção da leitura e de actividades culturais, dinamizado no âmbito do Departamento de Línguas Românicas.',
   },
 ]
 
@@ -61,13 +69,13 @@ export default function EstruturaOrganizacionalPage() {
         title="Estrutura Organizacional"
         description="Como a FCH está organizada para melhor servir a comunidade académica."
       />
-      
+
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mb-16">
-            <SectionTitle 
-              title="Departamentos" 
-              subtitle="Unidades académicas responsáveis pela coordenação dos cursos"
+            <SectionTitle
+              title="Departamentos"
+              subtitle="Unidades académicas responsáveis pela coordenação do ensino, investigação e extensão"
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {departamentos.map((dept, index) => (
@@ -77,26 +85,19 @@ export default function EstruturaOrganizacionalPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-gray-600 mb-2">
-                      <strong>Coordenador:</strong> {dept.coordenador}
+                      <strong>Chefia:</strong> {dept.coordenador}
                     </p>
-                    <p className="text-sm text-gray-600">
-                      <strong>Cursos:</strong>
-                    </p>
-                    <ul className="list-disc list-inside text-sm text-gray-600">
-                      {dept.cursos.map((curso, i) => (
-                        <li key={i}>{curso}</li>
-                      ))}
-                    </ul>
+                    <p className="text-sm text-gray-600">{dept.descricao}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
-          
+
           <div>
-            <SectionTitle 
-              title="Unidades de Apoio" 
-              subtitle="Estruturas que suportam as atividades de ensino, investigação e extensão"
+            <SectionTitle
+              title="Unidades de Apoio"
+              subtitle="Estruturas que suportam as actividades de ensino, investigação e extensão"
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {unidades.map((unidade, index) => (

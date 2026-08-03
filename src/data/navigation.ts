@@ -12,15 +12,17 @@ export const navigationItems: NavItem[] = [
         children: [
           { title: 'Psicologia do Trabalho e das Organizações', href: '/cursos/graduacao/psicologia-trabalho-organizacoes' },
           { title: 'Psicologia Clínica', href: '/cursos/graduacao/psicologia-clinica' },
-          { title: 'Línguas', href: '/cursos/graduacao/linguas' },
+          { title: 'Línguas e Administração', href: '/cursos/graduacao/linguas-administracao' },
         ],
       },
       {
         title: 'Pós-Graduação',
         href: '/cursos/pos-graduacao',
         children: [
-          { title: 'Mestrado em Psicologia Clínica', href: '/cursos/pos-graduacao/mestrado-psicologia-clinica' },
-          { title: 'Mestrado em Gestão Social', href: '/cursos/pos-graduacao/mestrado-gestao-social' },
+          { title: 'Especialização em Gestão do Ensino Superior', href: '/cursos/pos-graduacao/especializacao-gestao-ensino-superior' },
+          { title: 'Capacitação Pedagógica', href: '/cursos/pos-graduacao/capacitacao-pedagogica' },
+          { title: 'Gestão de Pessoas 360º', href: '/cursos/pos-graduacao/gestao-pessoas-360' },
+          { title: 'Consulta Psicológica', href: '/cursos/pos-graduacao/consulta-psicologica' },
         ],
       },
     ],

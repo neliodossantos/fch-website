@@ -5,12 +5,12 @@ import { TeamMember } from '@/components/shared/TeamMember'
 
 export const metadata: Metadata = {
   title: 'Direcção',
-  description: 'Conheça a equipa de direção da Faculdade de Ciências Sociais e Humanas.',
+  description: 'Conheça a equipa de direção da Faculdade de Ciências Humanas.',
 }
 
 const direcao = [
   {
-    nome: 'Dr.ª Ana Bela Loureiro',
+    nome: 'Dr.ª Ana Bela Pereira Loureiro',
     cargo: 'Decana',
     titulacao: 'Linguísta',
     email: 'anabela.loureiro@ucan.edu',
@@ -19,53 +19,54 @@ const direcao = [
   },
   {
     nome: 'Dr.ª Evanilse Diogo',
-    cargo: 'Vice-Decana para a área Académica',
-    titulacao: 'Psicologa Clinica',
+    cargo: 'Vice-Decana para a Graduação',
+    titulacao: 'Psicóloga Clínica',
     email: 'evanilse.diogo@ucan.edu',
     areas: ['Psicoterapia', 'Investigação'],
     foto_url: '/images/professores/Evanilse.PNG',
-
   },
   {
     nome: 'Dr. Manuel Dala',
-    cargo: 'Vice-Decano para Pós-Graduação, Investigação e Extensão',
-    titulacao: 'Psicologo do Trabalho e das Organizações',
+    cargo: 'Vice-Decano para as Pós-Graduações, Investigação e Extensão',
+    titulacao: 'Psicólogo do Trabalho e das Organizações',
     email: 'manuel.dala@ucan.edu',
-    areas: ['Investigação', 'Coonsultoria Organizacional'],
+    areas: ['Investigação', 'Consultoria Organizacional'],
     foto_url: '/images/professores/mdala.jpg',
-
   },
 ]
 
-const coordenadores = [
-  {
-    nome: 'Dr. Manuel Dala',
-    cargo: 'Coordenador de Psicologia de Trabalho e das Organizações',
-    email: 'manuel.dala@ucan.edu',
-    foto_url: '/images/professores/mdala.jpg',
-
-  },
+const chefesDepartamento = [
   {
     nome: 'Dr.ª Helena Veloso',
-    cargo: 'Coordenadora de Psicologia Clinica',
+    cargo: 'Chefe do Departamento de Psicologia Clínica',
     email: 'helena.veloso@ucan.edu',
-    foto_url: '/images/professores/Helena.jpg',
-
+    foto_url: undefined,
   },
   {
-    nome: 'Drª. Jeanine Silveira ',
-    cargo: 'Coordenadora de Linguas Romanicas',
-    email: 'jeanine.silveira@ucan.edu',
-    foto_url: '/images/professores/Jeanine.jpg',
-
+    nome: 'Mestre Manuel Armando Dala',
+    cargo: 'Chefe do Departamento de Psicologia do Trabalho e das Organizações',
+    email: 'manuel.dala@ucan.edu',
+    foto_url: '/images/professores/mdala.jpg',
+  },
+  {
+    nome: 'Dr. Domingos Carlos Pascoal',
+    cargo: 'Chefe do Departamento de Línguas Românicas e Literaturas Modernas',
+    email: 'domingos.pascoal@ucan.edu',
+    foto_url: undefined,
   },
   {
     nome: 'Dr. Francisco Matete',
-    cargo: 'Coordenador de Linguas Germanicas',
+    cargo: 'Chefe do Departamento de Línguas Germânicas e Literaturas Modernas',
     email: 'francisco.matete@ucan.edu',
     foto_url: '/images/professores/Matete.jpg',
-
   },
+]
+
+const vicedecanosHistorico = [
+  'Drª Elizabeth Ceita, Vice-Decana para a Graduação',
+  'Drª Edvalda Mendes, Vice-Decana para a Graduação',
+  'Dr. Artur Santos, Vice-Decano para a Graduação',
+  'Drª Vânia Filipe, Vice-Decana Interina para a Graduação',
 ]
 
 export default function DirecaoPage() {
@@ -75,11 +76,11 @@ export default function DirecaoPage() {
         title="Direcção"
         description="Conheça a equipa responsável pela gestão da Faculdade."
       />
-      
+
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Equipa de Direcção" 
+          <SectionTitle
+            title="Equipa de Direcção"
             subtitle="Órgão de gestão da Faculdade"
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
@@ -95,21 +96,38 @@ export default function DirecaoPage() {
               />
             ))}
           </div>
-          
-          <SectionTitle 
-            title="Coordenadores de Curso" 
-            subtitle="Responsáveis pela gestão académica dos cursos"
+
+          <SectionTitle
+            title="Chefes de Departamento"
+            subtitle="Responsáveis pela gestão académica dos departamentos"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coordenadores.map((coord, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {chefesDepartamento.map((chefe, index) => (
               <TeamMember
                 key={index}
-                nome={coord.nome}
-                cargo={coord.cargo}
-                email={coord.email}
-                foto_url={coord.foto_url}
+                nome={chefe.nome}
+                cargo={chefe.cargo}
+                email={chefe.email}
+                foto_url={chefe.foto_url}
               />
             ))}
+          </div>
+
+          <div className="max-w-3xl">
+            <SectionTitle
+              title="Vice-Decanos ao Longo dos Anos"
+              subtitle="Galeria histórica da Vice-Decania para a Graduação"
+            />
+            <ul className="space-y-2 text-gray-700 list-disc list-inside">
+              {vicedecanosHistorico.map((nome, index) => (
+                <li key={index}>{nome}</li>
+              ))}
+            </ul>
+            <p className="text-sm text-gray-500 mt-4">
+              Com excepção da Doutora Elizabeth Ceita, os restantes gestores acima, incluindo os
+              actuais Vice-Decanos, concluíram a Licenciatura na Faculdade de Ciências Humanas da
+              Universidade Católica de Angola.
+            </p>
           </div>
         </div>
       </section>

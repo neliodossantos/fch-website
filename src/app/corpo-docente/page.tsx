@@ -7,7 +7,7 @@ export const revalidate = 60 // Revalida cache a cada 60 segundos
 
 export const metadata: Metadata = {
   title: 'Corpo Docente',
-  description: 'Conheça o corpo docente da Faculdade de Ciências Sociais e Humanas.',
+  description: 'Conheça o corpo docente da Faculdade de Ciências Humanas.',
 }
 
 export default async function CorpoDocentePage() {

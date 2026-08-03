@@ -9,21 +9,17 @@ export const metadata: Metadata = {
 }
 
 const supervisores = {
-  psicologia: [
-    { nome: 'Prof. Dr. António Silva', areas: ['Psicologia Clínica', 'Avaliação Psicológica'], email: 'antonio.silva@FCH.edu' },
-    { nome: 'Prof.ª Dr.ª Teresa Oliveira', areas: ['Neuropsicologia', 'Psicopatologia'], email: 'teresa.oliveira@FCH.edu' },
+  psicologiaClinica: [
+    { nome: 'Dra. Helena Veloso', foto_url: undefined },
+    { nome: 'Dr. Artur Luciano', foto_url: '/images/professores/ArturLuciano.png' },
+    { nome: 'Dra. Evanilse Diogo', foto_url: '/images/professores/Evanilse.PNG' },
+    { nome: 'Dra. Vânia Filipe', foto_url: undefined },
+    { nome: 'Dra. Mangani Lopes', foto_url: '/images/professores/Mangani.png' },
   ],
-  servicoSocial: [
-    { nome: 'Prof.ª Dr.ª Maria Santos', areas: ['Política Social', 'Intervenção Social'], email: 'maria.santos@FCH.edu' },
-    { nome: 'Prof.ª Dr.ª Carla Mendes', areas: ['Família e Infância', 'Gerontologia'], email: 'carla.mendes@FCH.edu' },
-  ],
-  sociologia: [
-    { nome: 'Prof. Dr. João Costa', areas: ['Sociologia Urbana', 'Metodologia'], email: 'joao.costa@FCH.edu' },
-    { nome: 'Prof.ª Dr.ª Sofia Pereira', areas: ['Sociologia do Trabalho', 'Movimentos Sociais'], email: 'sofia.pereira@FCH.edu' },
-  ],
-  comunicacao: [
-    { nome: 'Prof.ª Dr.ª Ana Rodrigues', areas: ['Jornalismo', 'Comunicação Digital'], email: 'ana.rodrigues@FCH.edu' },
-    { nome: 'Prof. Dr. Ricardo Almeida', areas: ['Publicidade', 'Marketing Digital'], email: 'ricardo.almeida@FCH.edu' },
+  psicologiaTrabalho: [
+    { nome: 'Dr. João Saveia', foto_url: '/images/professores/Jsaveia.jpg' },
+    { nome: 'Dra. Ana Rocha', foto_url: '/images/professores/AnaRocha.jpeg' },
+    { nome: 'Dr. Armando Dala', foto_url: '/images/professores/mdala.jpg' },
   ],
 }
 
@@ -34,34 +30,20 @@ export default function SupervisoresPage() {
         title="Supervisores de Estágio"
         description="Professores responsáveis pelo acompanhamento académico dos estágios."
       />
-      
+
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <SectionTitle title="Psicologia" />
+          <SectionTitle title="Psicologia Clínica" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {supervisores.psicologia.map((sup, index) => (
-              <TeamMember key={index} nome={sup.nome} areas={sup.areas} email={sup.email} />
+            {supervisores.psicologiaClinica.map((sup, index) => (
+              <TeamMember key={index} nome={sup.nome} foto_url={sup.foto_url} />
             ))}
           </div>
-          
-          <SectionTitle title="Serviço Social" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {supervisores.servicoSocial.map((sup, index) => (
-              <TeamMember key={index} nome={sup.nome} areas={sup.areas} email={sup.email} />
-            ))}
-          </div>
-          
-          <SectionTitle title="Sociologia" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {supervisores.sociologia.map((sup, index) => (
-              <TeamMember key={index} nome={sup.nome} areas={sup.areas} email={sup.email} />
-            ))}
-          </div>
-          
-          <SectionTitle title="Comunicação Social" />
+
+          <SectionTitle title="Psicologia, Organizacional e do Trabalho" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {supervisores.comunicacao.map((sup, index) => (
-              <TeamMember key={index} nome={sup.nome} areas={sup.areas} email={sup.email} />
+            {supervisores.psicologiaTrabalho.map((sup, index) => (
+              <TeamMember key={index} nome={sup.nome} foto_url={sup.foto_url} />
             ))}
           </div>
         </div>

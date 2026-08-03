@@ -10,7 +10,7 @@ export const revalidate = 60 // Revalida cache a cada 60 segundos
 
 export const metadata: Metadata = {
   title: 'Cursos de Graduação',
-  description: 'Licenciaturas oferecidas pela FCH - Psicologia do Trabalho e das Organizações, Psicologia Clínica e Línguas.',
+  description: 'Licenciaturas oferecidas pela FCH - Psicologia (opções Clínica e do Trabalho e das Organizações) e Línguas e Administração.',
 }
 
 export default async function GraduacaoPage() {
@@ -20,7 +20,7 @@ export default async function GraduacaoPage() {
     <>
       <PageHeader
         title="Cursos de Graduação"
-        description="Licenciaturas com duração de 4 anos nas áreas das Ciências Sociais e Humanas."
+        description="Licenciaturas nas áreas das Ciências Humanas: Psicologia (5 anos) e Línguas e Administração."
       />
       
       <section className="py-16">

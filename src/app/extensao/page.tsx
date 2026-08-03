@@ -37,7 +37,7 @@ export default function ExtensaoPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-200 text-sm mb-4 text-justify">
-                    Cursos de curta duração em diversas áreas das Ciências Sociais e Humanas.
+                    Cursos de curta duração em diversas áreas das Ciências Humanas.
                   </p>
                   <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
                     Ver cursos <ArrowRight className="ml-2 w-4 h-4" />
@@ -58,9 +58,11 @@ export default function ExtensaoPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-200 text-sm mb-4 text-justify">
-                    Informações sobre o processo de inscrição nos cursos de extensão.
+                    Formação prática, investigação e prestação de serviços psicológicos gratuitos à comunidade.
                   </p>
-                
+                  <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                    Saber mais <ArrowRight className="ml-2 w-4 h-4" />
+                  </span>
                 </CardContent>
               </Card>
             </Link>

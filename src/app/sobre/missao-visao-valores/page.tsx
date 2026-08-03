@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Missão, Visão e Valores',
-  description: 'Conheça a missão, visão e valores da Faculdade de Ciências Sociais e Humanas.',
+  description: 'Conheça a missão, visão e valores da Faculdade de Ciências Humanas.',
 }
 
 const valores = [
@@ -49,7 +49,10 @@ export default function MissaoVisaoValoresPage() {
                   <h2 className="text-2xl font-bold">Missão</h2>
                 </div>
                 <p className="text-gray-200 leading-relaxed">
-                  Formar homens e mulheres plenos de valores humanos e eticos dotados de conhecimento técnico e científico inovadores, capazes de servir a comunidade com rectidão e brio.
+                  Formar homens e mulheres plenos de valores humanos, éticos e cristãos, dotados de
+                  conhecimentos científicos, técnicos e profissionais inovadores, capazes de servir a
+                  sociedade com competência, responsabilidade, rectidão moral, espírito crítico e
+                  compromisso com o bem comum.
                 </p>
               </CardContent>
             </Card>
@@ -63,7 +66,10 @@ export default function MissaoVisaoValoresPage() {
                   <h2 className="text-2xl font-bold">Visão</h2>
                 </div>
                 <p className="text-white/90 leading-relaxed">
-                 Afirmar-se como uma Faculdade de referência, nos dominio das ciências humanas. 
+                  Afirmar-se como uma referência nacional e internacional nos domínios das Ciências
+                  Humanas e Sociais, distinguindo-se pela qualidade do ensino, pela excelência da
+                  investigação científica, pela inovação pedagógica, pela relevância social dos seus
+                  projectos e pela qualidade dos serviços prestados à comunidade.
                 </p>
               </CardContent>
             </Card>
@@ -76,7 +82,9 @@ export default function MissaoVisaoValoresPage() {
               </div>
               <h2 className="text-3xl font-bold text-primary mb-4">Nossos Valores</h2>
               <p className="text-gray-600">
-                Os valores que sustentam a visão estratégica da Faculdade devem estar presentes em todos os seus programas, actividades e actuação são:
+                A actuação da Faculdade está alinhada com os valores institucionais da Universidade
+                Católica de Angola, devendo estar presentes em todos os seus programas, actividades e
+                na sua actuação:
               </p>
             </div>
             

@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { CheckCircle, FileText, CreditCard } from 'lucide-react'
+import { FileText, CreditCard } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
@@ -99,23 +99,13 @@ export default function InscricaoExtensaoPage() {
                     <li>
                       <p className="font-medium">Transferência Bancária</p>
                       <p className="text-sm">
-                        Banco: Banco XYZ<br />
-                        Conta: 1234567890<br />
-                        IBAN: AO00 1234 5678 9012 3456
+                        Os dados bancários para transferência são fornecidos pela Coordenação dos
+                        Cursos de Formação Complementar no momento da inscrição.
                       </p>
                     </li>
                   </ul>
-                  
-                  <div className="mt-6 p-4 bg-green-50 rounded-lg">
-                    <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0" />
-                      <p className="text-sm text-green-800">
-                        Descontos especiais para estudantes e ex-alunos da FCH.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6">
+
+                  <div className="mt-6 space-y-3">
                     <Button className="w-full">Baixar Ficha de Inscrição</Button>
                   </div>
                 </CardContent>

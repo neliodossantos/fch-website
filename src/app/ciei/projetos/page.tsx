@@ -5,54 +5,56 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Projetos de Investigação',
-  description: 'Projetos de investigação do CIEI - FCH.',
+  description: 'Linhas de investigação e projetos do CIEI - FCH.',
 }
 
-const projetosAtivos = [
+const linhasInvestigacao = [
   {
-    titulo: 'Saúde Mental e Bem-Estar em Contexto Universitário',
-    investigadores: ['Prof.ª Dr.ª Teresa Oliveira', 'Prof. Dr. António Silva'],
-    ano: '2023-2025',
-    descricao: 'Estudo sobre factores de risco e protecção para a saúde mental dos estudantes universitários.',
+    titulo: 'Saúde',
+    descricao:
+      'Inclui pesquisas sobre saúde física, como a desnutrição extrema em crianças e as suas famílias, e sobre saúde mental, tendo como objecto portadores de transtornos mentais, crianças abusadas sexualmente e os seus cuidadores, e profissionais de saúde. Comporta ainda investigação sobre desporto e saúde, H.I.V & SIDA, álcool e outras drogas, a vivência do luto, a prevalência do autismo e as representações sociais de professores sobre o racismo em livros escolares.',
   },
   {
-    titulo: 'Políticas Sociais e Redução da Pobreza',
-    investigadores: ['Prof.ª Dr.ª Maria Santos', 'Prof. Dr. Carlos Ferreira'],
-    ano: '2022-2024',
-    descricao: 'Análise do impacto das políticas sociais na redução da pobreza e desigualdade.',
+    titulo: 'Estudos sobre Género',
+    descricao:
+      'Linha de pesquisa que envolve investigações que visam o empoderamento da mulher, tendo em vista a sua importância para o desenvolvimento das sociedades.',
   },
   {
-    titulo: 'Transformações Urbanas e Coesão Social',
-    investigadores: ['Prof. Dr. João Costa', 'Prof.ª Dr.ª Sofia Pereira'],
-    ano: '2023-2025',
-    descricao: 'Investigação sobre os processos de transformação urbana e seus efeitos na coesão social.',
+    titulo: 'Construção e Adaptação de Testes',
+    descricao:
+      'Visa a construção e adaptação de instrumentos e testes psicológicos à população angolana.',
   },
   {
-    titulo: 'Media Digitais e Participação Cívica',
-    investigadores: ['Prof.ª Dr.ª Ana Rodrigues', 'Prof. Dr. Ricardo Almeida'],
-    ano: '2022-2024',
-    descricao: 'Estudo sobre o papel dos media digitais na participação cívica e política.',
+    titulo: 'Ecologia',
+    descricao:
+      'O Centro aspira tornar-se um núcleo de pesquisas ecológicas com a finalidade de produzir "mentes verdes", possuindo actualmente um projecto de pesquisa em curso nesta temática.',
   },
 ]
 
-const projetosConcluidos = [
+const eventosRealizados = [
   {
-    titulo: 'Intervenção Precoce em Crianças em Risco',
-    investigadores: ['Prof. Dr. Pedro Martins'],
-    ano: '2020-2022',
-    descricao: 'Desenvolvimento e avaliação de um programa de intervenção precoce.',
+    titulo: 'IV Fórum sobre Género "Heroínas Vivas"',
+    descricao: 'Fórum dedicado à discussão de temas de género e empoderamento feminino.',
   },
   {
-    titulo: 'Envelhecimento Ativo e Qualidade de Vida',
-    investigadores: ['Prof.ª Dr.ª Carla Mendes'],
-    ano: '2019-2021',
-    descricao: 'Estudo sobre estratégias de promoção do envelhecimento ativo.',
+    titulo: 'Ética na Humanização dos Serviços de Saúde',
+    descricao: 'Evento científico sobre ética aplicada à humanização dos serviços de saúde em Angola.',
   },
   {
-    titulo: 'Migração e Integração Social',
-    investigadores: ['Prof.ª Dr.ª Luísa Fernandes'],
-    ano: '2019-2021',
-    descricao: 'Análise dos processos de integração social de populações migrantes.',
+    titulo: 'Prémio "Onjila You Luto" - Programa de Iniciação Científica',
+    descricao: 'Cerimónia de premiação de pesquisa desenvolvida no âmbito do PIC da UCAN.',
+  },
+  {
+    titulo: 'Intervenção em Rede Multidisciplinar no Contexto da Hidrocefalia em Angola',
+    descricao: 'Fórum científico realizado em parceria com a Associação OSAI sobre hidrocefalia em contexto angolano.',
+  },
+  {
+    titulo: 'Webinar sobre Ética e Saúde',
+    descricao: 'Sessão online de discussão sobre ética aplicada à área da saúde.',
+  },
+  {
+    titulo: 'Participação em Feira Ecológica da UNESCO',
+    descricao: 'Estudantes do PIC apresentaram pesquisa em feira ecológica, na presença da Vice-Reitora da FCH e da Ministra da Educação.',
   },
 ]
 
@@ -61,52 +63,34 @@ export default function ProjetosPage() {
     <>
       <PageHeader
         title="Projetos de Investigação"
-        description="Projetos em desenvolvimento e concluídos pelo CIEI."
+        description="Linhas de investigação em curso e iniciativas científicas desenvolvidas pelo CIEI."
       />
-      
+
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <SectionTitle title="Projetos em Desenvolvimento" />
+          <SectionTitle title="Linhas de Investigação em Curso" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
-            {projetosAtivos.map((projeto, index) => (
+            {linhasInvestigacao.map((linha, index) => (
               <Card key={index}>
                 <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded">
-                      Em desenvolvimento
-                    </span>
-                    <span className="text-sm text-gray-500 dark:text-gray-300">{projeto.ano}</span>
-                  </div>
-                  <CardTitle className="text-lg">{projeto.titulo}</CardTitle>
+                  <CardTitle className="text-lg">{linha.titulo}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-200 text-sm mb-4 text-justify">{projeto.descricao}</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500">
-                    <strong>Investigadores:</strong> {projeto.investigadores.join(', ')}
-                  </p>
+                  <p className="text-gray-600 dark:text-gray-200 text-sm text-justify">{linha.descricao}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
-          
-          <SectionTitle title="Projetos Concluídos" />
+
+          <SectionTitle title="Eventos e Iniciativas Realizadas" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {projetosConcluidos.map((projeto, index) => (
+            {eventosRealizados.map((evento, index) => (
               <Card key={index} className="opacity-90">
                 <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-200 px-2 py-1 rounded">
-                      Concluído
-                    </span>
-                    <span className="text-sm text-gray-500 dark:text-gray-300">{projeto.ano}</span>
-                  </div>
-                  <CardTitle className="text-base">{projeto.titulo}</CardTitle>
+                  <CardTitle className="text-base">{evento.titulo}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-200 text-sm mb-2 text-justify">{projeto.descricao}</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500">
-                    {projeto.investigadores.join(', ')}
-                  </p>
+                  <p className="text-gray-600 dark:text-gray-200 text-sm text-justify">{evento.descricao}</p>
                 </CardContent>
               </Card>
             ))}
