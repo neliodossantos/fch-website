@@ -57,7 +57,7 @@ export default function ContatoPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 dark:text-gray-300">
                       Av. Pedro de Castro Van-Dúnem, 24<br />
                       Palanca, Kilamba Kiaxi<br />
                       C.P. 2064, Luanda - Angola
@@ -68,14 +68,14 @@ export default function ContatoPage() {
                 <Card>
                   <CardHeader>
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
                         <Phone className="w-5 h-5 text-gray-700 dark:text-gray-200" />
                       </div>
                       <CardTitle>Telefones</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-gray-600">
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li><strong>Laboratório de Psicologia:</strong> +244 923 820 314</li>
                       <li><strong>Coordenação de Estágios:</strong> +244 928 001 050</li>
                       <li><strong>Secretaria de Pós-Graduações:</strong> +244 927 609 890</li>
@@ -86,14 +86,14 @@ export default function ContatoPage() {
                 <Card>
                   <CardHeader>
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                        <Mail className="w-5 h-5 text-accent" />
+                      <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
+                        <Mail className="w-5 h-5 text-gray-700 dark:text-gray-200" />
                       </div>
                       <CardTitle>Email</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-gray-600">
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li><strong>Geral:</strong> <a href="mailto:fch@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">fch@ucan.edu</a></li>
                       <li><strong>Laboratório de Psicologia:</strong> <a href="mailto:laboratorio.psicologia@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">laboratorio.psicologia@ucan.edu</a></li>
                       <li><strong>Estágios:</strong> <a href="mailto:arieth.andrade@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">arieth.andrade@ucan.edu</a></li>
@@ -105,14 +105,14 @@ export default function ContatoPage() {
                 <Card>
                   <CardHeader>
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                        <Clock className="w-5 h-5 text-green-600" />
+                      <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <Clock className="w-5 h-5 text-green-600 dark:text-green-400" />
                       </div>
                       <CardTitle>Horário de Funcionamento</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-gray-600">
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li><strong>Segunda a Sexta:</strong> 08:00 - 16:00</li>
                       <li><strong>Secretaria de Pós-Graduações:</strong> 08:00 - 16:30 (pausa 13:00-14:00)</li>
                       <li><strong>Sábado e Domingo:</strong> Fechado</li>

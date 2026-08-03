@@ -1,6 +1,19 @@
 -- Seed data for FCH database
 -- Run this after schema.sql
 -- Sourced from "Informações para o Site Institucional - Faculdade de Ciências Humanas" (UCAN)
+--
+-- This script first clears any existing rows in decana/professores/cursos/formacao/
+-- publicacao/disciplinas (e.g. the old placeholder data) before inserting the real
+-- data below, so it is safe to run even on a database that was already seeded.
+-- It does NOT touch eventos or noticias.
+
+-- Clear previous data (children first, to respect foreign keys)
+DELETE FROM disciplinas;
+DELETE FROM publicacao;
+DELETE FROM formacao;
+DELETE FROM cursos;
+DELETE FROM professores;
+DELETE FROM decana;
 
 -- Insert Decana
 INSERT INTO decana (nome, titulo, mensagem) VALUES

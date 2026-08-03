@@ -51,7 +51,7 @@ export default function CandidaturaPage() {
                     {requisitos.map((req, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{req}</span>
+                        <span className="text-gray-700 dark:text-gray-200">{req}</span>
                       </li>
                     ))}
                   </ul>
@@ -65,7 +65,7 @@ export default function CandidaturaPage() {
                     {documentos.map((doc, index) => (
                       <li key={index} className="flex items-start">
                         <FileText className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{doc}</span>
+                        <span className="text-gray-700 dark:text-gray-200">{doc}</span>
                       </li>
                     ))}
                   </ul>
@@ -77,11 +77,11 @@ export default function CandidaturaPage() {
                 {etapas.map((etapa, index) => (
                   <Card key={index}>
                     <CardHeader className="pb-2">
-                      <span className="text-xs text-secondary font-medium">{etapa.fase}</span>
+                      <span className="text-xs text-primary font-medium">{etapa.fase}</span>
                       <CardTitle className="text-base">{etapa.titulo}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-gray-600">{etapa.descricao}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">{etapa.descricao}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -92,34 +92,34 @@ export default function CandidaturaPage() {
               <Card className="sticky top-24">
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Calendar className="w-5 h-5 mr-2 text-secondary" />
+                    <Calendar className="w-5 h-5 mr-2 text-primary" />
                     Estágio Curricular
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <p className="text-sm font-medium text-gray-700">Ano do estágio</p>
-                      <p className="text-gray-600">5º ano do curso de Psicologia</p>
+                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Ano do estágio</p>
+                      <p className="text-gray-600 dark:text-gray-400">5º ano do curso de Psicologia</p>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-700">Duração</p>
-                      <p className="text-gray-600">3 meses (288 horas)</p>
+                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Duração</p>
+                      <p className="text-gray-600 dark:text-gray-400">3 meses (288 horas)</p>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-700">Regime</p>
-                      <p className="text-gray-600">Presencial e obrigatório</p>
+                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Regime</p>
+                      <p className="text-gray-600 dark:text-gray-400">Presencial e obrigatório</p>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-700">Acompanhamento</p>
-                      <p className="text-gray-600">Supervisão de docente da UCAN e orientação de profissional da instituição parceira</p>
+                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Acompanhamento</p>
+                      <p className="text-gray-600 dark:text-gray-400">Supervisão de docente da UCAN e orientação de profissional da instituição parceira</p>
                     </div>
                   </div>
 
-                  <div className="mt-6 p-4 bg-primary/5 rounded-lg">
+                  <div className="mt-6 p-4 bg-primary/5 dark:bg-primary/10 rounded-lg">
                     <div className="flex items-start">
                       <Info className="w-5 h-5 text-primary mr-2 flex-shrink-0" />
-                      <p className="text-sm text-gray-700">
+                      <p className="text-sm text-gray-700 dark:text-gray-200">
                         A Faculdade tem também apostado na implementação de estágio profissional para
                         o curso de Línguas e Administração.
                       </p>

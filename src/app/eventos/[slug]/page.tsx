@@ -54,12 +54,12 @@ export default async function EventoDetalhePage({ params }: Props) {
   const tipoLabel = evento.tipo.charAt(0).toUpperCase() + evento.tipo.slice(1)
   const tipoColors =
     evento.tipo === 'conferencia'
-      ? 'bg-blue-100 text-blue-700'
+      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
       : evento.tipo === 'seminario'
-      ? 'bg-green-100 text-green-700'
+      ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
       : evento.tipo === 'workshop'
-      ? 'bg-purple-100 text-purple-700'
-      : 'bg-orange-100 text-orange-700'
+      ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400'
+      : 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400'
 
   return (
     <>
@@ -69,7 +69,7 @@ export default async function EventoDetalhePage({ params }: Props) {
         <div className="container mx-auto px-4">
           <Link
             href="/eventos"
-            className="inline-flex items-center text-primary hover:text-secondary mb-8"
+            className="inline-flex items-center text-primary hover:text-primary-dark dark:text-blue-400 dark:hover:text-blue-300 mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Voltar aos eventos

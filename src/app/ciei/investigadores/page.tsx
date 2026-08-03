@@ -69,7 +69,7 @@ export default function InvestigadoresPage() {
             ))}
           </div>
 
-          <p className="text-sm text-gray-500 mt-8 max-w-3xl">
+          <p className="text-sm text-gray-500 mt-8 max-w-3xl dark:text-gray-400">
             O CIEI conta ainda com a participação de docentes e estudantes do Programa de Iniciação
             Científica (PIC), que desenvolvem e apresentam as suas pesquisas em eventos, feiras
             científicas e jornadas da Faculdade.

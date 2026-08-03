@@ -84,10 +84,10 @@ export default function EstruturaOrganizacionalPage() {
                     <CardTitle className="text-lg">{dept.nome}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <p className="text-sm text-gray-600 mb-2 dark:text-gray-300">
                       <strong>Chefia:</strong> {dept.coordenador}
                     </p>
-                    <p className="text-sm text-gray-600">{dept.descricao}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">{dept.descricao}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -104,7 +104,7 @@ export default function EstruturaOrganizacionalPage() {
                 <Card key={index}>
                   <CardContent className="pt-6">
                     <h3 className="font-semibold text-primary mb-2">{unidade.nome}</h3>
-                    <p className="text-sm text-gray-600">{unidade.descricao}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">{unidade.descricao}</p>
                   </CardContent>
                 </Card>
               ))}

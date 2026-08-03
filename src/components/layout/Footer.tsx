@@ -136,7 +136,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-600 dark:border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-sm dark:text-gray-500">
             © {new Date().getFullYear()} Faculdade de Ciências Humanas. Todos os direitos reservados.
           </p>
         </div>

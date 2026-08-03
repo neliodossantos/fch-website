@@ -75,8 +75,8 @@ export default function FormulariosPage() {
                             <FileText className="w-5 h-5 text-primary" />
                           </div>
                           <div>
-                            <h3 className="font-medium text-gray-900">{item.nome}</h3>
-                            <p className="text-sm text-gray-600">{item.descricao}</p>
+                            <h3 className="font-medium text-gray-900 dark:text-white">{item.nome}</h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-300">{item.descricao}</p>
                           </div>
                         </div>
                         <Button variant="outline" size="sm" className="flex-shrink-0">
@@ -93,7 +93,7 @@ export default function FormulariosPage() {
           
           <div className="mt-8 p-6 bg-primary/5 rounded-lg">
             <h3 className="font-semibold text-primary mb-2">Como Proceder</h3>
-            <ol className="text-sm text-gray-600 space-y-2 list-decimal list-inside">
+            <ol className="text-sm text-gray-600 space-y-2 list-decimal list-inside dark:text-gray-300">
               <li>Baixe o formulário correspondente à sua solicitação.</li>
               <li>Preencha todos os campos obrigatórios de forma legível.</li>
               <li>Anexe os documentos necessários, quando aplicável.</li>

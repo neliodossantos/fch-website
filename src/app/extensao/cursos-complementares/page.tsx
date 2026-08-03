@@ -45,7 +45,7 @@ export default function CursosComplementaresPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6 dark:text-gray-200">
               No contexto da formação ao longo da vida, além dos cursos de graduação e pós-graduação, a
               FCH também oferece cursos de formação complementar de 16 a 32 horas, no decorrer de cada
               ano académico, nos domínios das Metodologias de Investigação, Línguas, Linguística,
@@ -53,7 +53,7 @@ export default function CursosComplementaresPage() {
             </p>
             <div className="bg-primary/5 rounded-lg p-6 flex items-start">
               <Globe className="w-6 h-6 text-primary mr-3 flex-shrink-0" />
-              <p className="text-gray-700 text-sm">
+              <p className="text-gray-700 text-sm dark:text-gray-200">
                 Em parceria com a Embaixada da Itália, a Faculdade lecciona o curso de Língua e Cultura
                 Italiana.
               </p>
@@ -69,7 +69,7 @@ export default function CursosComplementaresPage() {
               <Card key={index}>
                 <CardContent className="py-4 flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-sm text-gray-700">{area}</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-200">{area}</span>
                 </CardContent>
               </Card>
             ))}

@@ -55,7 +55,7 @@ export function EstruturaProgramatica({ estrutura }: EstruturaProgramaticaProps)
               </div>
               <ChevronDown
                 className={cn(
-                  'w-5 h-5 text-gray-500 transition-transform duration-200',
+                  'w-5 h-5 text-gray-500 transition-transform duration-200 dark:text-gray-400',
                   expandedYears.includes(anoCurricular.ano) && 'rotate-180'
                 )}
               />

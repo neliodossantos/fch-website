@@ -48,12 +48,12 @@ export default function SobrePage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12 space-y-6">
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed dark:text-gray-200">
               A Faculdade de Ciências Humanas (FCH) da Universidade Católica de Angola (UCAN) é uma
               unidade orgânica dedicada à formação superior, investigação científica, extensão
               universitária e prestação de serviços à comunidade nas áreas das Ciências Humanas e afins.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed dark:text-gray-200">
               Ao longo da sua trajectória, a Faculdade tem desempenhado um papel relevante na formação
               de profissionais altamente qualificados, comprometidos com os valores éticos, humanos e
               cristãos que orientam a missão da Universidade Católica de Angola. Fundada em 10 de Março
@@ -71,7 +71,7 @@ export default function SobrePage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 text-sm mb-4">{section.description}</p>
+                    <p className="text-gray-600 text-sm mb-4 dark:text-gray-300">{section.description}</p>
                     <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
                       Saber mais <ArrowRight className="ml-2 w-4 h-4" />
                     </span>

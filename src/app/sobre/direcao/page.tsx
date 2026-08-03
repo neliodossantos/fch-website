@@ -118,12 +118,12 @@ export default function DirecaoPage() {
               title="Vice-Decanos ao Longo dos Anos"
               subtitle="Galeria histórica da Vice-Decania para a Graduação"
             />
-            <ul className="space-y-2 text-gray-700 list-disc list-inside">
+            <ul className="space-y-2 text-gray-700 list-disc list-inside dark:text-gray-200">
               {vicedecanosHistorico.map((nome, index) => (
                 <li key={index}>{nome}</li>
               ))}
             </ul>
-            <p className="text-sm text-gray-500 mt-4">
+            <p className="text-sm text-gray-500 mt-4 dark:text-gray-400">
               Com excepção da Doutora Elizabeth Ceita, os restantes gestores acima, incluindo os
               actuais Vice-Decanos, concluíram a Licenciatura na Faculdade de Ciências Humanas da
               Universidade Católica de Angola.

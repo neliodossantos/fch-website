@@ -41,7 +41,7 @@ export default function ContactosAEPage() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
                       <Clock className="w-5 h-5 text-gray-700 dark:text-gray-200" />
                     </div>
                     <CardTitle>Horário de Atendimento</CardTitle>
@@ -58,8 +58,8 @@ export default function ContactosAEPage() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-accent" />
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-gray-700 dark:text-gray-200" />
                     </div>
                     <CardTitle>Telefone e Email</CardTitle>
                   </div>

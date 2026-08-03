@@ -31,7 +31,7 @@ export default async function GraduacaoPage() {
                 <Card key={curso.id} className="h-full">
                   <CardHeader>
                     <CardTitle className="text-xl text-primary">{curso.nome}</CardTitle>
-                    <div className="flex items-center space-x-4 text-sm text-gray-500 mt-2">
+                    <div className="flex items-center space-x-4 text-sm text-gray-500 mt-2 dark:text-gray-400">
                       <span className="flex items-center">
                         <Clock className="w-4 h-4 mr-1" />
                         {curso.duracao}
@@ -43,9 +43,9 @@ export default async function GraduacaoPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{curso.descricao}</p>
+                    <p className="text-gray-600 mb-4 dark:text-gray-300">{curso.descricao}</p>
                     <div className="mb-4">
-                      <p className="text-sm font-medium text-gray-700 mb-2">Principais áreas:</p>
+                      <p className="text-sm font-medium text-gray-700 mb-2 dark:text-gray-200">Principais áreas:</p>
                       <div className="flex flex-wrap gap-2">
                         {curso.areas.map((area, index) => (
                           <span
@@ -71,7 +71,7 @@ export default async function GraduacaoPage() {
           )}
           
           <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-4 dark:text-gray-300">
               Interessado em se candidatar a um dos nossos cursos?
             </p>
             <Link href="/admissoes">

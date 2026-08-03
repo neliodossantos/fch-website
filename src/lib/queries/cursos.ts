@@ -59,9 +59,9 @@ function transformCursoToDisplay(dbCurso: Curso & { coordenador?: { nome: string
     descricao: dbCurso.descricao || '',
     coordenador: dbCurso.coordenador?.nome || '',
     slug: dbCurso.slug,
-    objetivos: dbCurso.objetivos || [],
+    objetivos: Array.isArray(dbCurso.objetivos) ? dbCurso.objetivos : [],
     perfil: dbCurso.perfil_graduado || '',
-    areas: dbCurso.saidas_profissionais || [],
+    areas: Array.isArray(dbCurso.saidas_profissionais) ? dbCurso.saidas_profissionais : [],
     pdfUrl: dbCurso.pdf_url,
   }
 }

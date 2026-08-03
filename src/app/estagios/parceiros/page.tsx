@@ -62,7 +62,7 @@ export default function ParceirosPage() {
               <Card key={index}>
                 <CardContent className="py-4 flex items-center space-x-3">
                   <Building2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-sm text-gray-700">{parceiro}</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-200">{parceiro}</span>
                 </CardContent>
               </Card>
             ))}

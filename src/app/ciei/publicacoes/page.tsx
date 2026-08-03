@@ -86,11 +86,11 @@ export default function PublicacoesPage() {
                 <CardContent className="py-4">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="font-medium text-gray-900 mb-1">{artigo.titulo}</h3>
-                      <p className="text-sm text-gray-600 mb-1">
+                      <h3 className="font-medium text-gray-900 mb-1 dark:text-white">{artigo.titulo}</h3>
+                      <p className="text-sm text-gray-600 mb-1 dark:text-gray-300">
                         {artigo.autores.join('; ')}
                       </p>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
                         <em>{artigo.revista}</em>, {artigo.ano}
                       </p>
                     </div>
@@ -120,18 +120,18 @@ export default function PublicacoesPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b">
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Ano</th>
-                      <th className="text-right py-3 px-4 font-semibold text-gray-700">Revistas Indexadas</th>
-                      <th className="text-right py-3 px-4 font-semibold text-gray-700">Não Indexadas</th>
-                      <th className="text-right py-3 px-4 font-semibold text-gray-700">Total</th>
+                      <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-gray-200">Ano</th>
+                      <th className="text-right py-3 px-4 font-semibold text-gray-700 dark:text-gray-200">Revistas Indexadas</th>
+                      <th className="text-right py-3 px-4 font-semibold text-gray-700 dark:text-gray-200">Não Indexadas</th>
+                      <th className="text-right py-3 px-4 font-semibold text-gray-700 dark:text-gray-200">Total</th>
                     </tr>
                   </thead>
                   <tbody>
                     {publicacoesPorAno.map((item) => (
                       <tr key={item.ano} className="border-b last:border-b-0">
-                        <td className="py-3 px-4 text-gray-600">{item.ano}</td>
-                        <td className="py-3 px-4 text-right text-gray-600">{item.indexadas}</td>
-                        <td className="py-3 px-4 text-right text-gray-600">{item.naoIndexadas}</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-300">{item.ano}</td>
+                        <td className="py-3 px-4 text-right text-gray-600 dark:text-gray-300">{item.indexadas}</td>
+                        <td className="py-3 px-4 text-right text-gray-600 dark:text-gray-300">{item.naoIndexadas}</td>
                         <td className="py-3 px-4 text-right font-medium text-primary">{item.total}</td>
                       </tr>
                     ))}
@@ -141,8 +141,8 @@ export default function PublicacoesPage() {
             </CardContent>
           </Card>
 
-          <div className="bg-gray-50 rounded-lg p-6 max-w-3xl">
-            <p className="text-sm text-gray-600">
+          <div className="bg-gray-50 rounded-lg p-6 max-w-3xl dark:bg-gray-800">
+            <p className="text-sm text-gray-600 dark:text-gray-300">
               Está também em preparação um livro com 11 artigos, organizado pelo CIEI, resultantes de
               pesquisas do Programa de Iniciação Científica (PIC) e de Trabalhos de Fim de Curso das
               áreas de Psicologia Clínica, Psicologia do Trabalho e das Organizações e Saúde e Nutrição,

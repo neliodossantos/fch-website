@@ -73,8 +73,8 @@ export default function SecretariaPage() {
           
           <div className="mt-12 bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                <Phone className="w-6 h-6 text-secondary dark:text-primary" />
+              <div className="w-12 h-12 rounded-full bg-primary/10 dark:bg-gray-700 flex items-center justify-center flex-shrink-0">
+                <Phone className="w-6 h-6 text-primary" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Precisa de ajuda?</h3>

@@ -28,10 +28,10 @@ export default async function PosGraduacaoPage() {
           {cursosPosGraduacao.length > 0 ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {cursosPosGraduacao.map((curso) => (
-                <Card key={curso.id} className="h-full border-secondary/30">
+                <Card key={curso.id} className="h-full border-primary/30">
                   <CardHeader>
                     <CardTitle className="text-xl text-primary">{curso.nome}</CardTitle>
-                    <div className="flex items-center space-x-4 text-sm text-gray-500 mt-2">
+                    <div className="flex items-center space-x-4 text-sm text-gray-500 mt-2 dark:text-gray-400">
                       <span className="flex items-center">
                         <Clock className="w-4 h-4 mr-1" />
                         {curso.duracao}
@@ -43,9 +43,9 @@ export default async function PosGraduacaoPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{curso.descricao}</p>
+                    <p className="text-gray-600 mb-4 dark:text-gray-300">{curso.descricao}</p>
                     <div className="mb-4">
-                      <p className="text-sm font-medium text-gray-700 mb-2">Principais áreas:</p>
+                      <p className="text-sm font-medium text-gray-700 mb-2 dark:text-gray-200">Principais áreas:</p>
                       <div className="flex flex-wrap gap-2">
                         {curso.areas.map((area, index) => (
                           <span
@@ -58,7 +58,7 @@ export default async function PosGraduacaoPage() {
                       </div>
                     </div>
                     <Link href={`/cursos/pos-graduacao/${curso.slug}`}>
-                      <Button variant="secondary" className="w-full">
+                      <Button variant="outline" className="w-full">
                         Ver detalhes do curso <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </Link>
@@ -70,9 +70,9 @@ export default async function PosGraduacaoPage() {
             <p className="text-center text-gray-500 dark:text-gray-400">Sem dados disponíveis</p>
           )}
           
-          <div className="mt-12 bg-gray-50 rounded-lg p-8">
+          <div className="mt-12 bg-gray-50 rounded-lg p-8 dark:bg-gray-800">
             <h3 className="text-xl font-semibold text-primary mb-4">Requisitos Gerais</h3>
-            <ul className="text-gray-600 space-y-2 mb-6">
+            <ul className="text-gray-600 space-y-2 mb-6 dark:text-gray-300">
               <li>• Licenciatura concluída em área afim ao programa pretendido</li>
               <li>• Certificado de Habilitações (com homologação pelo INAAREES, quando aplicável)</li>
               <li>• Curriculum vitae actualizado</li>

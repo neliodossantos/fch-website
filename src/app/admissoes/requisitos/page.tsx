@@ -43,7 +43,7 @@ export default function RequisitosPage() {
                   {requisitosGraduacao.map((req, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{req}</span>
+                      <span className="text-gray-700 dark:text-gray-200">{req}</span>
                     </li>
                   ))}
                 </ul>
@@ -59,7 +59,7 @@ export default function RequisitosPage() {
                   {requisitosPosgr.map((req, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle className="w-5 h-5 text-gray-700 dark:text-gray-200 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{req}</span>
+                      <span className="text-gray-700 dark:text-gray-200">{req}</span>
                     </li>
                   ))}
                 </ul>
@@ -70,16 +70,16 @@ export default function RequisitosPage() {
           <SectionTitle title="Provas de Ingresso (Graduação)" />
           <Card className="mb-8">
             <CardContent className="pt-6">
-              <p className="text-gray-700">
+              <p className="text-gray-700 dark:text-gray-200">
                 O exame de admissão à graduação (curso de Psicologia) inclui provas de{' '}
                 <strong>Língua Portuguesa</strong> e <strong>Conhecimentos Gerais</strong>.
               </p>
             </CardContent>
           </Card>
 
-          <div className="bg-gray-50 rounded-lg p-6">
+          <div className="bg-gray-50 rounded-lg p-6 dark:bg-gray-800">
             <h3 className="font-semibold text-primary mb-2">Observações Importantes</h3>
-            <ul className="text-sm text-gray-600 space-y-2">
+            <ul className="text-sm text-gray-600 space-y-2 dark:text-gray-300">
               <li>• O número de vagas é limitado e a selecção é competitiva.</li>
               <li>• Candidatos com necessidades especiais devem indicar no formulário de candidatura.</li>
               <li>• A FCH reserva-se o direito de solicitar documentação adicional.</li>

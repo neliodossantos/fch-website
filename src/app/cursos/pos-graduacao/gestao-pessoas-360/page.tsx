@@ -87,29 +87,29 @@ export default async function GestaoPessoas360Page() {
             </div>
 
             <div>
-              <Card className="sticky top-24 border-secondary/30">
+              <Card className="sticky top-24 border-primary/30">
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-semibold text-primary mb-4">Informações</h3>
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <BookOpen className="w-5 h-5 text-gray-700 dark:text-gray-200 mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500">Grau</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Grau</p>
                         <p className="font-medium">Pós-Graduação Profissional</p>
                       </div>
                     </div>
                     <div className="flex items-center">
                       <Briefcase className="w-5 h-5 text-gray-700 dark:text-gray-200 mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500">Regime</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Regime</p>
                         <p className="font-medium">Presencial</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-6 pt-6 border-t">
-                    <p className="text-sm font-medium text-gray-700 mb-3">Coordenação</p>
-                    <div className="space-y-2 text-sm text-gray-600">
+                    <p className="text-sm font-medium text-gray-700 mb-3 dark:text-gray-200">Coordenação</p>
+                    <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                       <div className="flex items-center">
                         <User className="w-4 h-4 mr-2" />
                         Lorena Henriquez
@@ -127,7 +127,7 @@ export default async function GestaoPessoas360Page() {
 
                   <div className="mt-6 space-y-3">
                     <Link href="/admissoes" className="block">
-                      <Button variant="secondary" className="w-full">Candidate-se</Button>
+                      <Button className="w-full">Candidate-se</Button>
                     </Link>
                     <Link href="/contato" className="block">
                       <Button variant="outline" className="w-full">Mais informações</Button>
