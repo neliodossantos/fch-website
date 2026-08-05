@@ -4,7 +4,7 @@ import { SectionTitle } from '@/components/shared/SectionTitle'
 
 export const metadata: Metadata = {
   title: 'História',
-  description: 'Conheça a história da Faculdade de Ciências Sociais e Humanas.',
+  description: 'Conheça a história da Faculdade de Ciências Humanas da Universidade Católica de Angola.',
 }
 
 export default function HistoriaPage() {
@@ -12,48 +12,76 @@ export default function HistoriaPage() {
     <>
       <PageHeader
         title="Nossa História"
-        description="Uma trajetória de mais de três décadas dedicada à formação de profissionais de excelência."
+        description="Uma trajetória iniciada em 2003, dedicada à formação de profissionais de excelência em Ciências Humanas."
       />
-      
+
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <SectionTitle title="Fundação e Primeiros Anos" />
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              A Faculdade de Ciências Sociais e Humanas foi fundada em 1990, num período de grande transformação 
-              social e política. Desde o início, a instituição teve como missão formar profissionais capazes de 
-              compreender e intervir positivamente na sociedade.
+            <SectionTitle title="Fundação" />
+            <p className="text-gray-700 mb-6 leading-relaxed dark:text-gray-200">
+              A Faculdade de Ciências Humanas (FCH) da Universidade Católica de Angola foi criada em
+              10 de Março de 2003, constituindo uma das unidades orgânicas pioneiras da UCAN. A sua
+              fundação representou um marco importante na consolidação do ensino superior privado em
+              Angola e na expansão da formação universitária nas áreas das Ciências Humanas e Sociais.
             </p>
-            <p className="text-gray-700 mb-12 leading-relaxed">
-              Os primeiros cursos oferecidos foram as licenciaturas em Psicologia e Serviço Social, respondendo 
-              a uma demanda crescente por profissionais qualificados nessas áreas. Com um corpo docente dedicado 
-              e infraestrutura adequada, a FCH rapidamente se estabeleceu como uma referência na formação de 
-              recursos humanos na região.
+            <p className="text-gray-700 mb-12 leading-relaxed dark:text-gray-200">
+              A instalação e direcção inicial da Faculdade estiveram a cargo do Professor Doutor
+              António Fernandes da Costa (em feliz memória), reconhecido académico e investigador
+              angolano no domínio da Linguística, que assumiu a missão de estruturar esta unidade
+              orgânica e lançar as bases do seu desenvolvimento institucional. Foi o Decano fundador
+              da Faculdade e o primeiro Professor Catedrático da Faculdade e da Universidade.
             </p>
-            
-            <SectionTitle title="Expansão e Consolidação" />
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Na década de 2000, a Faculdade expandiu a sua oferta formativa com a criação dos cursos de 
-              Sociologia e Comunicação Social. Esta expansão refletiu o compromisso da instituição em 
-              responder às necessidades do mercado de trabalho e da sociedade.
+
+            <SectionTitle title="Primeiros Cursos" />
+            <p className="text-gray-700 mb-6 leading-relaxed dark:text-gray-200">
+              A actividade académica da Faculdade iniciou-se com o curso de Línguas, Literatura e
+              Administração — actualmente designado Línguas e Administração —, cuja primeira turma
+              foi diplomada em 2007, demonstrando a capacidade da Faculdade em formar os seus
+              primeiros quadros superiores.
             </p>
-            <p className="text-gray-700 mb-12 leading-relaxed">
-              Paralelamente, foram criados os primeiros programas de pós-graduação, com destaque para os 
-              mestrados em Psicologia Clínica e Gestão Social. A investigação científica também ganhou 
-              impulso com a criação do Centro de Investigação e Estudos Interdisciplinares (CIEI).
+            <p className="text-gray-700 mb-12 leading-relaxed dark:text-gray-200">
+              Em resposta às necessidades crescentes do país nos domínios da saúde mental,
+              desenvolvimento humano e gestão das organizações, a Faculdade procedeu, também em 2007,
+              à criação do curso de Psicologia, nas opções Clínica e do Trabalho e das Organizações.
+              A primeira turma ingressou na segunda metade da década de 2000, integrando estudantes de
+              diferentes províncias do país, e contribuiu para a afirmação da Psicologia como área
+              científica e profissional na UCAN. Desde então, centenas de profissionais formados pela
+              Faculdade exercem funções nos sectores da saúde, educação, recursos humanos,
+              administração pública, intervenção comunitária e investigação científica.
             </p>
-            
+
+            <SectionTitle title="Consolidação Institucional" />
+            <p className="text-gray-700 mb-6 leading-relaxed dark:text-gray-200">
+              Ao longo da sua história, a FCH desenvolveu uma cultura académica assente na excelência
+              do ensino, na promoção da investigação científica, na prestação de serviços à comunidade
+              e na formação integral da pessoa humana. Este compromisso levou à criação de estruturas
+              especializadas como o Centro Interdisciplinar de Ensino e Investigação (CIEI), criado em
+              Outubro de 2020 em parceria com o Instituto Superior de Ciências da Saúde, e o
+              Laboratório de Psicologia, que oferece projectos de extensão universitária como o
+              Plantão Psicológico e diversos programas de voluntariado comunitário.
+            </p>
+            <p className="text-gray-700 mb-12 leading-relaxed dark:text-gray-200">
+              A Faculdade tem também investido na formação pós-graduada e na capacitação profissional,
+              com programas como a Especialização em Gestão do Ensino Superior, a Pós-Graduação
+              Profissional em Capacitação Pedagógica, a Pós-Graduação de Capacitação Profissional em
+              Gestão de Pessoas 360º e a Pós-Graduação Profissional em Consulta Psicológica.
+            </p>
+
             <SectionTitle title="A FCH Hoje" />
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Atualmente, a FCH conta com quatro licenciaturas e dois mestrados, um corpo docente altamente 
-              qualificado e modernas instalações. O Laboratório de Psicologia presta serviços à comunidade, 
-              enquanto os programas de extensão ampliam o alcance da formação oferecida.
+            <p className="text-gray-700 mb-6 leading-relaxed dark:text-gray-200">
+              Actualmente, a Faculdade de Ciências Humanas acolhe cerca de 365 estudantes distribuídos
+              pelos seus cursos de graduação — 165 no curso de Psicologia e 200 no curso de Línguas e
+              Administração. O seu corpo docente é constituído por 31 docentes, entre professores
+              doutores, mestres e especialistas com reconhecida experiência académica e profissional.
             </p>
-            <p className="text-gray-700 leading-relaxed">
-              Com parcerias nacionais e internacionais, a Faculdade continua a evoluir, mantendo o seu 
-              compromisso com a excelência académica, a investigação relevante e a responsabilidade social. 
-              Milhares de profissionais formados pela FCH atuam em diversas áreas, contribuindo para o 
-              desenvolvimento da sociedade.
+            <p className="text-gray-700 leading-relaxed dark:text-gray-200">
+              A direcção é actualmente assegurada pela Dra. Ana Bela Pereira Loureiro, na qualidade de
+              Decana, auxiliada pela Drª Evanilse Diogo, Vice-Decana para a Graduação, e pelo Dr.
+              Manuel Dala, Vice-Decano para as Pós-Graduações, Investigação e Extensão. Com parcerias
+              nacionais e internacionais — nomeadamente com a Universidade Federal Fluminense (Brasil)
+              —, a Faculdade continua a evoluir, mantendo o seu compromisso com a excelência académica,
+              a investigação relevante e a responsabilidade social.
             </p>
           </div>
         </div>

@@ -48,15 +48,17 @@ export default function AdmissoesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-              A Faculdade de Ciências Sociais e Humanas recebe candidaturas de estudantes que 
-              desejam ingressar nos cursos de graduação e pós-graduação. O processo de admissão 
-              é realizado anualmente, com períodos específicos para candidatura.
+              A Faculdade de Ciências Humanas recebe candidaturas de estudantes que
+              desejam ingressar nos cursos de graduação (Psicologia e Línguas e Administração) e
+              pós-graduação. O processo de admissão à graduação inclui provas de ingresso em Língua
+              Portuguesa e Conhecimentos Gerais.
             </p>
             <div className="bg-primary/10 dark:bg-gray-800 rounded-lg p-6">
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Período de Candidaturas 2024</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Requisitos Gerais de Graduação</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                <strong>Graduação:</strong> Janeiro a Março de 2024<br />
-                <strong>Pós-Graduação:</strong> Fevereiro a Abril de 2024
+                Ter concluído o ensino médio ou equivalente, possuir os documentos originais que
+                atestam essa conclusão, apresentar o Bilhete de Identidade e ser aprovado nos exames
+                de admissão.
               </p>
             </div>
           </div>

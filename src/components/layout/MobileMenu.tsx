@@ -79,13 +79,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           >
             Contato
           </Link>
-          <Link
-            href="/portal"
-            onClick={onClose}
-            className="block w-full text-center px-4 py-3 bg-accent text-white font-medium rounded-md hover:bg-accent/80 transition-colors"
-          >
-            Portal do Estudante
-          </Link>
         </div>
       </nav>
     </div>

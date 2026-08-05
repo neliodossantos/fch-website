@@ -48,23 +48,23 @@ export default async function EventosRealizadosPage() {
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       <span className={`text-xs px-2 py-1 rounded opacity-75 ${
-                        evento.tipo === 'conferencia' ? 'bg-blue-100 text-blue-700' :
-                        evento.tipo === 'seminario' ? 'bg-green-100 text-green-700' :
-                        evento.tipo === 'workshop' ? 'bg-purple-100 text-purple-700' :
-                        'bg-orange-100 text-orange-700'
+                        evento.tipo === 'conferencia' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400' :
+                        evento.tipo === 'seminario' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400' :
+                        evento.tipo === 'workshop' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400' :
+                        'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400'
                       }`}>
                         {evento.tipo.charAt(0).toUpperCase() + evento.tipo.slice(1)}
                       </span>
                     </div>
-                    <div className="flex items-center space-x-2 text-sm text-gray-500 mb-2">
+                    <div className="flex items-center space-x-2 text-sm text-gray-500 mb-2 dark:text-gray-400">
                       <Calendar className="w-4 h-4" />
                       <span>{new Date(evento.data).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
                     </div>
-                    <CardTitle className="text-lg text-gray-700">{evento.titulo}</CardTitle>
+                    <CardTitle className="text-lg text-gray-700 dark:text-gray-200">{evento.titulo}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 text-sm mb-4">{evento.descricao}</p>
-                    <div className="flex items-center text-sm text-gray-500 mb-4">
+                    <p className="text-gray-600 text-sm mb-4 dark:text-gray-300">{evento.descricao}</p>
+                    <div className="flex items-center text-sm text-gray-500 mb-4 dark:text-gray-400">
                       <MapPin className="w-4 h-4 mr-2" />
                       {evento.local}
                     </div>
@@ -79,7 +79,7 @@ export default async function EventosRealizadosPage() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">Não há eventos registrados.</p>
+              <p className="text-gray-500 text-lg dark:text-gray-400">Não há eventos registrados.</p>
             </div>
           )}
         </div>

@@ -46,8 +46,8 @@ export default function AtividadesPage() {
                   <CardTitle className="text-base">{atividade.nome}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-600">{atividade.horario}</p>
-                  <p className="text-sm text-gray-500">{atividade.local}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{atividade.horario}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{atividade.local}</p>
                 </CardContent>
               </Card>
             ))}
@@ -61,8 +61,8 @@ export default function AtividadesPage() {
                   <CardTitle className="text-base">{atividade.nome}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-600">{atividade.horario}</p>
-                  <p className="text-sm text-gray-500">{atividade.local}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{atividade.horario}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{atividade.local}</p>
                 </CardContent>
               </Card>
             ))}
@@ -76,16 +76,16 @@ export default function AtividadesPage() {
                   <CardTitle className="text-base">{clube.nome}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-600">{clube.horario}</p>
-                  <p className="text-sm text-gray-500">{clube.descricao}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{clube.horario}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{clube.descricao}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
           
-          <div className="bg-gray-50 rounded-lg p-8 text-center">
+          <div className="bg-gray-50 rounded-lg p-8 text-center dark:bg-gray-800">
             <h3 className="text-xl font-semibold text-primary mb-4">Quer participar?</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 dark:text-gray-300">
               As inscrições estão abertas durante todo o ano letivo. 
               Procure a Coordenação Extracurricular para mais informações.
             </p>

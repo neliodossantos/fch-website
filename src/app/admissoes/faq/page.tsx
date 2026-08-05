@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     pergunta: 'Como funciona o exame de acesso?',
-    resposta: 'O exame de acesso é realizado em datas específicas e avalia conhecimentos de Português, conhecimentos gerais e conhecimentos específicos da área pretendida.',
+    resposta: 'O exame de admissão ao curso de Psicologia avalia Língua Portuguesa e Conhecimentos Gerais.',
   },
   {
     pergunta: 'Há bolsas de estudo disponíveis?',
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     pergunta: 'O curso tem estágio obrigatório?',
-    resposta: 'Sim, todos os cursos de graduação incluem estágio curricular obrigatório no último ano, com duração mínima de um semestre.',
+    resposta: 'O curso de Psicologia inclui estágio curricular presencial e obrigatório no 5º ano, com duração de 3 meses (288 horas), seguido de relatório final.',
   },
   {
     pergunta: 'Posso trabalhar enquanto estudo?',

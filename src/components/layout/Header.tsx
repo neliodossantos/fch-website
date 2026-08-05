@@ -62,12 +62,6 @@ export function Header() {
             >
               Contato
             </Link>
-            <Link
-              href="/portal"
-              className="ml-2 px-4 py-2 bg-accent text-white font-medium rounded-md hover:bg-accent/80 transition-colors"
-            >
-              Portal do Estudante
-            </Link>
           </nav>
 
           {/* Mobile Menu Button */}

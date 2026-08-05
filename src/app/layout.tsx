@@ -7,16 +7,16 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'FCH - Faculdade de Ciências Sociais e Humanas',
+    default: 'FCH - Faculdade de Ciências Humanas',
     template: '%s | FCH',
   },
-  description: 'Faculdade de Ciências Sociais e Humanas - Formando profissionais que transformam a sociedade. Cursos de Psicologia, Serviço Social, Sociologia e Comunicação Social.',
-  keywords: ['faculdade', 'ciências sociais', 'ciências humanas', 'psicologia', 'serviço social', 'sociologia', 'comunicação social', 'universidade'],
+  description: 'Faculdade de Ciências Humanas da Universidade Católica de Angola - formação superior, investigação e extensão universitária. Cursos de Psicologia (Clínica e do Trabalho e das Organizações) e Línguas e Administração.',
+  keywords: ['faculdade', 'ciências humanas', 'UCAN', 'psicologia', 'línguas e administração', 'universidade católica de angola'],
   authors: [{ name: 'FCH' }],
   openGraph: {
     type: 'website',
     locale: 'pt_PT',
-    siteName: 'FCH - Faculdade de Ciências Sociais e Humanas',
+    siteName: 'FCH - Faculdade de Ciências Humanas',
   },
 }
 

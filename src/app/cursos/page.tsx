@@ -68,7 +68,7 @@ export default async function CursosPage() {
           <div>
             <div className="flex items-center mb-8">
               <Award className="w-8 h-8 text-gray-900 dark:text-white mr-3" />
-              <SectionTitle title="Pós-Graduação" subtitle="Mestrados com duração de 2 anos" className="mb-0" />
+              <SectionTitle title="Pós-Graduação" subtitle="Especializações e pós-graduações profissionais" className="mb-0" />
             </div>
             {cursosPosGraduacao.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

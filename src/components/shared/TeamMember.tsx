@@ -28,7 +28,7 @@ export function TeamMember({ nome, cargo, titulacao, areas, email, foto_url, dep
         {cargo && <p className="text-sm text-gray-700 dark:text-gray-100 text-center font-medium">{cargo}</p>}
         {titulacao && <p className="text-sm text-gray-600 dark:text-gray-200 text-center">{titulacao}</p>}
         {departamento && <p className="text-sm text-gray-500 dark:text-gray-300 text-center">Departamento de {departamento}</p>}
-        {areas && areas.length > 0 && (
+        {Array.isArray(areas) && areas.length > 0 && (
           <div className="mt-3">
             <p className="text-xs text-gray-500 dark:text-gray-300 text-center mb-1">Áreas de atuação:</p>
             <div className="flex flex-wrap gap-1 justify-center">

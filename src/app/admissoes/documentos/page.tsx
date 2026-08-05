@@ -50,7 +50,7 @@ export default function DocumentosPage() {
                     {docsGraduacao.map((doc, index) => (
                       <li key={index} className="flex items-start">
                         <FileText className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{doc}</span>
+                        <span className="text-gray-700 dark:text-gray-200">{doc}</span>
                       </li>
                     ))}
                   </ul>
@@ -66,7 +66,7 @@ export default function DocumentosPage() {
                     {docsPosgraduacao.map((doc, index) => (
                       <li key={index} className="flex items-start">
                         <FileText className="w-5 h-5 text-gray-700 dark:text-gray-200 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{doc}</span>
+                        <span className="text-gray-700 dark:text-gray-200">{doc}</span>
                       </li>
                     ))}
                   </ul>
@@ -75,12 +75,12 @@ export default function DocumentosPage() {
             </div>
           </div>
           
-          <div className="bg-yellow-50 rounded-lg p-6">
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-6">
             <div className="flex items-start">
-              <AlertCircle className="w-6 h-6 text-yellow-600 mr-3 flex-shrink-0" />
+              <AlertCircle className="w-6 h-6 text-yellow-600 dark:text-yellow-400 mr-3 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-yellow-800 mb-2">Atenção</h3>
-                <ul className="text-sm text-yellow-700 space-y-1">
+                <h3 className="font-semibold text-yellow-800 dark:text-yellow-300 mb-2">Atenção</h3>
+                <ul className="text-sm text-yellow-700 dark:text-yellow-400 space-y-1">
                   <li>• Todos os documentos devem estar em bom estado de conservação.</li>
                   <li>• Documentos em língua estrangeira devem ser traduzidos por tradutor juramentado.</li>
                   <li>• Cópias devem ser autenticadas (exceto quando o original for apresentado).</li>

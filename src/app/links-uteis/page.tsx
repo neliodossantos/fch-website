@@ -54,10 +54,10 @@ export default function LinksUteisPage() {
                 <CardContent className="py-4">
                   <a href={link.url} className="flex items-center justify-between group">
                     <div>
-                      <h3 className="font-medium text-gray-900 group-hover:text-primary">{link.titulo}</h3>
-                      <p className="text-sm text-gray-500">{link.descricao}</p>
+                      <h3 className="font-medium text-gray-900 group-hover:text-primary dark:text-white">{link.titulo}</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{link.descricao}</p>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary" />
+                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-gray-500" />
                   </a>
                 </CardContent>
               </Card>
@@ -71,10 +71,10 @@ export default function LinksUteisPage() {
                 <CardContent className="py-4">
                   <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group">
                     <div>
-                      <h3 className="font-medium text-gray-900 group-hover:text-primary">{link.titulo}</h3>
-                      <p className="text-sm text-gray-500">{link.descricao}</p>
+                      <h3 className="font-medium text-gray-900 group-hover:text-primary dark:text-white">{link.titulo}</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{link.descricao}</p>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary" />
+                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-gray-500" />
                   </a>
                 </CardContent>
               </Card>
@@ -88,10 +88,10 @@ export default function LinksUteisPage() {
                 <CardContent className="py-4">
                   <a href={link.url} className="flex items-center justify-between group">
                     <div>
-                      <h3 className="font-medium text-gray-900 group-hover:text-primary">{link.titulo}</h3>
-                      <p className="text-sm text-gray-500">{link.descricao}</p>
+                      <h3 className="font-medium text-gray-900 group-hover:text-primary dark:text-white">{link.titulo}</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{link.descricao}</p>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary" />
+                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-gray-500" />
                   </a>
                 </CardContent>
               </Card>
@@ -105,10 +105,10 @@ export default function LinksUteisPage() {
                 <CardContent className="py-4">
                   <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group">
                     <div>
-                      <h3 className="font-medium text-gray-900 group-hover:text-primary">{link.titulo}</h3>
-                      <p className="text-sm text-gray-500">{link.descricao}</p>
+                      <h3 className="font-medium text-gray-900 group-hover:text-primary dark:text-white">{link.titulo}</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{link.descricao}</p>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary" />
+                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-gray-500" />
                   </a>
                 </CardContent>
               </Card>

@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { CheckCircle, FileText, CreditCard } from 'lucide-react'
+import { FileText, CreditCard } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
@@ -60,8 +60,8 @@ export default function InscricaoExtensaoPage() {
                       <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-4">
                         {etapa.numero}
                       </div>
-                      <h3 className="font-semibold text-gray-900 mb-2">{etapa.titulo}</h3>
-                      <p className="text-sm text-gray-600">{etapa.descricao}</p>
+                      <h3 className="font-semibold text-gray-900 mb-2 dark:text-white">{etapa.titulo}</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">{etapa.descricao}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -74,7 +74,7 @@ export default function InscricaoExtensaoPage() {
                     {documentos.map((doc, index) => (
                       <li key={index} className="flex items-center">
                         <FileText className="w-5 h-5 text-primary mr-3" />
-                        <span className="text-gray-700">{doc}</span>
+                        <span className="text-gray-700 dark:text-gray-200">{doc}</span>
                       </li>
                     ))}
                   </ul>
@@ -86,12 +86,12 @@ export default function InscricaoExtensaoPage() {
               <Card className="sticky top-24">
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <CreditCard className="w-5 h-5 mr-2 text-secondary" />
+                    <CreditCard className="w-5 h-5 mr-2 text-primary" />
                     Formas de Pagamento
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-4 text-gray-600">
+                  <ul className="space-y-4 text-gray-600 dark:text-gray-300">
                     <li>
                       <p className="font-medium">Presencial</p>
                       <p className="text-sm">Na tesouraria da Faculdade</p>
@@ -99,23 +99,13 @@ export default function InscricaoExtensaoPage() {
                     <li>
                       <p className="font-medium">Transferência Bancária</p>
                       <p className="text-sm">
-                        Banco: Banco XYZ<br />
-                        Conta: 1234567890<br />
-                        IBAN: AO00 1234 5678 9012 3456
+                        Os dados bancários para transferência são fornecidos pela Coordenação dos
+                        Cursos de Formação Complementar no momento da inscrição.
                       </p>
                     </li>
                   </ul>
-                  
-                  <div className="mt-6 p-4 bg-green-50 rounded-lg">
-                    <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0" />
-                      <p className="text-sm text-green-800">
-                        Descontos especiais para estudantes e ex-alunos da FCH.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6">
+
+                  <div className="mt-6 space-y-3">
                     <Button className="w-full">Baixar Ficha de Inscrição</Button>
                   </div>
                 </CardContent>

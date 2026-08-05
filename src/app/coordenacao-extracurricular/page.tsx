@@ -43,7 +43,7 @@ export default function CoordenacaoExtracurricularPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed dark:text-gray-200">
               A Coordenação Extracurricular organiza atividades que complementam a formação 
               académica dos estudantes. Oferecemos oportunidades nas áreas de desporto, cultura, 
               voluntariado e lazer, promovendo o desenvolvimento integral dos nossos estudantes.
@@ -58,7 +58,7 @@ export default function CoordenacaoExtracurricularPage() {
                     <area.icon className="w-8 h-8 text-primary" />
                   </div>
                   <h3 className="font-semibold text-primary mb-2">{area.title}</h3>
-                  <p className="text-gray-600 text-sm">{area.description}</p>
+                  <p className="text-gray-600 text-sm dark:text-gray-300">{area.description}</p>
                 </CardContent>
               </Card>
             ))}

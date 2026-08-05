@@ -21,7 +21,7 @@ export function Footer() {
               <span className="text-xl font-bold text-primary">FCH</span>
             </Link>
             <p className="text-gray-300 dark:text-gray-200 text-sm mb-4">
-              Faculdade de Ciências Humanas - Formando profissionais que transformam a sociedade desde 20...
+              Faculdade de Ciências Humanas da Universidade Católica de Angola - unidade orgânica dedicada à formação superior, investigação científica e extensão universitária desde 2003.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 dark:text-gray-200 hover:text-primary transition-colors" aria-label="Facebook">
@@ -116,14 +116,14 @@ export function Footer() {
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-300 dark:text-gray-200 text-sm">
                   Av. Pedro de Castro<br />
-                  Van-Dúnem nº24 <br />
-                  Caixa Postal 2064<br />
-                  Palanca, Luanda
+                  Van-Dúnem, 24 <br />
+                  Palanca, Kilamba Kiaxi<br />
+                  C.P. 2064, Luanda
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-gray-300 dark:text-gray-200 text-sm">+244 222 123 456</span>
+                <span className="text-gray-300 dark:text-gray-200 text-sm">+244 923 820 314</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
@@ -136,8 +136,8 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-600 dark:border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Faculdade de Ciências Sociais e Humanas. Todos os direitos reservados.
+          <p className="text-gray-400 text-sm dark:text-gray-500">
+            © {new Date().getFullYear()} Faculdade de Ciências Humanas. Todos os direitos reservados.
           </p>
         </div>
       </div>
