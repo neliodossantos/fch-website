@@ -10,16 +10,16 @@ export default async function MensagemDecana() {
     <section className="py-16 bg-white dark:bg-gray-800">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="Mensagem da Decana"
-          subtitle="Palavras de boas-vindas da nossa Decana"
+          title="Mensagem do Decano"
+          subtitle="Palavras de boas-vindas do nosso Decano"
           centered
         />
-        
+
         {decana ? (
           <Card className="max-w-4xl mx-auto">
             <CardContent className="pt-6">
               <div className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="w-full md:w-1/3 flex flex-col items-center">
+                <div className="w-full md:w-1/2 flex flex-col items-center">
                   <Avatar src={decana.foto_url} name={decana.nome} size="xl" className="mb-4" />
                   <h3 className="text-lg font-semibold text-center text-gray-900 dark:text-white">
                     {decana.nome}
@@ -28,7 +28,7 @@ export default async function MensagemDecana() {
                     {decana.titulo}
                   </p>
                 </div>
-                
+
                 <div className="w-full md:w-2/3">
                   <div className="prose dark:prose-invert max-w-none">
                     {decana.mensagem?.split('\n\n').map((paragraph, index) => (
