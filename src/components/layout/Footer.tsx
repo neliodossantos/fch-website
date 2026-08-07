@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from 'lucide-react'
 import logo from './FCH.png'
 import { NewsletterForm } from './NewsletterForm'
+import { BackToTopButton } from './BackToTopButton'
 
 const quickLinks = [
   { href: '/cursos', label: 'Cursos' },
@@ -122,6 +123,8 @@ export function Footer() {
           </p>
         </div>
       </div>
+
+      <BackToTopButton />
     </footer>
   )
 }
