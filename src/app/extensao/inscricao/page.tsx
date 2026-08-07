@@ -44,6 +44,7 @@ export default function InscricaoExtensaoPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Extensão"
         title="Inscrição"
         description="Como se inscrever nos cursos de extensão da FCH."
       />

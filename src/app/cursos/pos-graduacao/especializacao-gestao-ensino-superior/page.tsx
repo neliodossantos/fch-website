@@ -41,6 +41,7 @@ export default async function EGESPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Pós-Graduação"
         title={curso.nome}
         description={curso.descricao}
       />

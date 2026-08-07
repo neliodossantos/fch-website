@@ -19,6 +19,7 @@ export default async function PosGraduacaoPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Formação académica"
         title="Cursos de Pós-Graduação"
         description="Especializações e pós-graduações profissionais de capacitação avançada."
       />

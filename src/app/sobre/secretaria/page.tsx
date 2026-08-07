@@ -34,6 +34,7 @@ export default function SecretariaPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Sobre a FCH"
         title="Secretaria Académica"
         description="A Secretaria Académica é responsável pelos serviços de apoio administrativo aos estudantes e docentes."
       />

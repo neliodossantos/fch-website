@@ -12,6 +12,7 @@ export default function ContactosAEPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Associação de Estudantes"
         title="Contactos"
         description="Entre em contacto com a Associação de Estudantes da FCH."
       />

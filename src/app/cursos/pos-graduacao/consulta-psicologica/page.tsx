@@ -36,6 +36,7 @@ export default async function ConsultaPsicologicaPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Pós-Graduação"
         title={curso.nome}
         description={curso.descricao}
       />

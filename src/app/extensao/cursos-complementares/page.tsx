@@ -38,6 +38,7 @@ export default function CursosComplementaresPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Extensão"
         title="Cursos Complementares"
         description="Cursos de curta duração para atualização e formação contínua."
       />
@@ -93,7 +94,7 @@ export default function CursosComplementaresPage() {
             <p className="text-gray-600 dark:text-gray-200 mb-2">
               A coordenação dos Cursos de Formação Complementar está a cargo do Dr. Manassés Apolinário.
             </p>
-            <p className="text-gray-600 dark:text-gray-200 mb-4 text-justify">
+            <p className="text-gray-600 dark:text-gray-200 mb-4 text-center">
               Quer propor um curso ou tem interesse em áreas específicas?
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">

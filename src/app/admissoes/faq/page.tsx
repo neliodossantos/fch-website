@@ -55,6 +55,7 @@ export default function FAQPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Admissões"
         title="Perguntas Frequentes"
         description="Respostas para as dúvidas mais comuns sobre admissões."
       />

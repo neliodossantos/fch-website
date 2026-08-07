@@ -73,6 +73,7 @@ export default function DirecaoPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Sobre a FCH"
         title="Direcção"
         description="Conheça a equipa responsável pela gestão da Faculdade."
       />

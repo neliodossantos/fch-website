@@ -40,6 +40,7 @@ export default async function PGPCPPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Pós-Graduação"
         title={curso.nome}
         description={curso.descricao}
       />

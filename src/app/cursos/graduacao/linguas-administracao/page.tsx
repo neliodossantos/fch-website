@@ -45,6 +45,7 @@ export default async function LinguasAdministracaoPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Licenciatura"
         title={curso.nome}
         description={curso.descricao}
       />

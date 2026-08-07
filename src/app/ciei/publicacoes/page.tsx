@@ -73,6 +73,7 @@ export default function PublicacoesPage() {
   return (
     <>
       <PageHeader
+        eyebrow="CIEI"
         title="Publicações"
         description="Produção científica dos investigadores do CIEI, entre 2020 e 2026."
       />

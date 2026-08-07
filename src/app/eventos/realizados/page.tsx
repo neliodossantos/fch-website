@@ -20,6 +20,7 @@ export default async function EventosRealizadosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Agenda FCH"
         title="Eventos Realizados"
         description="Confira o histórico de eventos realizados pela FCH."
       />

@@ -33,6 +33,7 @@ export default function MissaoVisaoValoresPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Sobre a FCH"
         title="Missão, Visão e Valores"
         description="Os princípios que orientam a nossa atuação académica e social."
       />
@@ -57,15 +58,15 @@ export default function MissaoVisaoValoresPage() {
               </CardContent>
             </Card>
             
-            <Card className="bg-accent dark:bg-gray-800 text-white border-0">
+            <Card className="bg-gray-200/50 text-white border-0">
               <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mr-4">
                     <Eye className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold">Visão</h2>
+                  <h2 className="text-2xl text-black font-bold">Visão</h2>
                 </div>
-                <p className="text-white/90 leading-relaxed">
+                <p className="text-black leading-relaxed">
                   Afirmar-se como uma referência nacional e internacional nos domínios das Ciências
                   Humanas e Sociais, distinguindo-se pela qualidade do ensino, pela excelência da
                   investigação científica, pela inovação pedagógica, pela relevância social dos seus

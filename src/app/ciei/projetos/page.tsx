@@ -62,6 +62,7 @@ export default function ProjetosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="CIEI"
         title="Projetos de Investigação"
         description="Linhas de investigação em curso e iniciativas científicas desenvolvidas pelo CIEI."
       />

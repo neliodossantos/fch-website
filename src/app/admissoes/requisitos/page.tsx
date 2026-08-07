@@ -27,6 +27,7 @@ export default function RequisitosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Admissões"
         title="Requisitos de Admissão"
         description="Conheça os requisitos para candidatura aos cursos da FCH."
       />

@@ -54,6 +54,7 @@ export default function ServicosLabPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Laboratório de Psicologia"
         title="Serviços"
         description="Conheça os serviços gratuitos oferecidos pelo Laboratório de Psicologia."
       />

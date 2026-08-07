@@ -11,6 +11,7 @@ export default function HistoriaPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Sobre a FCH"
         title="Nossa História"
         description="Uma trajetória iniciada em 2003, dedicada à formação de profissionais de excelência em Ciências Humanas."
       />

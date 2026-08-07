@@ -12,6 +12,7 @@ export default function MarcacaoPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Laboratório de Psicologia"
         title="Marcação de Atendimento"
         description="Contactos e horários para agendar um atendimento psicológico."
       />

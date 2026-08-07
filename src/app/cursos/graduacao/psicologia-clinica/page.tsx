@@ -41,6 +41,7 @@ export default async function PsicologiaClinicaPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Licenciatura"
         title={curso.nome}
         description={curso.descricao}
       />

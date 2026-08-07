@@ -36,6 +36,7 @@ export default function CandidaturaPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Estágios"
         title="Candidatura a Estágio"
         description="Informações sobre o processo de candidatura a estágio curricular."
       />

@@ -35,6 +35,7 @@ export default function DocumentosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Admissões"
         title="Documentos para Candidatura"
         description="Lista de documentos necessários para sua candidatura."
       />

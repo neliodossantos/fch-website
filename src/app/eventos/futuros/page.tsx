@@ -20,6 +20,7 @@ export default async function EventosFuturosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Agenda FCH"
         title="Eventos Futuros"
         description="Confira os próximos eventos da Faculdade de Ciências Humanas."
       />

@@ -22,6 +22,7 @@ export default function HorariosContactosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Secretaria Académica"
         title="Horários e Contactos"
         description="Saiba quando e como contactar a Secretaria Académica."
       />

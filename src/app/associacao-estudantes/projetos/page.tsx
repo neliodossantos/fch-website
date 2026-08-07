@@ -53,6 +53,7 @@ export default function ProjetosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Associação de Estudantes"
         title="Projetos"
         description="Iniciativas e projetos desenvolvidos pela Associação de Estudantes."
       />

@@ -19,6 +19,7 @@ export default async function GraduacaoPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Formação académica"
         title="Cursos de Graduação"
         description="Licenciaturas nas áreas das Ciências Humanas: Psicologia (5 anos) e Línguas e Administração."
       />

@@ -66,6 +66,7 @@ export default function EstruturaOrganizacionalPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Sobre a FCH"
         title="Estrutura Organizacional"
         description="Como a FCH está organizada para melhor servir a comunidade académica."
       />

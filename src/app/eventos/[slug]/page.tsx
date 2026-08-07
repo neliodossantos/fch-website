@@ -63,7 +63,7 @@ export default async function EventoDetalhePage({ params }: Props) {
 
   return (
     <>
-      <PageHeader title={evento.titulo} description={tipoLabel} />
+      <PageHeader eyebrow="Evento" title={evento.titulo} description={tipoLabel} />
 
       <section className="py-16">
         <div className="container mx-auto px-4">

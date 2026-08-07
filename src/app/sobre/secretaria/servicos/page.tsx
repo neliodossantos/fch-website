@@ -41,6 +41,7 @@ export default function ServicosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Secretaria Académica"
         title="Serviços da Secretaria"
         description="Documentos, certificados, declarações e outros serviços oferecidos pela Secretaria Académica."
       />

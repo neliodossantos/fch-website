@@ -53,6 +53,7 @@ export default async function ProfessorPage({ params }: PageProps) {
   return (
     <>
       <PageHeader
+        eyebrow="Corpo Docente"
         title={professor.nome}
       />
       

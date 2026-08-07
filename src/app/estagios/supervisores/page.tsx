@@ -27,6 +27,7 @@ export default function SupervisoresPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Estágios"
         title="Supervisores de Estágio"
         description="Professores responsáveis pelo acompanhamento académico dos estágios."
       />

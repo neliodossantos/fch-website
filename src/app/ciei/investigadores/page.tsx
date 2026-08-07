@@ -36,6 +36,7 @@ export default function InvestigadoresPage() {
   return (
     <>
       <PageHeader
+        eyebrow="CIEI"
         title="Investigadores"
         description="Coordenação e equipa de investigadores do CIEI."
       />

@@ -32,6 +32,7 @@ export default function AtividadesPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Coordenação Extracurricular"
         title="Atividades Extracurriculares"
         description="Desporto, cultura e lazer para complementar a sua formação."
       />

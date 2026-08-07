@@ -33,6 +33,7 @@ export default function TaxasPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Admissões"
         title="Taxas e Propinas"
         description="Informações sobre custos académicos da FCH."
       />

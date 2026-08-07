@@ -26,6 +26,7 @@ export default function MembrosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Associação de Estudantes"
         title="Membros da AE-FCH"
         description="Conheça a equipa que representa os estudantes da Faculdade."
       />

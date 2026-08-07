@@ -47,6 +47,7 @@ export default function ParceirosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Estágios"
         title="Parceiros de Estágio"
         description="Instituições e empresas que acolhem os nossos estagiários."
       />

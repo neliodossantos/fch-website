@@ -56,6 +56,7 @@ export default function FormulariosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Secretaria Académica"
         title="Formulários"
         description="Baixe os formulários necessários para suas solicitações à Secretaria Académica."
       />
