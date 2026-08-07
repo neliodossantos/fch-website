@@ -59,7 +59,7 @@ export function Footer() {
       </div>
 
       <div className="container mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1.1fr]">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1.1fr] lg:gap-x-12">
           <div>
             <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-primary-dark dark:text-primary-light">Links Rápidos</h3>
             <ul className="space-y-2">
@@ -92,9 +92,9 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
                 <span className="text-sm text-gray-600 dark:text-gray-200">
-                  Av. Pedro de Castro<br />
-                  Van-Dúnem, 24 <br />
-                  Palanca, Kilamba Kiaxi<br />
+                  Av. Pedro de Castro
+                  Van-Dúnem, 24
+                  Palanca, Kilamba Kiaxi
                   C.P. 2064, Luanda
                 </span>
               </li>
@@ -111,7 +111,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="flex flex-col items-start lg:items-end lg:text-right">
             <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-primary-dark dark:text-primary-light">Subscreva a Newsletter</h3>
             <NewsletterForm />
           </div>
