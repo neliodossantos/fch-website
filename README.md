@@ -59,6 +59,17 @@ npm run dev
 
 4. Acesse o site em [http://localhost:3000](http://localhost:3000)
 
+### Dashboard de conteúdos
+
+Com o backend NestJS em execução, crie o ficheiro `.env.local`:
+
+```env
+FCH_API_URL=http://localhost:3005/api
+NEXT_PUBLIC_FCH_API_URL=http://localhost:3005/api
+```
+
+Aceda a [http://localhost:3000/admin](http://localhost:3000/admin) para gerir secções, posts, notícias e acordos. A dashboard permite criar, editar, publicar, apagar e adicionar/remover imagens de cada conteúdo.
+
 ### Scripts Disponíveis
 
 - `npm run dev` - Inicia o servidor de desenvolvimento

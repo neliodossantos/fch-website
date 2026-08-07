@@ -1,47 +1,40 @@
-import { supabase, isSupabaseConfigured } from '@/lib/supabase'
+import { apiGet } from '@/lib/api'
 
-export async function getNoticias(limit?: number) {
-  // Return empty array if Supabase is not configured
-  if (!isSupabaseConfigured || !supabase) {
-    return []
-  }
+type ApiNoticia = {
+  id: string
+  title: string
+  slug: string
+  excerpt?: string
+  body?: string
+  publishedAt?: string
+  media?: { url: string }[]
+}
 
-  try {
-    let query = supabase
-      .from('noticias')
-      .select('*')
-      .order('data_publicacao', { ascending: false })
-    
-    if (limit) query = query.limit(limit)
-    
-    const { data, error } = await query
-    if (error) throw error
-    return data
-  } catch {
-    // Silently return empty array on error - noticias are supplementary data
-    // This is intentional - we prioritize showing content over error logging
-    return []
+function mapApiNoticia(noticia: ApiNoticia) {
+  return {
+    id: noticia.id,
+    titulo: noticia.title,
+    slug: noticia.slug,
+    resumo: noticia.excerpt || '',
+    conteudo: noticia.body || '',
+    imagem_url: noticia.media?.[0]?.url || null,
+    data_publicacao: noticia.publishedAt || new Date().toISOString(),
   }
 }
 
-export async function getNoticiaBySlug(slug: string) {
-  // Return null if Supabase is not configured
-  if (!isSupabaseConfigured || !supabase) {
-    return null
-  }
+export async function getNoticias(limit?: number) {
+  const [noticias, posts] = await Promise.all([
+    apiGet<ApiNoticia[]>('/content?type=news'),
+    apiGet<ApiNoticia[]>('/content?type=post'),
+  ])
 
-  try {
-    const { data, error } = await supabase
-      .from('noticias')
-      .select('*')
-      .eq('slug', slug)
-      .single()
-    
-    if (error) throw error
-    return data
-  } catch {
-    // Silently return null on error - we show not found page instead
-    // This is intentional - we prioritize showing content over error logging
-    return null
-  }
+  return [...(noticias || []), ...(posts || [])]
+    .sort((first, second) => new Date(second.publishedAt || 0).getTime() - new Date(first.publishedAt || 0).getTime())
+    .slice(0, limit)
+    .map(mapApiNoticia)
+}
+
+export async function getNoticiaBySlug(slug: string) {
+  const noticia = await apiGet<ApiNoticia>(`/content/${slug}`)
+  return noticia ? mapApiNoticia(noticia) : null
 }

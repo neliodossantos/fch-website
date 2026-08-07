@@ -1,51 +1,13 @@
 import Link from 'next/link'
-import { GraduationCap, FileText, HelpCircle, Phone } from 'lucide-react'
+import { ArrowRight, FileText, HelpCircle, Phone } from 'lucide-react'
 
 const acessosRapidos = [
-  {
-    icon: GraduationCap,
-    title: 'Candidaturas',
-    description: 'Informações sobre admissões',
-    href: '/admissoes',
-  },
-  {
-    icon: FileText,
-    title: 'Secretaria',
-    description: 'Serviços e formulários',
-    href: '/sobre/secretaria',
-  },
-  {
-    icon: HelpCircle,
-    title: 'FAQ',
-    description: 'Perguntas frequentes',
-    href: '/admissoes/faq',
-  },
-  {
-    icon: Phone,
-    title: 'Contato',
-    description: 'Fale connosco',
-    href: '/contato',
-  },
+  { icon: FileText, title: 'Candidaturas', description: 'Tudo o que precisa para começar.', href: '/admissoes' },
+  { icon: FileText, title: 'Secretaria', description: 'Serviços, horários e formulários.', href: '/sobre/secretaria' },
+  { icon: HelpCircle, title: 'Perguntas frequentes', description: 'Encontre respostas rapidamente.', href: '/admissoes/faq' },
+  { icon: Phone, title: 'Fale connosco', description: 'Estamos aqui para ajudar.', href: '/contato' },
 ]
 
 export function AcessoRapido() {
-  return (
-    <section className="py-12 bg-primary dark:bg-gray-800">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {acessosRapidos.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="flex flex-col items-center p-6 rounded-lg bg-white/10 hover:bg-white/20 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-colors text-center group"
-            >
-              <item.icon className="w-8 h-8 text-white mb-3 group-hover:scale-110 transition-transform" />
-              <h3 className="text-white font-semibold mb-1">{item.title}</h3>
-              <p className="text-white dark:text-gray-200 text-sm">{item.description}</p>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+  return <section className="bg-gray-950 py-16 text-white"><div className="container mx-auto px-5 lg:px-8"><div className="mb-9 flex flex-col justify-between gap-4 md:flex-row md:items-end"><div><p className="eyebrow text-primary-light">Informação útil</p><h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Como podemos ajudar?</h2></div><p className="max-w-sm text-sm leading-relaxed text-gray-400">Aceda aos serviços mais procurados por estudantes, candidatos e comunidade.</p></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{acessosRapidos.map((item) => <Link key={item.href} href={item.href} className="group rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-primary/60 hover:bg-white/10"><item.icon className="mb-8 h-6 w-6 text-primary" /><h3 className="flex items-center justify-between font-bold">{item.title}<ArrowRight className="h-4 w-4 text-primary transition group-hover:translate-x-1" /></h3><p className="mt-2 text-sm text-gray-400">{item.description}</p></Link>)}</div></div></section>
 }

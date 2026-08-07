@@ -1,7 +1,6 @@
 import { NavItem } from '@/types'
 
 export const navigationItems: NavItem[] = [
-  
   {
     title: 'Ensino',
     href: '/cursos',
@@ -42,18 +41,12 @@ export const navigationItems: NavItem[] = [
     children: [
       { title: 'Cursos Complementares', href: '/extensao/cursos-complementares' },
       { title: 'Laboratório de Psicologia', href: '/laboratorio-psicologia' },
-      { title: 'Estágios',
-      href: '/estagios',
-      children: [
-      { title: 'Supervisores', href: '/estagios/supervisores' },
-      { title: 'Parceiros', href: '/estagios/parceiros' },
-    ],
-    }
+      { title: 'Estágios', href: '/estagios', children: [
+        { title: 'Supervisores', href: '/estagios/supervisores' },
+        { title: 'Parceiros', href: '/estagios/parceiros' },
+      ] },
     ],
   },
-
-
-
   {
     title: 'Docentes',
     href: '/corpo-docente',
@@ -74,15 +67,6 @@ export const navigationItems: NavItem[] = [
       { title: 'Contactos', href: '/associacao-estudantes/Contactos' },
     ],
   },
- /*{
-    title: 'Coordenação Extracurricular',
-    href: '/coordenacao-extracurricular',
-    children: [
-      { title: 'Atividades', href: '/coordenacao-extracurricular/atividades' },
-    ],
-  },*/
-
-  
   {
     title: 'Sobre',
     href: '/sobre',
@@ -91,19 +75,13 @@ export const navigationItems: NavItem[] = [
       { title: 'Missão, Visão e Valores', href: '/sobre/missao-visao-valores' },
       { title: 'Estrutura Organizacional', href: '/sobre/estrutura-organizacional' },
       { title: 'Direção', href: '/sobre/direcao' },
-      {
-        title: 'Secretaria',
-        href: '/sobre/secretaria',
-        children: [
-          { title: 'Serviços', href: '/sobre/secretaria/servicos' },
-          { title: 'Formulários', href: '/sobre/secretaria/formularios' },
-          { title: 'Horários e Contactos', href: '/sobre/secretaria/horarios-Contactos' },
-        ],
-      },
+      { title: 'Secretaria', href: '/sobre/secretaria', children: [
+        { title: 'Serviços', href: '/sobre/secretaria/servicos' },
+        { title: 'Formulários', href: '/sobre/secretaria/formularios' },
+        { title: 'Horários e Contactos', href: '/sobre/secretaria/horarios-Contactos' },
+      ] },
     ],
   },
-
-  
   {
     title: 'Admissões',
     href: '/admissoes',

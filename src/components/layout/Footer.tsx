@@ -26,7 +26,6 @@ const socialLinks = [
   { href: '#', label: 'Facebook', Icon: Facebook },
   { href: '#', label: 'Instagram', Icon: Instagram },
   { href: '#', label: 'LinkedIn', Icon: Linkedin },
-  { href: '#', label: 'YouTube', Icon: Youtube },
 ]
 
 export function Footer() {
@@ -39,7 +38,7 @@ export function Footer() {
       <div className="container mx-auto flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 px-4 py-6 dark:border-gray-700">
         <Link href="/" className="flex items-center gap-3">
           <Image src={logo} alt="Logo UCAN - Faculdade de Ciências Humanas" width={44} height={44} className="rounded-full object-cover" />
-          <span className="text-base font-bold text-gray-900 dark:text-white">Faculdade de Ciências Humanas</span>
+          <span className="text-base font-semibold text-gray-600 dark:text-white">Faculdade de Ciências Humanas</span>
         </Link>
         <div className="flex items-center gap-3">
           <span className="text-sm font-semibold text-gray-600 dark:text-gray-300">Siga-nos</span>
@@ -49,9 +48,9 @@ export function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary-dark"
+                className="flex h-8 w-8 items-center justify-center rounded-xl border-none bg-primary text-white transition-colors hover:bg-primary-dark"
               >
-                <Icon className="h-3.5 w-3.5" />
+                <Icon className="h-4 w-4" />
               </a>
             ))}
           </div>
@@ -112,7 +111,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col items-start lg:items-end lg:text-right">
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-primary-dark dark:text-primary-light">Subscreva a Newsletter</h3>
+            <h3 className="mb-4 text-sm font-bold self-start uppercase tracking-wide text-primary-dark dark:text-primary-light">Subscreva a Newsletter</h3>
             <NewsletterForm />
           </div>
         </div>

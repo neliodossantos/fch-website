@@ -31,12 +31,20 @@ body {
     @apply border-gray-200 dark:border-gray-700;
   }
   body {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors;
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors antialiased;
   }
 }
 
 @layer utilities {
   .container {
     @apply max-w-7xl;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.18em] text-primary-dark;
+  }
+
+  .section-heading {
+    @apply mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl;
   }
 }

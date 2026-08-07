@@ -10,7 +10,7 @@ export function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex max-w-[230px] overflow-hidden rounded-md border border-gray-300 dark:border-gray-600">
+    <form onSubmit={handleSubmit} className="flex w-full overflow-hidden rounded-md border border-gray-300 dark:border-gray-600">
       <input
         type="email"
         name="email"

@@ -64,7 +64,7 @@ export interface Disciplina {
   bibliografia?: string
 }
 
-export interface Decana {
+export interface Decano {
   id: string
   nome: string
   titulo?: string

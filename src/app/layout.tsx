@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
-import { TopBar } from '@/components/layout/TopBar'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
+import { SiteChrome } from '@/components/layout/SiteChrome'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import './globals.css'
 
@@ -29,12 +27,7 @@ export default function RootLayout({
     <html lang="pt" suppressHydrationWarning>
       <body className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
         <ThemeProvider>
-          <TopBar />
-          <Header />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
       </body>
     </html>
