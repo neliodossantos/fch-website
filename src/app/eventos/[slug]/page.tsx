@@ -9,6 +9,11 @@ import { getEventoBySlug, getEventos } from '@/lib/queries/eventos'
 
 export const revalidate = 60
 
+function getYouTubeEmbedUrl(url: string): string | null {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/)
+  return match ? `https://www.youtube.com/embed/${match[1]}` : null
+}
+
 interface Props {
   params: Promise<{ slug: string }>
 }
@@ -96,6 +101,22 @@ export default async function EventoDetalhePage({ params }: Props) {
                   </div>
                 )}
               </div>
+
+              {evento.video_url && (
+                <div className="mb-8 aspect-video overflow-hidden rounded-lg">
+                  {getYouTubeEmbedUrl(evento.video_url) ? (
+                    <iframe
+                      src={getYouTubeEmbedUrl(evento.video_url)!}
+                      title={`Vídeo: ${evento.titulo}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="h-full w-full"
+                    />
+                  ) : (
+                    <video controls src={evento.video_url} className="h-full w-full" />
+                  )}
+                </div>
+              )}
 
               {/* Event Description */}
               <div className="prose prose-lg dark:prose-invert max-w-none">

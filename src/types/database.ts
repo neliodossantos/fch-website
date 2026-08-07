@@ -82,6 +82,7 @@ export interface Evento {
   local?: string
   tipo?: string
   imagem_url?: string
+  video_url?: string
   created_at: string
 }
 
