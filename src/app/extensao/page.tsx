@@ -13,6 +13,7 @@ export default function ExtensaoPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Formação contínua"
         title="Extensão"
       />
       

@@ -22,6 +22,7 @@ export default async function EventosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Agenda FCH"
         title="Eventos"
         description="Conferências, seminários, workshops e eventos culturais promovidos pela FCH."
       />

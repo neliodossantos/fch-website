@@ -34,6 +34,7 @@ export default function EstagiosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Mercado de trabalho"
         title="Estágios"
         description="A Coordenação de Estágios facilita a inserção dos estudantes no mercado de trabalho."
       />

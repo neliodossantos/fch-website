@@ -20,6 +20,7 @@ export default async function CursosPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Formação académica"
         title="Nossos Cursos"
         description="A FCH oferece cursos de graduação e pós-graduação nas áreas das Ciências Humanas."
       />

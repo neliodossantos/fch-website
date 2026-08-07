@@ -34,6 +34,7 @@ export default function AssociacaoEstudantesPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Comunidade estudantil"
         title="Associação de Estudantes"
         description="A voz dos estudantes da FCH - representação, defesa dos interesses e promoção de actividades."
       />

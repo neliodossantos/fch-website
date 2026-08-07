@@ -34,6 +34,7 @@ export default function CIEIPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Investigação"
         title="CIEI - Centro de Investigação"
         description="Centro Interdisciplinar de Estudo e Investigação da Faculdade de Ciências Humanas da UCAN."
       />

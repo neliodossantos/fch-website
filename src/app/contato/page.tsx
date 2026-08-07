@@ -38,6 +38,7 @@ export default function ContatoPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Fale connosco"
         title="Contacto"
         description="Entre em contacto com a Faculdade de Ciências Humanas."
       />

@@ -41,6 +41,7 @@ export default function LinksUteisPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Recursos"
         title="Links Úteis"
         description="Recursos online úteis para estudantes e comunidade académica."
       />

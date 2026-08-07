@@ -41,6 +41,7 @@ export default function SobrePage() {
   return (
     <>
       <PageHeader
+        eyebrow="Conheça a FCH"
         title="Sobre a FCH"
         description="Conheça a Faculdade de Ciências Humanas da Universidade Católica de Angola, uma instituição de referência na formação em Ciências Humanas."
       />

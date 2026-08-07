@@ -36,6 +36,7 @@ export default function CoordenacaoExtracurricularPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Vida académica"
         title="Coordenação Extracurricular"
         description="Atividades extracurriculares que complementam a formação académica."
       />

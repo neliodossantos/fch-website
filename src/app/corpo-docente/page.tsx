@@ -16,6 +16,7 @@ export default async function CorpoDocentePage() {
   return (
     <>
       <PageHeader
+        eyebrow="Pessoas FCH"
         title="Corpo Docente"
         description="Conheça os professores e investigadores da FCH."
       />

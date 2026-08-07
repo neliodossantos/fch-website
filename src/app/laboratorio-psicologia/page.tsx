@@ -13,6 +13,7 @@ export default function LaboratorioPsicologiaPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Psicologia aplicada"
         title="Laboratório de Psicologia"
         description="Formação prática, investigação e intervenção psicológica aplicada, com serviços gratuitos à comunidade."
       />

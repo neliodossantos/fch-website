@@ -40,6 +40,7 @@ export default function AdmissoesPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Faça parte da FCH"
         title="Admissões"
         description="Venha fazer parte da FCH - conheça o processo de admissão."
       />
