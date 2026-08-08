@@ -11,7 +11,7 @@ const quickLinks = [
   { href: '/eventos', label: 'Eventos' },
   { href: '/corpo-docente', label: 'Corpo Docente' },
   { href: '/estagios', label: 'Estágios' },
-  { href: 'https://ucan.persistec.com/', label: 'UCAN' },
+  { href: 'https://ucan.persistec.com/', label: 'Ucan' },
 ]
 
 const resourceLinks = [
@@ -25,7 +25,6 @@ const resourceLinks = [
 const socialLinks = [
   { href: '#', label: 'Facebook', Icon: Facebook },
   { href: '#', label: 'Instagram', Icon: Instagram },
-  { href: '#', label: 'LinkedIn', Icon: Linkedin },
 ]
 
 export function Footer() {

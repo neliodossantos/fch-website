@@ -1,4 +1,4 @@
-import { apiGet } from '@/lib/api'
+import { apiGet, resolveMediaUrl } from '@/lib/api'
 
 type ApiNoticia = {
   id: string
@@ -19,8 +19,8 @@ function mapApiNoticia(noticia: ApiNoticia) {
     slug: noticia.slug,
     resumo: noticia.excerpt || '',
     conteudo: noticia.body || '',
-    imagem_url: noticia.media?.[0]?.url || null,
-    video_url: noticia.videoUrl || null,
+    imagem_url: resolveMediaUrl(noticia.media?.[0]?.url) || null,
+    video_url: resolveMediaUrl(noticia.videoUrl) || null,
     data_publicacao: noticia.publishedAt || new Date().toISOString(),
   }
 }
