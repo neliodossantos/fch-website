@@ -2,19 +2,21 @@
 
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { Calendar, Pencil, Plus, Trash2, X } from 'lucide-react'
-import { Field } from './AdminFormControls'
+import { Field, Check } from './AdminFormControls'
 
-type EventoAdmin = { id: string; titulo: string; slug: string; descricao?: string; data: string; hora?: string; local?: string; tipo: string; imagem_url?: string; video_url?: string }
-type FormData = { title: string; slug: string; description: string; date: string; time: string; location: string; type: string; imageUrl: string; videoUrl: string }
+type EventoAdmin = { id: string; titulo: string; slug: string; descricao?: string; data: string; hora?: string; local?: string; tipo: string; imagem_url?: string; video_url?: string; featured?: boolean }
+type FormData = { title: string; slug: string; description: string; date: string; time: string; location: string; type: string; imageUrl: string; videoUrl: string; featured: boolean }
 
 const API_URL = process.env.NEXT_PUBLIC_FCH_API_URL || 'http://localhost:3005/api'
-const initialForm: FormData = { title: '', slug: '', description: '', date: '', time: '', location: '', type: 'conferencia', imageUrl: '', videoUrl: '' }
+const initialForm: FormData = { title: '', slug: '', description: '', date: '', time: '', location: '', type: 'conferencia', imageUrl: '', videoUrl: '', featured: false }
 
 export function EventosPanel({ token }: { token: string }) {
   const [items, setItems] = useState<EventoAdmin[]>([])
   const [form, setForm] = useState<FormData>(initialForm)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [selectedImage, setSelectedImage] = useState<File | null>(null)
+  const [selectedVideo, setSelectedVideo] = useState<File | null>(null)
+  const [uploadingVideo, setUploadingVideo] = useState(false)
   const [error, setError] = useState('')
   const [notice, setNotice] = useState('')
   const [busy, setBusy] = useState(false)
@@ -29,10 +31,10 @@ export function EventosPanel({ token }: { token: string }) {
   useEffect(() => { load() }, [])
 
   const update = <K extends keyof FormData>(key: K, value: FormData[K]) => setForm(current => ({ ...current, [key]: value }))
-  const reset = () => { setForm(initialForm); setEditingId(null); setSelectedImage(null); setError(''); setNotice('') }
+  const reset = () => { setForm(initialForm); setEditingId(null); setSelectedImage(null); setSelectedVideo(null); setError(''); setNotice('') }
   const edit = (item: EventoAdmin) => {
     setEditingId(item.id)
-    setForm({ title: item.titulo, slug: item.slug, description: item.descricao || '', date: item.data.slice(0, 10), time: item.hora || '', location: item.local || '', type: item.tipo || 'conferencia', imageUrl: item.imagem_url || '', videoUrl: item.video_url || '' })
+    setForm({ title: item.titulo, slug: item.slug, description: item.descricao || '', date: item.data.slice(0, 10), time: item.hora || '', location: item.local || '', type: item.tipo || 'conferencia', imageUrl: item.imagem_url || '', videoUrl: item.video_url || '', featured: item.featured || false })
     setNotice('A editar: faça alterações e guarde.')
   }
   const save = async (event: FormEvent) => {
@@ -44,10 +46,19 @@ export function EventosPanel({ token }: { token: string }) {
         const upload = await request<{ url: string }>('/media/upload', { method: 'POST', body: data })
         imageUrl = upload.url
       }
-      const payload = { title: form.title, slug: form.slug, description: form.description || undefined, date: form.date, time: form.time || undefined, location: form.location || undefined, type: form.type, imageUrl: imageUrl || undefined, videoUrl: form.videoUrl || undefined }
+      const payload = { title: form.title, slug: form.slug, description: form.description || undefined, date: form.date, time: form.time || undefined, location: form.location || undefined, type: form.type, imageUrl: imageUrl || undefined, videoUrl: form.videoUrl || undefined, featured: form.featured }
       await request(`/eventos${editingId ? `/${editingId}` : ''}`, { method: editingId ? 'PATCH' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       setNotice(editingId ? 'Evento actualizado.' : 'Evento criado.'); await load(); reset()
     } catch (err) { setError(err instanceof Error ? err.message : 'Erro ao guardar.') } finally { setBusy(false) }
+  }
+  const uploadVideoFile = async () => {
+    if (!selectedVideo) return
+    setUploadingVideo(true); setError('')
+    try {
+      const data = new window.FormData(); data.append('file', selectedVideo)
+      const upload = await request<{ url: string }>('/media/upload-video', { method: 'POST', body: data })
+      update('videoUrl', upload.url); setSelectedVideo(null); setNotice('Vídeo carregado — não esqueça de guardar o evento.')
+    } catch (err) { setError(err instanceof Error ? err.message : 'Erro ao enviar vídeo.') } finally { setUploadingVideo(false) }
   }
   const remove = async (item: EventoAdmin) => {
     if (!confirm(`Apagar "${item.titulo}"?`)) return
@@ -76,6 +87,8 @@ export function EventosPanel({ token }: { token: string }) {
             <Field label="Tipo"><select value={form.type} onChange={e => update('type', e.target.value)}><option value="conferencia">Conferência</option><option value="seminario">Seminário</option><option value="workshop">Workshop</option><option value="cultural">Cultural</option></select></Field>
           </div>
           <Field label="Link do vídeo (YouTube, opcional)"><input value={form.videoUrl} onChange={e => update('videoUrl', e.target.value)} placeholder="https://youtube.com/watch?v=..." /></Field>
+          <div className="flex items-center gap-3"><input type="file" accept="video/mp4,video/webm,video/quicktime" onChange={(e: ChangeEvent<HTMLInputElement>) => setSelectedVideo(e.target.files?.[0] || null)} className="block flex-1 text-sm" /><button type="button" onClick={uploadVideoFile} disabled={!selectedVideo || uploadingVideo} className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-bold text-white disabled:opacity-50">{uploadingVideo ? 'A enviar…' : 'Enviar vídeo'}</button></div>
+          <Check label="Em destaque" checked={form.featured} onChange={value => update('featured', value)} />
           <Field label="Imagem">
             <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" onChange={(e: ChangeEvent<HTMLInputElement>) => setSelectedImage(e.target.files?.[0] || null)} className="block w-full text-sm" />
             {form.imageUrl && !selectedImage && <p className="mt-1 text-xs text-gray-500">Imagem actual mantida se não seleccionar outra.</p>}
