@@ -7,6 +7,8 @@ type ApiNoticia = {
   excerpt?: string
   body?: string
   publishedAt?: string
+  featured?: boolean
+  videoUrl?: string
   media?: { url: string }[]
 }
 
@@ -18,6 +20,7 @@ function mapApiNoticia(noticia: ApiNoticia) {
     resumo: noticia.excerpt || '',
     conteudo: noticia.body || '',
     imagem_url: noticia.media?.[0]?.url || null,
+    video_url: noticia.videoUrl || null,
     data_publicacao: noticia.publishedAt || new Date().toISOString(),
   }
 }
@@ -29,7 +32,10 @@ export async function getNoticias(limit?: number) {
   ])
 
   return [...(noticias || []), ...(posts || [])]
-    .sort((first, second) => new Date(second.publishedAt || 0).getTime() - new Date(first.publishedAt || 0).getTime())
+    .sort((first, second) => {
+      if (Boolean(first.featured) !== Boolean(second.featured)) return first.featured ? -1 : 1
+      return new Date(second.publishedAt || 0).getTime() - new Date(first.publishedAt || 0).getTime()
+    })
     .slice(0, limit)
     .map(mapApiNoticia)
 }
