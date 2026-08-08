@@ -17,6 +17,8 @@ export function DestaquesPanel({ token }: { token: string }) {
   const [form, setForm] = useState<FormData>(initialForm)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [selectedImage, setSelectedImage] = useState<File | null>(null)
+  const [selectedVideo, setSelectedVideo] = useState<File | null>(null)
+  const [uploadingVideo, setUploadingVideo] = useState(false)
   const [error, setError] = useState('')
   const [notice, setNotice] = useState('')
   const [busy, setBusy] = useState(false)
@@ -31,7 +33,7 @@ export function DestaquesPanel({ token }: { token: string }) {
   useEffect(() => { load() }, [])
 
   const update = <K extends keyof FormData>(key: K, value: FormData[K]) => setForm(current => ({ ...current, [key]: value }))
-  const reset = () => { setForm(initialForm); setEditingId(null); setSelectedImage(null); setError(''); setNotice('') }
+  const reset = () => { setForm(initialForm); setEditingId(null); setSelectedImage(null); setSelectedVideo(null); setError(''); setNotice('') }
   const edit = (item: DestaqueAdmin) => {
     setEditingId(item.id)
     setForm({ title: item.title, description: item.description, href: item.href, icon: item.icon, imageUrl: item.imageUrl || '', videoUrl: item.videoUrl || '', position: String(item.position), published: item.published })
@@ -50,6 +52,15 @@ export function DestaquesPanel({ token }: { token: string }) {
       await request(`/destaques${editingId ? `/${editingId}` : ''}`, { method: editingId ? 'PATCH' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       setNotice(editingId ? 'Destaque actualizado.' : 'Destaque criado.'); await load(); reset()
     } catch (err) { setError(err instanceof Error ? err.message : 'Erro ao guardar.') } finally { setBusy(false) }
+  }
+  const uploadVideoFile = async () => {
+    if (!selectedVideo) return
+    setUploadingVideo(true); setError('')
+    try {
+      const data = new window.FormData(); data.append('file', selectedVideo)
+      const upload = await request<{ url: string }>('/media/upload-video', { method: 'POST', body: data })
+      update('videoUrl', upload.url); setSelectedVideo(null); setNotice('Vídeo carregado — não esqueça de guardar o destaque.')
+    } catch (err) { setError(err instanceof Error ? err.message : 'Erro ao enviar vídeo.') } finally { setUploadingVideo(false) }
   }
   const remove = async (item: DestaqueAdmin) => {
     if (!confirm(`Apagar "${item.title}"?`)) return
@@ -74,6 +85,7 @@ export function DestaquesPanel({ token }: { token: string }) {
             <Field label="Posição"><input type="number" value={form.position} onChange={e => update('position', e.target.value)} /></Field>
           </div>
           <Field label="Link do vídeo (opcional)"><input value={form.videoUrl} onChange={e => update('videoUrl', e.target.value)} placeholder="https://youtube.com/watch?v=..." /></Field>
+          <div className="flex items-center gap-3"><input type="file" accept="video/mp4,video/webm,video/quicktime" onChange={(e: ChangeEvent<HTMLInputElement>) => setSelectedVideo(e.target.files?.[0] || null)} className="block flex-1 text-sm" /><button type="button" onClick={uploadVideoFile} disabled={!selectedVideo || uploadingVideo} className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-bold text-white disabled:opacity-50">{uploadingVideo ? 'A enviar…' : 'Enviar vídeo'}</button></div>
           <Field label="Imagem (opcional, substitui o ícone)">
             <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" onChange={(e: ChangeEvent<HTMLInputElement>) => setSelectedImage(e.target.files?.[0] || null)} className="block w-full text-sm" />
           </Field>
