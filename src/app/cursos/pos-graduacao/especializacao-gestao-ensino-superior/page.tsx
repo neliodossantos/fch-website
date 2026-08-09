@@ -1,14 +1,12 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { User, Mail, Phone, BookOpen, Briefcase } from 'lucide-react'
+import { User, Mail, Phone, BookOpen, Briefcase, GraduationCap } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { getCursoBySlug } from '@/lib/queries/cursos'
-
-export const revalidate = 60 // Revalida cache a cada 60 segundos
+import { getCursoPosGraduacaoBySlug } from '@/data/cursos'
+import { docentes } from '@/data/docentes'
 
 export const metadata: Metadata = {
   title: 'Especialização em Gestão do Ensino Superior',
@@ -21,7 +19,7 @@ const disciplinasObrigatorias = [
   { disciplina: 'Planeamento Estratégico', docente: 'Ken Ndalamba', carga: '100H' },
   { disciplina: 'Processos de Criação, Avaliação e Acreditação de Cursos', docente: 'Manuel Zau', carga: '100H' },
   { disciplina: 'Investigação', docente: 'Eurico Gungula', carga: '100H' },
-  { disciplina: 'Extensão', docente: 'Nlandu Faustino', carga: '100H' },
+  { disciplina: 'Extensão', docente: 'Nlando Matondo Faustino', carga: '100H' },
 ]
 
 const modulosOpcionais = [
@@ -31,12 +29,12 @@ const modulosOpcionais = [
   { disciplina: 'Gestão Financeira', docente: 'Pedro Fernandes', carga: '75H' },
 ]
 
-export default async function EGESPage() {
-  const curso = await getCursoBySlug('especializacao-gestao-ensino-superior')
+const docentesEGES = docentes.filter(docente =>
+  docente.disciplinas.some(disciplina => disciplina.curso === 'Especialização em Gestão do Ensino Superior')
+)
 
-  if (!curso) {
-    notFound()
-  }
+export default function EGESPage() {
+  const curso = getCursoPosGraduacaoBySlug('especializacao-gestao-ensino-superior')!
 
   return (
     <>
@@ -113,6 +111,28 @@ export default async function EGESPage() {
                   </div>
                 </CardContent>
               </Card>
+
+              <SectionTitle title="Corpo Docente" />
+              <div className="space-y-4 mb-8">
+                {docentesEGES.map(docente => (
+                  <Card key={docente.slug}>
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-3 mb-3">
+                        <GraduationCap className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-gray-900 dark:text-gray-100">{docente.nome}</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">{docente.titulo}</p>
+                        </div>
+                      </div>
+                      <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1 list-disc list-inside">
+                        {docente.formacao.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
 
             <div>

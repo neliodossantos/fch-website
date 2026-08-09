@@ -120,9 +120,50 @@ export default function ContatoPage() {
                     </ul>
                   </CardContent>
                 </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Contactos por Programa de Pós-Graduação</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b">
+                            <th className="text-left py-2 px-2 font-semibold text-gray-700 dark:text-gray-200">Programa</th>
+                            <th className="text-left py-2 px-2 font-semibold text-gray-700 dark:text-gray-200">Email</th>
+                            <th className="text-left py-2 px-2 font-semibold text-gray-700 dark:text-gray-200">Telefone</th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-gray-600 dark:text-gray-300">
+                          <tr className="border-b last:border-b-0">
+                            <td className="py-2 px-2">Especialização em Gestão do Ensino Superior</td>
+                            <td className="py-2 px-2">eges@ucan.edu</td>
+                            <td className="py-2 px-2">+244 923 949 052</td>
+                          </tr>
+                          <tr className="border-b last:border-b-0">
+                            <td className="py-2 px-2">Capacitação Pedagógica (PGPCP)</td>
+                            <td className="py-2 px-2">cpp.fch@ucan.edu</td>
+                            <td className="py-2 px-2">+244 923 949 052</td>
+                          </tr>
+                          <tr className="border-b last:border-b-0">
+                            <td className="py-2 px-2">Gestão de Pessoas 360º</td>
+                            <td className="py-2 px-2">coord.gp360ia@ucan.edu</td>
+                            <td className="py-2 px-2">+244 928 524 737</td>
+                          </tr>
+                          <tr className="border-b last:border-b-0">
+                            <td className="py-2 px-2">Consulta Psicológica</td>
+                            <td className="py-2 px-2">posgraduacao.fch@ucan.edu</td>
+                            <td className="py-2 px-2">+244 928 524 737</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
-            
+
             <div>
               <Card>
                 <CardHeader>

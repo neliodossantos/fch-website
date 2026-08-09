@@ -1,15 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { Clock, User, Target, BookOpen, Briefcase } from 'lucide-react'
+import { User, BookOpen, Briefcase } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica'
-import { getCursoBySlug, getEstruturaCurricular } from '@/lib/queries/cursos'
-
-export const revalidate = 60 // Revalida cache a cada 60 segundos
+import { getCursoGraduacaoBySlug } from '@/data/cursos'
 
 export const metadata: Metadata = {
   title: 'Licenciatura em Línguas e Administração',
@@ -34,13 +30,8 @@ const saidasProfissionais = [
   'Gestor de Empresas',
 ]
 
-export default async function LinguasAdministracaoPage() {
-  const curso = await getCursoBySlug('linguas-administracao')
-  const estrutura = await getEstruturaCurricular('linguas-administracao')
-
-  if (!curso) {
-    notFound()
-  }
+export default function LinguasAdministracaoPage() {
+  const curso = getCursoGraduacaoBySlug('linguas-administracao')!
 
   return (
     <>
@@ -65,16 +56,6 @@ export default async function LinguasAdministracaoPage() {
                 vasto de saídas profissionais ao futuro licenciado.
               </p>
 
-              <SectionTitle title="Objetivos do Curso" />
-              <ul className="space-y-3 mb-8">
-                {curso.objetivos.map((objetivo, index) => (
-                  <li key={index} className="flex items-start">
-                    <Target className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-200">{objetivo}</span>
-                  </li>
-                ))}
-              </ul>
-
               <SectionTitle title="Saídas Profissionais" />
               <div className="flex flex-wrap gap-2 mb-8">
                 {saidasProfissionais.map((saida, index) => (
@@ -86,8 +67,6 @@ export default async function LinguasAdministracaoPage() {
                   </span>
                 ))}
               </div>
-
-              {estrutura && <EstruturaProgramatica estrutura={estrutura} />}
             </div>
 
             <div>
@@ -95,13 +74,6 @@ export default async function LinguasAdministracaoPage() {
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-semibold text-primary mb-4">Informações</h3>
                   <div className="space-y-4">
-                    <div className="flex items-center">
-                      <Clock className="w-5 h-5 text-primary mr-3" />
-                      <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-300">Duração</p>
-                        <p className="font-medium dark:text-gray-200">{curso.duracao}</p>
-                      </div>
-                    </div>
                     <div className="flex items-center">
                       <User className="w-5 h-5 text-primary mr-3" />
                       <div>

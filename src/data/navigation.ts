@@ -75,6 +75,9 @@ export const navigationItems: NavItem[] = [
       { title: 'Missão, Visão e Valores', href: '/sobre/missao-visao-valores' },
       { title: 'Estrutura Organizacional', href: '/sobre/estrutura-organizacional' },
       { title: 'Direção', href: '/sobre/direcao' },
+      { title: 'Mensagem do Decano', href: '/sobre/mensagem-do-decano' },
+      { title: 'Cooperação Internacional', href: '/sobre/cooperacao-internacional' },
+      { title: 'Perspectivas de Desenvolvimento', href: '/sobre/perspectivas-desenvolvimento' },
       { title: 'Secretaria', href: '/sobre/secretaria', children: [
         { title: 'Serviços', href: '/sobre/secretaria/servicos' },
         { title: 'Formulários', href: '/sobre/secretaria/formularios' },

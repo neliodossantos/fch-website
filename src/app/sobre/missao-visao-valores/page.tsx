@@ -8,27 +8,6 @@ export const metadata: Metadata = {
   description: 'Conheça a missão, visão e valores da Faculdade de Ciências Humanas.',
 }
 
-const valores = [
-  {
-    title: 'Trabalho',
-  },
-  {
-    title: 'Responsabilidade',
-  },
-  {
-    title: 'Respeito',
-  },
-  {
-    title: 'Serviço',
-  },
-  {
-    title: 'Liberdade',
-  },
-   {
-    title: 'Transparência',
-  },
-]
-
 export default function MissaoVisaoValoresPage() {
   return (
     <>
@@ -77,26 +56,16 @@ export default function MissaoVisaoValoresPage() {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 dark:bg-gray-700 mb-4">
                 <Heart className="w-8 h-8 text-primary" />
               </div>
               <h2 className="text-3xl font-bold text-primary mb-4">Nossos Valores</h2>
               <p className="text-gray-600 dark:text-gray-300">
-                A actuação da Faculdade está alinhada com os valores institucionais da Universidade
-                Católica de Angola, devendo estar presentes em todos os seus programas, actividades e
-                na sua actuação:
+                A actuação da Faculdade de Ciências Humanas está alinhada com os valores institucionais
+                da Universidade Católica de Angola, devendo estar presentes em todos os seus programas,
+                actividades e na sua actuação.
               </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {valores.map((valor, index) => (
-                <Card key={index}>
-                  <CardContent className="pt-6">
-                    <h3 className="text-lg font-semibold text-primary mb-2">{valor.title}</h3>
-                  </CardContent>
-                </Card>
-              ))}
             </div>
           </div>
         </div>

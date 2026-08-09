@@ -1,15 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { Clock, User, Target, BookOpen, Briefcase } from 'lucide-react'
+import { Clock, User, BookOpen, Briefcase } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica'
-import { getCursoBySlug, getEstruturaCurricular } from '@/lib/queries/cursos'
-
-export const revalidate = 60 // Revalida cache a cada 60 segundos
+import { getCursoGraduacaoBySlug } from '@/data/cursos'
 
 export const metadata: Metadata = {
   title: 'Licenciatura em Psicologia - Opção Clínica',
@@ -30,13 +26,8 @@ const locaisAtuacao = [
   'Residências terapêuticas',
 ]
 
-export default async function PsicologiaClinicaPage() {
-  const curso = await getCursoBySlug('psicologia-clinica')
-  const estrutura = await getEstruturaCurricular('psicologia-clinica')
-
-  if (!curso) {
-    notFound()
-  }
+export default function PsicologiaClinicaPage() {
+  const curso = getCursoGraduacaoBySlug('psicologia-clinica')!
 
   return (
     <>
@@ -62,16 +53,6 @@ export default async function PsicologiaClinicaPage() {
                 especializados de Psicologia e Anatomia que apoiam a formação prática dos estudantes.
               </p>
 
-              <SectionTitle title="Objetivos do Curso" />
-              <ul className="space-y-3 mb-8">
-                {curso.objetivos.map((objetivo, index) => (
-                  <li key={index} className="flex items-start">
-                    <Target className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-200">{objetivo}</span>
-                  </li>
-                ))}
-              </ul>
-
               <SectionTitle title="Saídas Profissionais" />
               <ul className="text-gray-700 dark:text-gray-200 space-y-2 mb-8">
                 <li>• Promoção da saúde mental em dispositivos e organizações de Psicologia Clínica</li>
@@ -92,8 +73,6 @@ export default async function PsicologiaClinicaPage() {
                   </span>
                 ))}
               </div>
-
-              {estrutura && <EstruturaProgramatica estrutura={estrutura} />}
             </div>
 
             <div>

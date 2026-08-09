@@ -77,8 +77,8 @@ export default function HistoriaPage() {
               doutores, mestres e especialistas com reconhecida experiência académica e profissional.
             </p>
             <p className="text-gray-700 leading-relaxed dark:text-gray-200">
-              A direcção é actualmente assegurada pela Dra. Ana Bela Pereira Loureiro, na qualidade de
-              Decana, auxiliada pela Drª Evanilse Diogo, Vice-Decana para a Graduação, e pelo Dr.
+              A direcção é actualmente assegurada por Nlando Matondo Faustino, na qualidade de
+              Decano, auxiliado pela Drª Evanilse Diogo, Vice-Decana para a Graduação, e pelo Dr.
               Manuel Dala, Vice-Decano para as Pós-Graduações, Investigação e Extensão. Com parcerias
               nacionais e internacionais — nomeadamente com a Universidade Federal Fluminense (Brasil)
               —, a Faculdade continua a evoluir, mantendo o seu compromisso com a excelência académica,

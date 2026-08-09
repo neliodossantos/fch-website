@@ -1,14 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
 import { Clock, User, Mail, Phone, BookOpen, Briefcase } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { getCursoBySlug } from '@/lib/queries/cursos'
-
-export const revalidate = 60 // Revalida cache a cada 60 segundos
+import { getCursoPosGraduacaoBySlug } from '@/data/cursos'
 
 export const metadata: Metadata = {
   title: 'Pós-Graduação Profissional em Consulta Psicológica',
@@ -26,12 +23,8 @@ const planoEstudo = [
   { disciplina: 'Psicoterapias Humanistas e Existenciais: Teoria e Clínica', docente: 'Cátia Pargano', carga: '—' },
 ]
 
-export default async function ConsultaPsicologicaPage() {
-  const curso = await getCursoBySlug('consulta-psicologica')
-
-  if (!curso) {
-    notFound()
-  }
+export default function ConsultaPsicologicaPage() {
+  const curso = getCursoPosGraduacaoBySlug('consulta-psicologica')!
 
   return (
     <>

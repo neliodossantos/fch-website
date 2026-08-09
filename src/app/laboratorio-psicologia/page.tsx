@@ -117,6 +117,25 @@ export default function LaboratorioPsicologiaPage() {
               psicológica destinados às áreas Clínica, Escolar e Organizacional.
             </p>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div>
+              <h3 className="text-xl font-semibold text-primary mb-4">Galeria de Coordenadores</h3>
+              <ul className="space-y-2 text-gray-700 dark:text-gray-200">
+                <li>Irmã Maria Zélia Pinto (2012–2020)</li>
+                <li>Helena Veloso (2020–2022)</li>
+                <li>Evanilse dos Santos Diogo (2022–2023)</li>
+                <li>Bráulia Jacinto Acácio (2023–2024)</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-primary mb-4">Parceiros</h3>
+              <ul className="space-y-2 text-gray-700 dark:text-gray-200">
+                <li>Banco Millennium Atlântico</li>
+                <li>Instituto Superior João Paulo II</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </>

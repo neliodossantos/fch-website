@@ -1,14 +1,12 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { User, Mail, Phone, BookOpen, Briefcase } from 'lucide-react'
+import { User, Mail, Phone, BookOpen, Briefcase, GraduationCap } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { getCursoBySlug } from '@/lib/queries/cursos'
-
-export const revalidate = 60 // Revalida cache a cada 60 segundos
+import { getCursoPosGraduacaoBySlug } from '@/data/cursos'
+import { docentes } from '@/data/docentes'
 
 export const metadata: Metadata = {
   title: 'Pós-Graduação Profissional em Capacitação Pedagógica',
@@ -17,7 +15,7 @@ export const metadata: Metadata = {
 
 const planoEstudo = [
   { disciplina: 'Prática Pedagógica I', docente: 'Pedro Fernandes', carga: '15H' },
-  { disciplina: 'A Universidade e as Novas Tendências Pedagógicas', docente: 'Nlandu Faustino', carga: '45H' },
+  { disciplina: 'A Universidade e as Novas Tendências Pedagógicas', docente: 'Nlando Matondo Faustino', carga: '45H' },
   { disciplina: 'Didáctica do Ensino Superior', docente: 'José Gomes', carga: '45H' },
   { disciplina: 'Comunicação Educativa', docente: 'José Chivinda', carga: '30H' },
   { disciplina: 'Métodos e Meios de Ensino', docente: 'José Chivinda', carga: '30H' },
@@ -30,12 +28,12 @@ const planoEstudo = [
   { disciplina: 'Prática Pedagógica II', docente: 'Pedro Fernandes', carga: '15H' },
 ]
 
-export default async function PGPCPPage() {
-  const curso = await getCursoBySlug('capacitacao-pedagogica')
+const docentesPGPCP = docentes.filter(docente =>
+  docente.disciplinas.some(disciplina => disciplina.curso === 'Capacitação Pedagógica (PGPCP)')
+)
 
-  if (!curso) {
-    notFound()
-  }
+export default function PGPCPPage() {
+  const curso = getCursoPosGraduacaoBySlug('capacitacao-pedagogica')!
 
   return (
     <>
@@ -86,6 +84,28 @@ export default async function PGPCPPage() {
                   </div>
                 </CardContent>
               </Card>
+
+              <SectionTitle title="Corpo Docente" />
+              <div className="space-y-4 mb-8">
+                {docentesPGPCP.map(docente => (
+                  <Card key={docente.slug}>
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-3 mb-3">
+                        <GraduationCap className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-gray-900 dark:text-gray-100">{docente.nome}</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">{docente.titulo}</p>
+                        </div>
+                      </div>
+                      <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1 list-disc list-inside">
+                        {docente.formacao.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
 
             <div>

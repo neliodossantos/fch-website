@@ -127,6 +127,16 @@ export default function CandidaturaPage() {
                     </div>
                   </div>
 
+                  <div className="mt-6 pt-6 border-t">
+                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Horário de Atendimento</p>
+                    <div className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                      <div className="flex justify-between"><span>3ª Feira</span><span>08h–15h</span></div>
+                      <div className="flex justify-between"><span>5ª Feira</span><span>8h–16h</span></div>
+                      <div className="flex justify-between"><span>6ª Feira</span><span>8h–11h</span></div>
+                      <div className="flex justify-between"><span>2ª e 4ª Feira</span><span>Visita de campo</span></div>
+                    </div>
+                  </div>
+
                   <div className="mt-6 space-y-3">
                     <Link href="/sobre/secretaria/formularios" className="block">
                       <Button className="w-full">Baixar Formulários</Button>

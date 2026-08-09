@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 
 const direcao = [
   {
-    nome: 'Dr.ª Ana Bela Pereira Loureiro',
-    cargo: 'Decana',
-    titulacao: 'Linguísta',
-    email: 'anabela.loureiro@ucan.edu',
-    areas: ['Estudos Linguísticos', 'Investigação'],
-    foto_url: '/images/decana/decana.jpg',
+    nome: 'Nlando Matondo Faustino',
+    cargo: 'Decano',
+    titulacao: 'Doutor em Filosofia',
+    email: 'nlando.faustino@ucan.edu',
+    areas: ['Filosofia Política', 'Ciências da Educação'],
+    foto_url: '/images/decana/decano.jpeg',
   },
   {
     nome: 'Dr.ª Evanilse Diogo',
@@ -60,6 +60,11 @@ const chefesDepartamento = [
     email: 'francisco.matete@ucan.edu',
     foto_url: '/images/professores/Matete.jpg',
   },
+]
+
+const decanosHistorico = [
+  'Professor Doutor António Fernandes da Costa, Decano fundador (2003)',
+  'Dr.ª Ana Bela Pereira Loureiro, Decana',
 ]
 
 const vicedecanosHistorico = [
@@ -112,6 +117,18 @@ export default function DirecaoPage() {
                 foto_url={chefe.foto_url}
               />
             ))}
+          </div>
+
+          <div className="max-w-3xl mb-16">
+            <SectionTitle
+              title="Decanos ao Longo dos Anos"
+              subtitle="Galeria histórica do Decanato"
+            />
+            <ul className="space-y-2 text-gray-700 list-disc list-inside dark:text-gray-200">
+              {decanosHistorico.map((nome, index) => (
+                <li key={index}>{nome}</li>
+              ))}
+            </ul>
           </div>
 
           <div className="max-w-3xl">

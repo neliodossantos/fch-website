@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 }
 
 const horarios = [
-  { dia: 'Segunda-feira', horario: '08:00 - 12:00 | 14:00 - 17:00' },
-  { dia: 'Terça-feira', horario: '08:00 - 12:00 | 14:00 - 17:00' },
-  { dia: 'Quarta-feira', horario: '08:00 - 12:00 | 14:00 - 17:00' },
-  { dia: 'Quinta-feira', horario: '08:00 - 12:00 | 14:00 - 17:00' },
-  { dia: 'Sexta-feira', horario: '08:00 - 12:00' },
+  { dia: 'Segunda-feira', horario: '08:00 - 16:30 (pausa 13:00-14:00)' },
+  { dia: 'Terça-feira', horario: '08:00 - 16:30 (pausa 13:00-14:00)' },
+  { dia: 'Quarta-feira', horario: '08:00 - 16:30 (pausa 13:00-14:00)' },
+  { dia: 'Quinta-feira', horario: '08:00 - 16:30 (pausa 13:00-14:00)' },
+  { dia: 'Sexta-feira', horario: '08:00 - 16:30 (pausa 13:00-14:00)' },
   { dia: 'Sábado', horario: 'Fechado' },
   { dia: 'Domingo', horario: 'Fechado' },
 ]
@@ -73,9 +73,9 @@ export default function HorariosContactosPage() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-200">
-                    <li><strong>Geral:</strong> +244 222 123 456</li>
-                    <li><strong>Matrículas:</strong> +244 222 123 457</li>
-                    <li><strong>Documentos:</strong> +244 222 123 458</li>
+                    <li><strong>Secretaria de Pós-Graduações:</strong> +244 927 609 890</li>
+                    <li><strong>Laboratório de Psicologia:</strong> +244 923 820 314</li>
+                    <li><strong>Coordenação de Estágios:</strong> +244 928 001 050</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -93,14 +93,14 @@ export default function HorariosContactosPage() {
                   <ul className="space-y-2 text-gray-600 dark:text-gray-200">
                     <li>
                       <strong>Geral:</strong>{' '}
-                      <a href="mailto:secretaria@FCH.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
-                        secretaria@FCH.edu
+                      <a href="mailto:fch@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
+                        fch@ucan.edu
                       </a>
                     </li>
                     <li>
-                      <strong>Matrículas:</strong>{' '}
-                      <a href="mailto:matriculas@FCH.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
-                        matriculas@FCH.edu
+                      <strong>Pós-Graduações:</strong>{' '}
+                      <a href="mailto:yola.filipe@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
+                        yola.filipe@ucan.edu
                       </a>
                     </li>
                   </ul>
@@ -118,9 +118,9 @@ export default function HorariosContactosPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-200">
-                    Edifício Principal, Piso Térreo<br />
-                    Av. Principal, 1234<br />
-                    Campus Universitário
+                    Av. Pedro de Castro Van-Dúnem, 24<br />
+                    Palanca, Kilamba Kiaxi<br />
+                    C.P. 2064, Luanda - Angola
                   </p>
                 </CardContent>
               </Card>

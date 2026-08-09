@@ -1,14 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
 import { User, Mail, Phone, BookOpen, Briefcase } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { getCursoBySlug } from '@/lib/queries/cursos'
-
-export const revalidate = 60 // Revalida cache a cada 60 segundos
+import { getCursoPosGraduacaoBySlug } from '@/data/cursos'
 
 export const metadata: Metadata = {
   title: 'Pós-Graduação Profissional em Gestão de Pessoas 360º',
@@ -26,12 +23,8 @@ const planoEstudo = [
   { disciplina: 'Projeto Integrador em Gestão de Pessoas 360º', docente: 'Lorena Henriquez', carga: '30H' },
 ]
 
-export default async function GestaoPessoas360Page() {
-  const curso = await getCursoBySlug('gestao-pessoas-360')
-
-  if (!curso) {
-    notFound()
-  }
+export default function GestaoPessoas360Page() {
+  const curso = getCursoPosGraduacaoBySlug('gestao-pessoas-360')!
 
   return (
     <>

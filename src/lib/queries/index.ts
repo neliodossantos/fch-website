@@ -1,7 +1,3 @@
-export * from './professores'
-export * from './cursos'
-export * from './disciplinas'
-export * from './decano'
 export * from './eventos'
 export * from './noticias'
 export * from './heroBanner'

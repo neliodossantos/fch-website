@@ -14,24 +14,42 @@ const departamentos = [
     coordenador: 'Doutora Helena Veloso',
     descricao:
       'Responsável pela coordenação das actividades académicas, científicas e de extensão relacionadas com a formação dos futuros psicólogos clínicos, promovendo competências em avaliação psicológica, diagnóstico, intervenção clínica, psicoterapia, saúde mental e investigação científica.',
+    areas: ['Avaliação Psicológica', 'Diagnóstico', 'Intervenção Clínica', 'Psicoterapia', 'Saúde Mental', 'Investigação Científica'],
   },
   {
     nome: 'Departamento de Psicologia do Trabalho e das Organizações',
     coordenador: 'Mestre Manuel Armando Dala',
     descricao:
-      'Dedica-se à formação de profissionais capazes de intervir em contextos organizacionais, empresariais e institucionais, nas áreas de gestão de recursos humanos, desenvolvimento organizacional, saúde ocupacional, liderança e comportamento organizacional.',
+      'Dedica-se à formação de profissionais capazes de intervir em contextos organizacionais, empresariais e institucionais, com forte ligação ao mercado de trabalho através de protocolos de estágio com empresas e organizações parceiras.',
+    areas: [
+      'Gestão de Recursos Humanos',
+      'Desenvolvimento Organizacional',
+      'Saúde Ocupacional',
+      'Liderança e Gestão de Equipas',
+      'Avaliação de Desempenho',
+      'Formação e Desenvolvimento Profissional',
+      'Comportamento Organizacional',
+    ],
   },
   {
     nome: 'Departamento de Línguas Românicas e Literaturas Modernas',
     coordenador: 'Doutor Domingos Carlos Pascoal',
     descricao:
-      'Coordena a formação linguística e cultural relacionada com a Língua Portuguesa, Francesa, Latim, Italiano e outras áreas da Linguística, desenvolvendo actividades de ensino, investigação e extensão em Linguística, Literatura, Tradução, Comunicação e Ensino de Línguas.',
+      'Coordena a formação linguística e cultural relacionada com a Língua Portuguesa, Francesa, Latim, Italiano e outras áreas da Linguística, promovendo seminários, concursos, jornadas científicas, clube de leitura e actividades culturais.',
+    areas: ['Linguística', 'Literatura', 'Tradução', 'Comunicação', 'Estudos Culturais', 'Ensino de Línguas'],
   },
   {
     nome: 'Departamento de Línguas Germânicas e Literaturas Modernas',
     coordenador: 'Doutor Francisco Matete',
     descricao:
-      'Assegura a formação linguística nas áreas da Língua Inglesa e dos estudos interculturais, promovendo a tradução e interpretação e a investigação em linguística aplicada e ensino de línguas estrangeiras.',
+      'Assegura a formação linguística nas áreas da Língua Inglesa e dos estudos interculturais, com workshops, concursos de línguas, intercâmbios académicos e cooperação internacional.',
+    areas: [
+      'Comunicação Avançada em Língua Inglesa',
+      'Tradução e Interpretação',
+      'Formação em Contextos Internacionais',
+      'Linguística Aplicada',
+      'Ensino de Línguas Estrangeiras',
+    ],
   },
 ]
 
@@ -88,7 +106,17 @@ export default function EstruturaOrganizacionalPage() {
                     <p className="text-sm text-gray-600 mb-2 dark:text-gray-300">
                       <strong>Chefia:</strong> {dept.coordenador}
                     </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{dept.descricao}</p>
+                    <p className="text-sm text-gray-600 mb-3 dark:text-gray-300">{dept.descricao}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {dept.areas.map((area, areaIndex) => (
+                        <span
+                          key={areaIndex}
+                          className="text-xs bg-primary/10 text-primary dark:bg-gray-700 dark:text-gray-200 px-2 py-1 rounded"
+                        >
+                          {area}
+                        </span>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
               ))}

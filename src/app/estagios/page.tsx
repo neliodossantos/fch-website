@@ -94,6 +94,15 @@ export default function EstagiosPage() {
               elevados níveis de empregabilidade dos graduados da Faculdade.
             </p>
           </div>
+
+          <div className="mt-12 max-w-3xl mx-auto">
+            <h3 className="font-semibold text-primary mb-2">Galeria de Coordenadores</h3>
+            <ul className="space-y-2 text-gray-700 dark:text-gray-200">
+              <li>Dr. Almeida de Sousa (2021–2023)</li>
+              <li>Dra. Bráulia Jacinto (2023–2024)</li>
+              <li>Arieth Andrade (Coordenadora actual)</li>
+            </ul>
+          </div>
         </div>
       </section>
     </>
