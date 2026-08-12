@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Field, Check } from '../AdminFormControls'
 import { TagInput } from '../shared/TagInput'
 import { MediaGallery, MediaAdmin } from '../shared/MediaGallery'
+import { VideoField } from '../shared/VideoField'
 import { adminRequest, slugify } from '../shared/adminApi'
 
 type NewsCategory = 'institucional' | 'investigacao' | 'academico' | 'comunidade'
@@ -81,7 +82,7 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
           <Field label="Resumo"><textarea value={form.excerpt} onChange={e => update('excerpt', e.target.value)} rows={3} /></Field>
           <Field label="Conteúdo principal"><textarea value={form.body} onChange={e => update('body', e.target.value)} rows={6} /></Field>
           <Field label="Tags"><TagInput value={form.tags} onChange={value => update('tags', value)} placeholder="Escreva e prima Enter" /></Field>
-          <Field label="Vídeo (link ou upload)"><input value={form.videoUrl} onChange={e => update('videoUrl', e.target.value)} placeholder="https://youtube.com/watch?v=..." /></Field>
+          <VideoField token={token} value={form.videoUrl} onChange={value => update('videoUrl', value)} />
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Meta título (SEO)"><input value={form.metaTitle} onChange={e => update('metaTitle', e.target.value)} /></Field>
             <Field label="Meta descrição (SEO)"><input value={form.metaDescription} onChange={e => update('metaDescription', e.target.value)} /></Field>
