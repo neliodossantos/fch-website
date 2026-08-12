@@ -18,8 +18,9 @@ export function SectionsEditor({ token, ownerType, ownerId, sections, onChange }
   const ordered = [...sections].sort((a, b) => a.order - b.order)
 
   const persist = async (next: SectionAdmin[]) => {
-    onChange(next)
-    try { await adminRequest(token, '/sections/reorder', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ids: next.map(section => section.id) }) }) }
+    const renumbered = next.map((section, index) => ({ ...section, order: index }))
+    onChange(renumbered)
+    try { await adminRequest(token, '/sections/reorder', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ids: renumbered.map(section => section.id) }) }) }
     catch (err) { setError(err instanceof Error ? err.message : 'Erro ao reordenar.') }
   }
 
