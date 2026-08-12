@@ -8,6 +8,7 @@ import { TagInput } from '../shared/TagInput'
 import { MediaGallery, MediaAdmin } from '../shared/MediaGallery'
 import { VideoField } from '../shared/VideoField'
 import type { SectionAdmin } from '../shared/SectionsEditor'
+import { SectionsEditor } from '../shared/SectionsEditor'
 import { adminRequest, slugify } from '../shared/adminApi'
 
 export type AgendaItem = { time?: string; title: string; description?: string }
@@ -25,6 +26,7 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
   const [form, setForm] = useState<FormData>(initialForm)
   const [id, setId] = useState<string | undefined>(item?.id)
   const [media, setMedia] = useState<MediaAdmin[]>(item?.media || [])
+  const [sections, setSections] = useState<SectionAdmin[]>(item?.sections || [])
   const [selectedImage, setSelectedImage] = useState<File | null>(null)
   const [imageUrl, setImageUrl] = useState(item?.imagem_url || '')
   const [error, setError] = useState('')
@@ -36,6 +38,7 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
     setForm({ title: item.titulo, slug: item.slug, description: item.descricao || '', date: item.data.slice(0, 10), endDate: item.data_fim ? item.data_fim.slice(0, 10) : '', time: item.hora || '', location: item.local || '', type: item.tipo || 'conferencia', videoUrl: item.video_url || '', organizer: item.organizadores || [], externalUrl: item.link_externo || '', additionalInfo: item.informacoes_adicionais || '', agenda: item.agenda || [], featured: item.featured, published: item.published })
     setId(item.id)
     setMedia(item.media || [])
+    setSections(item.sections || [])
     setImageUrl(item.imagem_url || '')
   }, [item])
 
@@ -126,6 +129,11 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
       <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
         <h3 className="mb-1 text-lg font-bold">Galeria</h3>
         {!id ? <p className="text-sm text-gray-500">Guarde o evento antes de adicionar imagens.</p> : <MediaGallery items={media} onUpload={uploadGalleryImage} onRemove={removeGalleryImage} />}
+      </section>
+
+      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
+        <h3 className="mb-4 text-lg font-bold">Secções</h3>
+        {!id ? <p className="text-sm text-gray-500">Guarde o evento antes de adicionar secções.</p> : <SectionsEditor token={token} ownerType="event" ownerId={id} sections={sections} onChange={setSections} />}
       </section>
     </div>
   )
