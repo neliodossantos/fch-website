@@ -6,6 +6,7 @@ import { Field, Check } from '../AdminFormControls'
 import { TagInput } from '../shared/TagInput'
 import { MediaGallery, MediaAdmin } from '../shared/MediaGallery'
 import { VideoField } from '../shared/VideoField'
+import { SectionsEditor, SectionAdmin } from '../shared/SectionsEditor'
 import { adminRequest, slugify } from '../shared/adminApi'
 
 type NewsCategory = 'institucional' | 'investigacao' | 'academico' | 'comunidade'
@@ -16,12 +17,10 @@ const CATEGORIES: { value: NewsCategory; label: string }[] = [
   { value: 'comunidade', label: 'Comunidade' },
 ]
 
-export type SectionAdminLike = { id: string; title?: string; text?: string; order: number; videoUrl?: string; caption?: string; media: MediaAdmin[] }
-
 export type ContentAdmin = {
   id: string; type: 'news' | 'post'; title: string; slug: string; excerpt?: string; body?: string
   category?: NewsCategory; author?: string; tags?: string[]; metaTitle?: string; metaDescription?: string
-  videoUrl?: string; featured: boolean; published: boolean; media: MediaAdmin[]; sections: SectionAdminLike[]
+  videoUrl?: string; featured: boolean; published: boolean; media: MediaAdmin[]; sections: SectionAdmin[]
 }
 
 type FormData = { title: string; slug: string; excerpt: string; body: string; category: NewsCategory | ''; author: string; tags: string[]; metaTitle: string; metaDescription: string; videoUrl: string; featured: boolean; published: boolean }
@@ -32,6 +31,7 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
   const [form, setForm] = useState<FormData>(initialForm)
   const [id, setId] = useState<string | undefined>(item?.id)
   const [media, setMedia] = useState<MediaAdmin[]>(item?.media || [])
+  const [sections, setSections] = useState<SectionAdmin[]>(item?.sections || [])
   const [error, setError] = useState('')
   const [notice, setNotice] = useState('')
   const [busy, setBusy] = useState(false)
@@ -41,6 +41,7 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
     setForm({ title: item.title, slug: item.slug, excerpt: item.excerpt || '', body: item.body || '', category: item.category || '', author: item.author || '', tags: item.tags || [], metaTitle: item.metaTitle || '', metaDescription: item.metaDescription || '', videoUrl: item.videoUrl || '', featured: item.featured, published: item.published })
     setId(item.id)
     setMedia(item.media || [])
+    setSections(item.sections || [])
   }, [item])
 
   const update = <K extends keyof FormData>(key: K, value: FormData[K]) => setForm(current => ({ ...current, [key]: value }))
@@ -98,6 +99,11 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
       <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
         <h3 className="mb-1 text-lg font-bold">Galeria de capa</h3>
         {!id ? <p className="text-sm text-gray-500">Guarde a notícia antes de adicionar imagens.</p> : <MediaGallery items={media} onUpload={uploadCover} onRemove={removeCover} />}
+      </section>
+
+      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
+        <h3 className="mb-4 text-lg font-bold">Secções</h3>
+        {!id ? <p className="text-sm text-gray-500">Guarde a notícia antes de adicionar secções.</p> : <SectionsEditor token={token} ownerType="content" ownerId={id} sections={sections} onChange={setSections} />}
       </section>
     </div>
   )
