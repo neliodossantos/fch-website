@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import { DndContext, DragEndEvent, PointerSensor, closestCenter, useSensor, useSensors } from '@dnd-kit/core'
 import { SortableContext, arrayMove, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
@@ -12,7 +12,7 @@ import { adminRequest } from './adminApi'
 
 export type SectionAdmin = { id: string; title?: string; text?: string; order: number; videoUrl?: string; caption?: string; media: MediaAdmin[] }
 
-export function SectionsEditor({ token, ownerType, ownerId, sections, onChange }: { token: string; ownerType: 'content' | 'event'; ownerId: string; sections: SectionAdmin[]; onChange: (sections: SectionAdmin[]) => void }) {
+export function SectionsEditor({ token, ownerType, ownerId, sections, onChange }: { token: string; ownerType: 'content' | 'event'; ownerId: string; sections: SectionAdmin[]; onChange: Dispatch<SetStateAction<SectionAdmin[]>> }) {
   const [error, setError] = useState('')
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }))
   const ordered = [...sections].sort((a, b) => a.order - b.order)
@@ -36,19 +36,19 @@ export function SectionsEditor({ token, ownerType, ownerId, sections, onChange }
     setError('')
     try {
       const created = await adminRequest<SectionAdmin>(token, '/sections', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ownerType, ownerId }) })
-      onChange([...sections, { ...created, media: [] }])
+      onChange(current => [...current, { ...created, media: [] }])
     } catch (err) { setError(err instanceof Error ? err.message : 'Erro ao criar secção.') }
   }
 
   const updateSection = async (id: string, patch: Partial<Pick<SectionAdmin, 'title' | 'text' | 'videoUrl' | 'caption'>>) => {
-    onChange(sections.map(section => section.id === id ? { ...section, ...patch } : section))
+    onChange(current => current.map(section => section.id === id ? { ...section, ...patch } : section))
     try { await adminRequest(token, `/sections/${id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(patch) }) }
     catch (err) { setError(err instanceof Error ? err.message : 'Erro ao guardar secção.') }
   }
 
   const removeSection = async (id: string) => {
     if (!confirm('Remover esta secção e as suas imagens?')) return
-    try { await adminRequest(token, `/sections/${id}`, { method: 'DELETE' }); onChange(sections.filter(section => section.id !== id)) }
+    try { await adminRequest(token, `/sections/${id}`, { method: 'DELETE' }); onChange(current => current.filter(section => section.id !== id)) }
     catch (err) { setError(err instanceof Error ? err.message : 'Erro ao remover secção.') }
   }
 
@@ -56,11 +56,11 @@ export function SectionsEditor({ token, ownerType, ownerId, sections, onChange }
     const data = new window.FormData(); data.append('file', file)
     const upload = await adminRequest<{ url: string }>(token, '/media/upload', { method: 'POST', body: data })
     const created = await adminRequest<MediaAdmin>(token, `/sections/${sectionId}/media`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: upload.url }) })
-    onChange(sections.map(section => section.id === sectionId ? { ...section, media: [...section.media, created] } : section))
+    onChange(current => current.map(section => section.id === sectionId ? { ...section, media: [...section.media, created] } : section))
   }
   const removeSectionMedia = async (sectionId: string, mediaId: string) => {
     await adminRequest(token, `/sections/media/${mediaId}`, { method: 'DELETE' })
-    onChange(sections.map(section => section.id === sectionId ? { ...section, media: section.media.filter(item => item.id !== mediaId) } : section))
+    onChange(current => current.map(section => section.id === sectionId ? { ...section, media: section.media.filter(item => item.id !== mediaId) } : section))
   }
 
   return (
@@ -80,7 +80,7 @@ export function SectionsEditor({ token, ownerType, ownerId, sections, onChange }
   )
 }
 
-function SectionCard({ token, section, index, onUpdate, onRemove, onUpload, onRemoveMedia }: { token: string; section: SectionAdmin; index: number; onUpdate: (patch: Partial<Pick<SectionAdmin, 'title' | 'text' | 'videoUrl' | 'caption'>>) => void; onRemove: () => void; onUpload: (file: File) => Promise<void>; onRemoveMedia: (mediaId: string) => void }) {
+function SectionCard({ token, section, index, onUpdate, onRemove, onUpload, onRemoveMedia }: { token: string; section: SectionAdmin; index: number; onUpdate: (patch: Partial<Pick<SectionAdmin, 'title' | 'text' | 'videoUrl' | 'caption'>>) => void; onRemove: () => void; onUpload: (file: File) => Promise<void>; onRemoveMedia: (mediaId: string) => Promise<void> }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: section.id })
   const style = { transform: CSS.Transform.toString(transform), transition, opacity: isDragging ? 0.5 : 1 }
   return (
@@ -98,7 +98,7 @@ function SectionCard({ token, section, index, onUpdate, onRemove, onUpload, onRe
           <VideoField token={token} value={section.videoUrl || ''} onChange={value => onUpdate({ videoUrl: value })} />
           <div>
             <span className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200">Imagens</span>
-            <MediaGallery items={section.media} onUpload={onUpload} onRemove={async mediaId => onRemoveMedia(mediaId)} />
+            <MediaGallery items={section.media} onUpload={onUpload} onRemove={onRemoveMedia} />
           </div>
         </div>
       </div>

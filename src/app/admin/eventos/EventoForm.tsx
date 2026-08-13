@@ -57,7 +57,7 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
         const upload = await adminRequest<{ url: string }>(token, '/media/upload', { method: 'POST', body: data })
         nextImageUrl = upload.url
       }
-      const payload = { title: form.title, slug: form.slug, description: form.description || undefined, date: form.date, endDate: form.endDate || undefined, time: form.time || undefined, location: form.location || undefined, type: form.type, imageUrl: nextImageUrl || undefined, videoUrl: form.videoUrl || undefined, organizer: form.organizer.length ? form.organizer : undefined, externalUrl: form.externalUrl || undefined, additionalInfo: form.additionalInfo || undefined, agenda: form.agenda.length ? form.agenda : undefined, featured: form.featured, published: form.published }
+      const payload = { title: form.title, slug: form.slug, description: form.description, date: form.date, endDate: form.endDate || null, time: form.time, location: form.location, type: form.type, imageUrl: nextImageUrl || undefined, videoUrl: form.videoUrl, organizer: form.organizer, externalUrl: form.externalUrl, additionalInfo: form.additionalInfo, agenda: form.agenda, featured: form.featured, published: form.published }
       const saved = await adminRequest<{ id: string }>(token, `/eventos${id ? `/${id}` : ''}`, { method: id ? 'PATCH' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       setImageUrl(nextImageUrl); setSelectedImage(null)
       setNotice(id ? 'Evento actualizado.' : 'Evento criado. Já pode adicionar galeria e secções.')
@@ -98,7 +98,10 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
             <Field label="Local"><input value={form.location} onChange={e => update('location', e.target.value)} /></Field>
           </div>
           <Field label="Tipo"><select value={form.type} onChange={e => update('type', e.target.value)}><option value="conferencia">Conferência</option><option value="seminario">Seminário</option><option value="workshop">Workshop</option><option value="cultural">Cultural</option></select></Field>
-          <Field label="Organizadores"><TagInput value={form.organizer} onChange={value => update('organizer', value)} placeholder="Escreva e prima Enter" /></Field>
+          <div>
+            <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-200">Organizadores</label>
+            <TagInput value={form.organizer} onChange={value => update('organizer', value)} placeholder="Escreva e prima Enter" />
+          </div>
           <Field label="Link externo (inscrições, etc.)"><input value={form.externalUrl} onChange={e => update('externalUrl', e.target.value)} placeholder="https://..." /></Field>
           <Field label="Informações adicionais"><textarea value={form.additionalInfo} onChange={e => update('additionalInfo', e.target.value)} rows={3} /></Field>
           <VideoField token={token} value={form.videoUrl} onChange={value => update('videoUrl', value)} />

@@ -24,7 +24,7 @@ export function VideoField({ token, value, onChange, label = 'Vídeo (link ou up
   return (
     <div>
       <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-200">{label}</label>
-      <input value={draft} onChange={event => setDraft(event.target.value)} onBlur={() => onChange(draft)} placeholder="https://youtube.com/watch?v=..." className="w-full rounded-lg border bg-white p-3 dark:bg-gray-800" />
+      <input value={draft} onChange={event => setDraft(event.target.value)} onBlur={() => { if (draft !== value) onChange(draft) }} placeholder="https://youtube.com/watch?v=..." className="w-full rounded-lg border bg-white p-3 dark:bg-gray-800" />
       <div className="mt-2 flex items-center gap-3">
         <input type="file" accept="video/mp4,video/webm,video/quicktime" onChange={(event: ChangeEvent<HTMLInputElement>) => setSelected(event.target.files?.[0] || null)} className="block flex-1 text-sm" disabled={uploading} />
         <button type="button" onClick={upload} disabled={!selected || uploading} className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-bold text-white disabled:opacity-50">{uploading ? 'A enviar…' : 'Enviar vídeo'}</button>

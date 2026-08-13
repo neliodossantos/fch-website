@@ -50,7 +50,7 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
   const save = async (event: FormEvent) => {
     event.preventDefault(); setError(''); setNotice(''); setBusy(true)
     try {
-      const payload = { type: 'news', title: form.title, slug: form.slug, excerpt: form.excerpt || undefined, body: form.body || undefined, category: form.category || undefined, author: form.author || undefined, tags: form.tags.length ? form.tags : undefined, metaTitle: form.metaTitle || undefined, metaDescription: form.metaDescription || undefined, videoUrl: form.videoUrl || undefined, featured: form.featured, published: form.published }
+      const payload = { type: 'news', title: form.title, slug: form.slug, excerpt: form.excerpt, body: form.body, category: form.category || null, author: form.author, tags: form.tags, metaTitle: form.metaTitle, metaDescription: form.metaDescription, videoUrl: form.videoUrl, featured: form.featured, published: form.published }
       const saved = await adminRequest<{ id: string }>(token, `/content${id ? `/${id}` : ''}`, { method: id ? 'PATCH' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       setNotice(id ? 'Notícia actualizada.' : 'Notícia criada. Já pode adicionar imagens e secções.')
       if (!id) { setId(saved.id); router.replace(`/admin/noticias/${saved.id}/editar`) }
@@ -86,7 +86,10 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
           </div>
           <Field label="Resumo"><textarea value={form.excerpt} onChange={e => update('excerpt', e.target.value)} rows={3} /></Field>
           <Field label="Conteúdo principal"><textarea value={form.body} onChange={e => update('body', e.target.value)} rows={6} /></Field>
-          <Field label="Tags"><TagInput value={form.tags} onChange={value => update('tags', value)} placeholder="Escreva e prima Enter" /></Field>
+          <div>
+            <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-200">Tags</label>
+            <TagInput value={form.tags} onChange={value => update('tags', value)} placeholder="Escreva e prima Enter" />
+          </div>
           <VideoField token={token} value={form.videoUrl} onChange={value => update('videoUrl', value)} />
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Meta título (SEO)"><input value={form.metaTitle} onChange={e => update('metaTitle', e.target.value)} /></Field>
