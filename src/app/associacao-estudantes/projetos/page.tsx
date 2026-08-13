@@ -73,7 +73,7 @@ export default function ProjetosPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300">{projeto.descricao}</p>
+                  <p className="text-gray-600 dark:text-[#d8cfc4]">{projeto.descricao}</p>
                 </CardContent>
               </Card>
             ))}
@@ -85,10 +85,10 @@ export default function ProjetosPage() {
               <Card key={index} className="opacity-90">
                 <CardHeader>
                   <CardTitle className="text-base">{projeto.titulo}</CardTitle>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{projeto.data}</p>
+                  <p className="text-sm text-gray-500 dark:text-[#b8ab9c]">{projeto.data}</p>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 text-sm dark:text-gray-300">{projeto.descricao}</p>
+                  <p className="text-gray-600 text-sm dark:text-[#d8cfc4]">{projeto.descricao}</p>
                 </CardContent>
               </Card>
             ))}

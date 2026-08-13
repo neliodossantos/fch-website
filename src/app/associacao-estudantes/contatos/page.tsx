@@ -31,7 +31,7 @@ export default function ContactosAEPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-200">
+                  <p className="text-gray-600 dark:text-[#E4D9CC]">
                     Gabinete da Associação de Estudantes<br />
                     Edifício Principal, Piso 1, Sala 101<br />
                     Campus Universitário FCH
@@ -42,16 +42,16 @@ export default function ContactosAEPage() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-[#332a22] flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC]" />
                     </div>
                     <CardTitle>Horário de Atendimento</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-200">
+                  <p className="text-gray-600 dark:text-[#E4D9CC]">
                     Segunda a Sexta: 10:00 - 12:00 | 14:00 - 16:00<br />
-                    <span className="text-sm text-gray-500 dark:text-gray-500">Fechado aos fins de semana e feriados</span>
+                    <span className="text-sm text-gray-500 dark:text-[#9c8d7d]">Fechado aos fins de semana e feriados</span>
                   </p>
                 </CardContent>
               </Card>
@@ -59,20 +59,20 @@ export default function ContactosAEPage() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-[#332a22] flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC]" />
                     </div>
                     <CardTitle>Telefone e Email</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-200">
+                  <ul className="space-y-2 text-gray-600 dark:text-[#E4D9CC]">
                     <li className="flex items-center">
-                      <Phone className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500" />
+                      <Phone className="w-4 h-4 mr-2 text-gray-400 dark:text-[#9c8d7d]" />
                       +244 222 123 460
                     </li>
                     <li className="flex items-center">
-                      <Mail className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500" />
+                      <Mail className="w-4 h-4 mr-2 text-gray-400 dark:text-[#9c8d7d]" />
                       <a href="mailto:ae@FCH.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
                         ae@FCH.edu
                       </a>
@@ -88,7 +88,7 @@ export default function ContactosAEPage() {
                   <CardTitle>Redes Sociais</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-200 mb-6 text-justify">
+                  <p className="text-gray-600 dark:text-[#E4D9CC] mb-6 text-justify">
                     Siga-nos nas redes sociais para ficar a par das nossas actividades e novidades!
                   </p>
                   <div className="space-y-4">
@@ -98,8 +98,8 @@ export default function ContactosAEPage() {
                     >
                       <Facebook className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-4" />
                       <div>
-                        <p className="font-medium text-gray-900 dark:text-gray-100">Facebook</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-300">@aeFCH</p>
+                        <p className="font-medium text-gray-900 dark:text-[#F5F0EA]">Facebook</p>
+                        <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">@aeFCH</p>
                       </div>
                     </a>
                     <a
@@ -108,8 +108,8 @@ export default function ContactosAEPage() {
                     >
                       <Instagram className="w-6 h-6 text-pink-600 dark:text-pink-400 mr-4" />
                       <div>
-                        <p className="font-medium text-gray-900 dark:text-gray-100">Instagram</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-300">@ae_FCH</p>
+                        <p className="font-medium text-gray-900 dark:text-[#F5F0EA]">Instagram</p>
+                        <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">@ae_FCH</p>
                       </div>
                     </a>
                   </div>
@@ -121,10 +121,10 @@ export default function ContactosAEPage() {
                   <CardTitle>Fale Connosco</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-200 mb-4 text-justify">
+                  <p className="text-gray-600 dark:text-[#E4D9CC] mb-4 text-justify">
                     Tem sugestões, reclamações ou ideias? A AE-FCH está aqui para ouvir os estudantes!
                   </p>
-                  <ul className="text-sm text-gray-600 dark:text-gray-200 space-y-2">
+                  <ul className="text-sm text-gray-600 dark:text-[#E4D9CC] space-y-2">
                     <li>• Atendimento presencial no gabinete</li>
                     <li>• Envio de mensagem por email</li>
                     <li>• Mensagem privada nas redes sociais</li>

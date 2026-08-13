@@ -18,7 +18,7 @@ export function SectionTitle({ eyebrow, title, subtitle, centered = false, class
       )}
       <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">{title}</h2>
       {subtitle && (
-        <p className="mt-3 text-gray-600 dark:text-gray-200">{subtitle}</p>
+        <p className="mt-3 text-gray-600 dark:text-[#E4D9CC]">{subtitle}</p>
       )}
     </div>
   )

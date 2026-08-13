@@ -27,7 +27,7 @@ export default function GraduacaoPage() {
               <Card key={curso.id} className="h-full">
                 <CardHeader>
                   <CardTitle className="text-xl text-primary">{curso.nome}</CardTitle>
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500 mt-2 dark:text-gray-400">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500 mt-2 dark:text-[#b8ab9c]">
                     {curso.duracao && (
                       <span className="flex items-center">
                         <Clock className="w-4 h-4 mr-1" />
@@ -43,9 +43,9 @@ export default function GraduacaoPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4 dark:text-gray-300">{curso.descricao}</p>
+                  <p className="text-gray-600 mb-4 dark:text-[#d8cfc4]">{curso.descricao}</p>
                   <div className="mb-4">
-                    <p className="text-sm font-medium text-gray-700 mb-2 dark:text-gray-200">Principais áreas:</p>
+                    <p className="text-sm font-medium text-gray-700 mb-2 dark:text-[#E4D9CC]">Principais áreas:</p>
                     <div className="flex flex-wrap gap-2">
                       {curso.areas.map((area, index) => (
                         <span
@@ -68,7 +68,7 @@ export default function GraduacaoPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4 dark:text-gray-300">
+            <p className="text-gray-600 mb-4 dark:text-[#d8cfc4]">
               Interessado em se candidatar a um dos nossos cursos?
             </p>
             <Link href="/admissoes">

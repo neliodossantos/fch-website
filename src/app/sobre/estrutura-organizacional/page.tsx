@@ -103,15 +103,15 @@ export default function EstruturaOrganizacionalPage() {
                     <CardTitle className="text-lg">{dept.nome}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-gray-600 mb-2 dark:text-gray-300">
+                    <p className="text-sm text-gray-600 mb-2 dark:text-[#d8cfc4]">
                       <strong>Chefia:</strong> {dept.coordenador}
                     </p>
-                    <p className="text-sm text-gray-600 mb-3 dark:text-gray-300">{dept.descricao}</p>
+                    <p className="text-sm text-gray-600 mb-3 dark:text-[#d8cfc4]">{dept.descricao}</p>
                     <div className="flex flex-wrap gap-2">
                       {dept.areas.map((area, areaIndex) => (
                         <span
                           key={areaIndex}
-                          className="text-xs bg-primary/10 text-primary dark:bg-gray-700 dark:text-gray-200 px-2 py-1 rounded"
+                          className="text-xs bg-primary/10 text-primary dark:bg-[#332a22] dark:text-[#E4D9CC] px-2 py-1 rounded"
                         >
                           {area}
                         </span>
@@ -133,7 +133,7 @@ export default function EstruturaOrganizacionalPage() {
                 <Card key={index}>
                   <CardContent className="pt-6">
                     <h3 className="font-semibold text-primary mb-2">{unidade.nome}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{unidade.descricao}</p>
+                    <p className="text-sm text-gray-600 dark:text-[#d8cfc4]">{unidade.descricao}</p>
                   </CardContent>
                 </Card>
               ))}

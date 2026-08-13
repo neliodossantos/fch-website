@@ -59,7 +59,7 @@ export default function ServicosPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600 dark:text-gray-300">
+                        <span className="text-gray-600 dark:text-[#d8cfc4]">
                           <strong>Prazo:</strong> {item.prazo}
                         </span>
                         <span className="text-primary font-medium">
@@ -73,9 +73,9 @@ export default function ServicosPage() {
             </div>
           ))}
           
-          <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+          <div className="mt-8 p-6 bg-gray-50 dark:bg-[#1f1a16] rounded-lg">
             <h3 className="font-semibold text-primary mb-2">Observações Importantes</h3>
-            <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+            <ul className="text-sm text-gray-600 dark:text-[#d8cfc4] space-y-2">
               <li>• Os prazos são contados em dias úteis a partir da data de solicitação.</li>
               <li>• As taxas podem sofrer alterações. Consulte a Secretaria para valores atualizados.</li>
               <li>• Alguns serviços exigem documentação específica. Verifique os requisitos antes de solicitar.</li>

@@ -42,8 +42,8 @@ export default async function EventosRealizadosPage() {
                         className="object-cover opacity-75"
                       />
                     ) : (
-                      <div className="bg-gray-200 dark:bg-gray-700 h-full flex items-center justify-center">
-                        <span className="text-gray-500 dark:text-gray-300">Sem imagem</span>
+                      <div className="bg-gray-200 dark:bg-[#332a22] h-full flex items-center justify-center">
+                        <span className="text-gray-500 dark:text-[#d8cfc4]">Sem imagem</span>
                       </div>
                     )}
                   </div>
@@ -58,15 +58,15 @@ export default async function EventosRealizadosPage() {
                         {evento.tipo.charAt(0).toUpperCase() + evento.tipo.slice(1)}
                       </span>
                     </div>
-                    <div className="flex items-center space-x-2 text-sm text-gray-500 mb-2 dark:text-gray-400">
+                    <div className="flex items-center space-x-2 text-sm text-gray-500 mb-2 dark:text-[#b8ab9c]">
                       <Calendar className="w-4 h-4" />
                       <span>{new Date(evento.data).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
                     </div>
-                    <CardTitle className="text-lg text-gray-700 dark:text-gray-200">{evento.titulo}</CardTitle>
+                    <CardTitle className="text-lg text-gray-700 dark:text-[#E4D9CC]">{evento.titulo}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 text-sm mb-4 dark:text-gray-300">{evento.descricao}</p>
-                    <div className="flex items-center text-sm text-gray-500 mb-4 dark:text-gray-400">
+                    <p className="text-gray-600 text-sm mb-4 dark:text-[#d8cfc4]">{evento.descricao}</p>
+                    <div className="flex items-center text-sm text-gray-500 mb-4 dark:text-[#b8ab9c]">
                       <MapPin className="w-4 h-4 mr-2" />
                       {evento.local}
                     </div>
@@ -81,7 +81,7 @@ export default async function EventosRealizadosPage() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-500 text-lg dark:text-gray-400">Não há eventos registrados.</p>
+              <p className="text-gray-500 text-lg dark:text-[#b8ab9c]">Não há eventos registrados.</p>
             </div>
           )}
         </div>

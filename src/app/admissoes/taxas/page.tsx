@@ -49,7 +49,7 @@ export default function TaxasPage() {
                 <div className="space-y-4">
                   {propinasGraduacao.map((item, index) => (
                     <div key={index} className="flex justify-between items-center py-2 border-b last:border-b-0">
-                      <span className="text-gray-700 dark:text-gray-300">{item.item}</span>
+                      <span className="text-gray-700 dark:text-[#d8cfc4]">{item.item}</span>
                       <span className="font-semibold text-primary">{item.valor}</span>
                     </div>
                   ))}
@@ -58,14 +58,14 @@ export default function TaxasPage() {
             </Card>
             
             <Card>
-              <CardHeader className="bg-gray-50 dark:bg-gray-700/50">
+              <CardHeader className="bg-gray-50 dark:bg-[#332a22]/50">
                 <CardTitle className="text-xl text-gray-900 dark:text-white">Pós-Graduação</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="space-y-4">
                   {propinasPostgrad.map((item, index) => (
                     <div key={index} className="flex justify-between items-center py-2 border-b last:border-b-0">
-                      <span className="text-gray-700 dark:text-gray-300">{item.item}</span>
+                      <span className="text-gray-700 dark:text-[#d8cfc4]">{item.item}</span>
                       <span className="font-semibold text-gray-900 dark:text-white">{item.valor}</span>
                     </div>
                   ))}
@@ -80,7 +80,7 @@ export default function TaxasPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {outrasTexas.map((item, index) => (
                   <div key={index} className="flex justify-between items-center py-2 border-b md:border-b-0">
-                    <span className="text-gray-700 dark:text-gray-300">{item.item}</span>
+                    <span className="text-gray-700 dark:text-[#d8cfc4]">{item.item}</span>
                     <span className="font-medium text-gray-900 dark:text-white">{item.valor}</span>
                   </div>
                 ))}
@@ -88,24 +88,24 @@ export default function TaxasPage() {
             </CardContent>
           </Card>
 
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
+          <div className="bg-gray-50 dark:bg-[#1f1a16] rounded-lg p-6">
             <h3 className="font-semibold text-primary mb-4">Formas de Pagamento</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-medium text-gray-900 dark:text-white mb-2">Presencial</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p className="text-sm text-gray-600 dark:text-[#d8cfc4]">
                   Na tesouraria da Faculdade, das 08:00 às 15:00, de segunda a sexta-feira.
                 </p>
               </div>
               <div>
                 <h4 className="font-medium text-gray-900 dark:text-white mb-2">Transferência Bancária</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p className="text-sm text-gray-600 dark:text-[#d8cfc4]">
                   Os dados bancários da Faculdade são fornecidos pela Secretaria no acto da
                   candidatura ou matrícula.
                 </p>
               </div>
             </div>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+            <p className="text-sm text-gray-500 dark:text-[#b8ab9c] mt-4">
               * Os valores podem sofrer alterações. Consulte a Secretaria para valores atualizados.
             </p>
           </div>

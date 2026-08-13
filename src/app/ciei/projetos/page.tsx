@@ -77,7 +77,7 @@ export default function ProjetosPage() {
                   <CardTitle className="text-lg">{linha.titulo}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-200 text-sm text-justify">{linha.descricao}</p>
+                  <p className="text-gray-600 dark:text-[#E4D9CC] text-sm text-justify">{linha.descricao}</p>
                 </CardContent>
               </Card>
             ))}
@@ -91,7 +91,7 @@ export default function ProjetosPage() {
                   <CardTitle className="text-base">{evento.titulo}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-200 text-sm text-justify">{evento.descricao}</p>
+                  <p className="text-gray-600 dark:text-[#E4D9CC] text-sm text-justify">{evento.descricao}</p>
                 </CardContent>
               </Card>
             ))}

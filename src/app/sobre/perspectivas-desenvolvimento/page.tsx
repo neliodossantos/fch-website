@@ -34,7 +34,7 @@ export default function PerspectivasDesenvolvimentoPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <p className="text-gray-700 mb-12 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 mb-12 leading-relaxed dark:text-[#E4D9CC]">
               No âmbito do Plano Estratégico 2022–2026 e dos processos de melhoria contínua da
               qualidade, a Faculdade de Ciências Humanas projecta os seguintes eixos de
               desenvolvimento:
@@ -45,13 +45,13 @@ export default function PerspectivasDesenvolvimentoPage() {
                 <Card key={index}>
                   <CardContent className="pt-6 flex items-start gap-3">
                     <TrendingUp className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-200">{item}</span>
+                    <span className="text-gray-700 dark:text-[#E4D9CC]">{item}</span>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
-            <p className="text-gray-700 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 leading-relaxed dark:text-[#E4D9CC]">
               Com uma visão orientada para a excelência académica, a inovação, a investigação
               científica e o serviço à sociedade, a Faculdade de Ciências Humanas da Universidade
               Católica de Angola continua a afirmar-se como um espaço privilegiado de formação,

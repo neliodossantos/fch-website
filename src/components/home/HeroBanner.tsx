@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, BookOpen, Brain } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { getHeroBanner } from '@/lib/queries'
 import { HeroCarousel } from './HeroCarousel'
 
@@ -37,9 +37,9 @@ export async function HeroBanner() {
     : slideImages
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f7f5]">
+    <section className="relative overflow-hidden bg-[#f7f7f5] dark:bg-[#151312] lg:min-h-[calc(100svh-7rem)]">
       <div className="absolute left-0 top-0 h-full w-full bg-primary lg:w-[58%]" />
-      <div className="relative container mx-auto grid min-h-[590px] items-center gap-10 px-5 py-14 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-16">
+      <div className="relative container mx-auto grid items-center gap-10 px-5 py-12 sm:px-6 lg:min-h-[calc(100svh-7rem)] lg:grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)] lg:px-8 lg:py-16">
         <div className="max-w-xl motion-safe:animate-[hero-content-in_700ms_ease-out_both]">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-gray-800">
             Universidade Católica de Angola
@@ -65,16 +65,23 @@ export async function HeroBanner() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-xl lg:mx-0">
-          <div className="relative aspect-[4/4.6] overflow-hidden rounded-[2rem] bg-gray-200 shadow-2xl shadow-gray-900/20 motion-safe:animate-[hero-image-in_900ms_cubic-bezier(0.16,1,0.3,1)_both] lg:ml-auto">
+        <div className="relative mx-auto w-full max-w-[600px] py-2 lg:ml-auto lg:mr-0 lg:py-8">
+          <div className="relative aspect-[4/4.15] overflow-hidden rounded-[1.75rem] bg-gray-200 shadow-[0_24px_60px_-28px_rgba(17,24,39,0.35)] motion-safe:animate-[hero-image-in_900ms_cubic-bezier(0.16,1,0.3,1)_both] dark:bg-[#332a22] dark:shadow-black/40">
             <HeroCarousel slides={slides} />
           </div>
-          <div className="absolute -bottom-5 -left-3 hidden items-center gap-3 rounded-2xl bg-white p-4 shadow-xl sm:flex lg:-left-10">
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-primary"><BookOpen className="h-5 w-5 text-gray-950" /></span>
-            <span className="text-sm font-semibold text-gray-800">Ensinar, aprender<br /> e pesquisar para um futuro mais humano.</span>
-          </div>
-          <div className="absolute -right-4 top-8 hidden rounded-2xl bg-gray-50 py-2 px-4 text-white shadow-xl lg:block 2xl:-right-16">
-            <Brain className="mb-2 h-5 w-5 mx-auto text-primary" /><span className="text-xs text-black font-semibold uppercase tracking-wider">Conhecimento<br />com propósito</span>
+          <div className="hidden mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 2xl:absolute 2xl:right-[-15rem] 2xl:top-1/2 2xl:mt-0 2xl:w-48 2xl:-translate-y-1/2 2xl:grid-cols-1">
+            <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
+              <p className="text-2xl font-extrabold tracking-tight text-gray-950">20+</p>
+              <p className="mt-1 text-xs font-medium leading-relaxed text-gray-500">anos de excelência</p>
+            </div>
+            <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
+              <p className="text-2xl font-extrabold tracking-tight text-gray-950">7</p>
+              <p className="mt-1 text-xs font-medium leading-relaxed text-gray-500">programas de formação</p>
+            </div>
+            <div className="col-span-2 rounded-2xl border border-primary/30 bg-primary/10 p-4 sm:col-span-1 2xl:col-span-1">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary-dark">Faculdade de Ciências Humanas</p>
+              <p className="mt-2 text-sm font-semibold leading-snug text-gray-800">Conhecimento com impacto na comunidade.</p>
+            </div>
           </div>
         </div>
       </div>

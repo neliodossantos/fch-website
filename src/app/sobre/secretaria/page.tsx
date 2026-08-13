@@ -42,7 +42,7 @@ export default function SecretariaPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
-            <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed text-justify">
+            <p className="text-lg text-gray-700 dark:text-[#E4D9CC] leading-relaxed text-justify">
               A Secretaria Académica da FCH oferece diversos serviços de apoio aos estudantes, docentes 
               e público em geral. Aqui pode encontrar informações sobre documentos, formulários, 
               horários de atendimento e formas de contacto.
@@ -62,7 +62,7 @@ export default function SecretariaPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 dark:text-gray-200 text-sm mb-4 text-justify">{section.description}</p>
+                    <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4 text-justify">{section.description}</p>
                     <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
                       Aceder <ArrowRight className="ml-2 w-4 h-4" />
                     </span>
@@ -72,17 +72,17 @@ export default function SecretariaPage() {
             ))}
           </div>
           
-          <div className="mt-12 bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
+          <div className="mt-12 bg-gray-50 dark:bg-[#1f1a16] rounded-lg p-8">
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 rounded-full bg-primary/10 dark:bg-gray-700 flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-primary/10 dark:bg-[#332a22] flex items-center justify-center flex-shrink-0">
                 <Phone className="w-6 h-6 text-primary" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Precisa de ajuda?</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4 text-justify">
+                <p className="text-gray-600 dark:text-[#E4D9CC] mb-4 text-justify">
                   Para questões urgentes ou informações adicionais, entre em contacto connosco:
                 </p>
-                <p className="text-gray-700 dark:text-gray-200">
+                <p className="text-gray-700 dark:text-[#E4D9CC]">
                   <strong>Telefone:</strong> +244 222 123 456<br />
                   <strong>Email:</strong> secretaria@FCH.edu
                 </p>

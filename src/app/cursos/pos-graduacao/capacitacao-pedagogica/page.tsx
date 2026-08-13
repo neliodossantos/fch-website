@@ -48,7 +48,7 @@ export default function PGPCPPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <SectionTitle title="Apresentação" />
-              <p className="text-gray-700 dark:text-gray-200 mb-8 leading-relaxed text-justify">
+              <p className="text-gray-700 dark:text-[#E4D9CC] mb-8 leading-relaxed text-justify">
                 Este curso foi criado e homologado pelo Decreto Executivo n.º 60/19, de 2019. A
                 Universidade Católica de Angola criou este programa de capacitação pedagógica para os
                 seus professores, denominado Pós-Graduação Profissional em Capacitação Pedagógica
@@ -66,17 +66,17 @@ export default function PGPCPPage() {
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="border-b">
-                          <th className="text-left py-3 px-2 font-semibold text-gray-700 dark:text-gray-200">Disciplina</th>
-                          <th className="text-left py-3 px-2 font-semibold text-gray-700 dark:text-gray-200">Docente</th>
-                          <th className="text-right py-3 px-2 font-semibold text-gray-700 dark:text-gray-200">Carga Horária</th>
+                          <th className="text-left py-3 px-2 font-semibold text-gray-700 dark:text-[#E4D9CC]">Disciplina</th>
+                          <th className="text-left py-3 px-2 font-semibold text-gray-700 dark:text-[#E4D9CC]">Docente</th>
+                          <th className="text-right py-3 px-2 font-semibold text-gray-700 dark:text-[#E4D9CC]">Carga Horária</th>
                         </tr>
                       </thead>
                       <tbody>
                         {planoEstudo.map((item, index) => (
                           <tr key={index} className="border-b last:border-b-0">
-                            <td className="py-3 px-2 text-gray-700 dark:text-gray-200">{item.disciplina}</td>
-                            <td className="py-3 px-2 text-gray-600 dark:text-gray-300">{item.docente}</td>
-                            <td className="py-3 px-2 text-right text-gray-600 dark:text-gray-300">{item.carga}</td>
+                            <td className="py-3 px-2 text-gray-700 dark:text-[#E4D9CC]">{item.disciplina}</td>
+                            <td className="py-3 px-2 text-gray-600 dark:text-[#d8cfc4]">{item.docente}</td>
+                            <td className="py-3 px-2 text-right text-gray-600 dark:text-[#d8cfc4]">{item.carga}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -93,11 +93,11 @@ export default function PGPCPPage() {
                       <div className="flex items-start gap-3 mb-3">
                         <GraduationCap className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="font-semibold text-gray-900 dark:text-gray-100">{docente.nome}</p>
-                          <p className="text-sm text-gray-500 dark:text-gray-400">{docente.titulo}</p>
+                          <p className="font-semibold text-gray-900 dark:text-[#F5F0EA]">{docente.nome}</p>
+                          <p className="text-sm text-gray-500 dark:text-[#b8ab9c]">{docente.titulo}</p>
                         </div>
                       </div>
-                      <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1 list-disc list-inside">
+                      <ul className="text-sm text-gray-600 dark:text-[#d8cfc4] space-y-1 list-disc list-inside">
                         {docente.formacao.map((item, index) => (
                           <li key={index}>{item}</li>
                         ))}
@@ -114,24 +114,24 @@ export default function PGPCPPage() {
                   <h3 className="text-lg font-semibold text-primary mb-4">Informações</h3>
                   <div className="space-y-4">
                     <div className="flex items-center">
-                      <BookOpen className="w-5 h-5 text-gray-700 dark:text-gray-200 mr-3" />
+                      <BookOpen className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC] mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Grau</p>
+                        <p className="text-sm text-gray-500 dark:text-[#b8ab9c]">Grau</p>
                         <p className="font-medium">Pós-Graduação Profissional</p>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <Briefcase className="w-5 h-5 text-gray-700 dark:text-gray-200 mr-3" />
+                      <Briefcase className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC] mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Regime</p>
+                        <p className="text-sm text-gray-500 dark:text-[#b8ab9c]">Regime</p>
                         <p className="font-medium">Presencial</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-6 pt-6 border-t">
-                    <p className="text-sm font-medium text-gray-700 mb-3 dark:text-gray-200">Coordenação</p>
-                    <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                    <p className="text-sm font-medium text-gray-700 mb-3 dark:text-[#E4D9CC]">Coordenação</p>
+                    <div className="space-y-2 text-sm text-gray-600 dark:text-[#d8cfc4]">
                       <div className="flex items-center">
                         <User className="w-4 h-4 mr-2" />
                         Manuel Dala

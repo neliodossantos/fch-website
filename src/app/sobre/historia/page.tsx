@@ -20,13 +20,13 @@ export default function HistoriaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <SectionTitle title="Fundação" />
-            <p className="text-gray-700 mb-6 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 mb-6 leading-relaxed dark:text-[#E4D9CC]">
               A Faculdade de Ciências Humanas (FCH) da Universidade Católica de Angola foi criada em
               10 de Março de 2003, constituindo uma das unidades orgânicas pioneiras da UCAN. A sua
               fundação representou um marco importante na consolidação do ensino superior privado em
               Angola e na expansão da formação universitária nas áreas das Ciências Humanas e Sociais.
             </p>
-            <p className="text-gray-700 mb-12 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 mb-12 leading-relaxed dark:text-[#E4D9CC]">
               A instalação e direcção inicial da Faculdade estiveram a cargo do Professor Doutor
               António Fernandes da Costa (em feliz memória), reconhecido académico e investigador
               angolano no domínio da Linguística, que assumiu a missão de estruturar esta unidade
@@ -35,13 +35,13 @@ export default function HistoriaPage() {
             </p>
 
             <SectionTitle title="Primeiros Cursos" />
-            <p className="text-gray-700 mb-6 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 mb-6 leading-relaxed dark:text-[#E4D9CC]">
               A actividade académica da Faculdade iniciou-se com o curso de Línguas, Literatura e
               Administração — actualmente designado Línguas e Administração —, cuja primeira turma
               foi diplomada em 2007, demonstrando a capacidade da Faculdade em formar os seus
               primeiros quadros superiores.
             </p>
-            <p className="text-gray-700 mb-12 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 mb-12 leading-relaxed dark:text-[#E4D9CC]">
               Em resposta às necessidades crescentes do país nos domínios da saúde mental,
               desenvolvimento humano e gestão das organizações, a Faculdade procedeu, também em 2007,
               à criação do curso de Psicologia, nas opções Clínica e do Trabalho e das Organizações.
@@ -53,7 +53,7 @@ export default function HistoriaPage() {
             </p>
 
             <SectionTitle title="Consolidação Institucional" />
-            <p className="text-gray-700 mb-6 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 mb-6 leading-relaxed dark:text-[#E4D9CC]">
               Ao longo da sua história, a FCH desenvolveu uma cultura académica assente na excelência
               do ensino, na promoção da investigação científica, na prestação de serviços à comunidade
               e na formação integral da pessoa humana. Este compromisso levou à criação de estruturas
@@ -62,7 +62,7 @@ export default function HistoriaPage() {
               Laboratório de Psicologia, que oferece projectos de extensão universitária como o
               Plantão Psicológico e diversos programas de voluntariado comunitário.
             </p>
-            <p className="text-gray-700 mb-12 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 mb-12 leading-relaxed dark:text-[#E4D9CC]">
               A Faculdade tem também investido na formação pós-graduada e na capacitação profissional,
               com programas como a Especialização em Gestão do Ensino Superior, a Pós-Graduação
               Profissional em Capacitação Pedagógica, a Pós-Graduação de Capacitação Profissional em
@@ -70,13 +70,13 @@ export default function HistoriaPage() {
             </p>
 
             <SectionTitle title="A FCH Hoje" />
-            <p className="text-gray-700 mb-6 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 mb-6 leading-relaxed dark:text-[#E4D9CC]">
               Actualmente, a Faculdade de Ciências Humanas acolhe cerca de 365 estudantes distribuídos
               pelos seus cursos de graduação — 165 no curso de Psicologia e 200 no curso de Línguas e
               Administração. O seu corpo docente é constituído por 31 docentes, entre professores
               doutores, mestres e especialistas com reconhecida experiência académica e profissional.
             </p>
-            <p className="text-gray-700 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 leading-relaxed dark:text-[#E4D9CC]">
               A direcção é actualmente assegurada por Nlando Matondo Faustino, na qualidade de
               Decano, auxiliado pela Drª Evanilse Diogo, Vice-Decana para a Graduação, e pelo Dr.
               Manuel Dala, Vice-Decano para as Pós-Graduações, Investigação e Extensão. Com parcerias

@@ -10,7 +10,7 @@ export default function NotFound() {
         <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mt-4 mb-2">
           Página não encontrada
         </h2>
-        <p className="text-gray-600 dark:text-gray-200 mb-8 max-w-md mx-auto text-justify">
+        <p className="text-gray-600 dark:text-[#E4D9CC] mb-8 max-w-md mx-auto text-justify">
           Pedimos desculpa, a página que está à procura não existe ou foi movida.
         </p>
         <Link href="/">

@@ -94,13 +94,13 @@ export default async function NoticiaDetalhePage({ params }: Props) {
             </div>
           )}
 
-          <div className="mb-6 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+          <div className="mb-6 flex items-center gap-2 text-sm text-gray-500 dark:text-[#b8ab9c]">
             <CalendarDays className="h-4 w-4" />
             <span className="capitalize">{formattedDate}</span>
           </div>
 
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="whitespace-pre-line text-gray-700 dark:text-gray-200">{noticia.conteudo || noticia.resumo}</p>
+            <p className="whitespace-pre-line text-gray-700 dark:text-[#E4D9CC]">{noticia.conteudo || noticia.resumo}</p>
           </div>
         </div>
       </section>

@@ -35,10 +35,10 @@ export default function CursosPage() {
                       <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
                         {curso.nome}
                       </CardTitle>
-                      {curso.duracao && <p className="text-sm text-gray-500 dark:text-gray-300">Duração: {curso.duracao}</p>}
+                      {curso.duracao && <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">Duração: {curso.duracao}</p>}
                     </CardHeader>
                     <CardContent>
-                      <p className="text-gray-600 dark:text-gray-200 text-sm mb-4 line-clamp-3">{curso.descricao}</p>
+                      <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4 line-clamp-3">{curso.descricao}</p>
                       <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
                         Ver detalhes <ArrowRight className="ml-2 w-4 h-4" />
                       </span>
@@ -65,15 +65,15 @@ export default function CursosPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {cursosPosGraduacao.map((curso) => (
                 <Link key={curso.id} href={`/cursos/pos-graduacao/${curso.slug}`}>
-                  <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group border-gray-200 dark:border-gray-700">
+                  <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group border-gray-200 dark:border-[#332a22]">
                     <CardHeader>
                       <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
                         {curso.nome}
                       </CardTitle>
-                      {curso.duracao && <p className="text-sm text-gray-500 dark:text-gray-300">Duração: {curso.duracao}</p>}
+                      {curso.duracao && <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">Duração: {curso.duracao}</p>}
                     </CardHeader>
                     <CardContent>
-                      <p className="text-gray-600 dark:text-gray-200 text-sm mb-4 line-clamp-3">{curso.descricao}</p>
+                      <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4 line-clamp-3">{curso.descricao}</p>
                       <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
                         Ver detalhes <ArrowRight className="ml-2 w-4 h-4" />
                       </span>

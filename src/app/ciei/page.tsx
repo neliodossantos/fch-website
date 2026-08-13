@@ -42,7 +42,7 @@ export default function CIEIPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6 dark:text-gray-200">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6 dark:text-[#E4D9CC]">
               O Centro Interdisciplinar de Estudo e Investigação (CIEI) é uma unidade de pesquisa
               vinculada à Faculdade de Ciências Humanas e ao Instituto Superior de Ciências da Saúde
               da Universidade Católica de Angola, criada em parceria entre a Doutora Marli Santana (ISCS)
@@ -51,7 +51,7 @@ export default function CIEIPage() {
               Constitui a principal estrutura de investigação científica da Faculdade, investindo no
               Programa de Iniciação Científica (PIC).
             </p>
-            <p className="text-gray-700 leading-relaxed mb-6 dark:text-gray-200">
+            <p className="text-gray-700 leading-relaxed mb-6 dark:text-[#E4D9CC]">
               As suas principais tarefas são investigar e promover eventos sobre fenómenos sociais
               visando o debate e o encaminhamento de soluções; fomentar a literacia científica através
               de formações que envolvem docentes e estudantes; e formar pesquisadores para o futuro por
@@ -61,7 +61,7 @@ export default function CIEIPage() {
             </p>
             <div className="bg-primary/5 rounded-lg p-6">
               <h3 className="font-semibold text-primary mb-2">Linhas de Investigação</h3>
-              <ul className="text-gray-600 space-y-1 dark:text-gray-300">
+              <ul className="text-gray-600 space-y-1 dark:text-[#d8cfc4]">
                 <li>• Saúde (física e mental, incluindo desnutrição, transtornos mentais, abuso sexual, HIV/SIDA e luto)</li>
                 <li>• Estudos sobre Género</li>
                 <li>• Construção e Adaptação de Testes à população angolana</li>
@@ -83,7 +83,7 @@ export default function CIEIPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 text-sm mb-4 dark:text-gray-300">{section.description}</p>
+                    <p className="text-gray-600 text-sm mb-4 dark:text-[#d8cfc4]">{section.description}</p>
                     <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
                       Ver mais <ArrowRight className="ml-2 w-4 h-4" />
                     </span>
@@ -96,21 +96,21 @@ export default function CIEIPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="p-6">
               <p className="text-4xl font-bold text-primary">80</p>
-              <p className="text-gray-600 dark:text-gray-300">Publicações (2020-2026)</p>
+              <p className="text-gray-600 dark:text-[#d8cfc4]">Publicações (2020-2026)</p>
             </div>
             <div className="p-6">
               <p className="text-4xl font-bold text-primary">59</p>
-              <p className="text-gray-600 dark:text-gray-300">Artigos em Revistas Indexadas</p>
+              <p className="text-gray-600 dark:text-[#d8cfc4]">Artigos em Revistas Indexadas</p>
             </div>
             <div className="p-6">
               <p className="text-4xl font-bold text-primary">4</p>
-              <p className="text-gray-600 dark:text-gray-300">Linhas de Investigação</p>
+              <p className="text-gray-600 dark:text-[#d8cfc4]">Linhas de Investigação</p>
             </div>
           </div>
 
           <div className="max-w-3xl mx-auto mt-12 bg-primary/5 dark:bg-primary/10 rounded-lg p-6 text-center">
             <h3 className="font-semibold text-primary mb-2">Apadrinhe uma Pesquisa</h3>
-            <p className="text-gray-600 text-sm dark:text-gray-300">
+            <p className="text-gray-600 text-sm dark:text-[#d8cfc4]">
               O CIEI possui projectos concebidos para melhorar a vida das comunidades angolanas, mas
               cuja execução depende de apoio financeiro. Instituições interessadas em apadrinhar
               pesquisas ou estabelecer parcerias de investigação conjunta podem contactar a directora do

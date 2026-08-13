@@ -61,21 +61,21 @@ export default async function DocentePage({ params }: PageProps) {
                   <h2 className="text-xl font-semibold text-center text-primary dark:text-primary mb-1">
                     {docente.nome}
                   </h2>
-                  <p className="text-sm text-gray-600 dark:text-gray-200 text-center mb-4">
+                  <p className="text-sm text-gray-600 dark:text-[#E4D9CC] text-center mb-4">
                     {docente.titulo}
                   </p>
                   {docente.departamento && (
-                    <p className="text-sm text-gray-500 dark:text-gray-300 text-center mb-4">
+                    <p className="text-sm text-gray-500 dark:text-[#d8cfc4] text-center mb-4">
                       {docente.departamento}
                     </p>
                   )}
 
                   {docente.email && (
                     <div className="border-t pt-4 space-y-3">
-                      <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Contacto</h3>
+                      <h3 className="font-semibold text-gray-900 dark:text-[#F5F0EA] mb-3">Contacto</h3>
                       <div className="flex items-center text-sm">
                         <Mail className="w-4 h-4 text-primary mr-3 flex-shrink-0" />
-                        <a href={`mailto:${docente.email}`} className="text-gray-600 dark:text-gray-200 hover:text-primary">
+                        <a href={`mailto:${docente.email}`} className="text-gray-600 dark:text-[#E4D9CC] hover:text-primary">
                           {docente.email}
                         </a>
                       </div>
@@ -103,7 +103,7 @@ export default async function DocentePage({ params }: PageProps) {
                         {docente.formacao.map((item, index) => (
                           <li key={index} className="flex items-start">
                             <GraduationCap className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-700 dark:text-gray-200">{item}</span>
+                            <span className="text-gray-700 dark:text-[#E4D9CC]">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -121,7 +121,7 @@ export default async function DocentePage({ params }: PageProps) {
                         {docente.disciplinas.map((disciplina, index) => (
                           <li key={index} className="flex items-start">
                             <BookOpen className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-700 dark:text-gray-200">
+                            <span className="text-gray-700 dark:text-[#E4D9CC]">
                               {disciplina.nome} — {disciplina.curso}
                             </span>
                           </li>

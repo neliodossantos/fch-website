@@ -62,7 +62,7 @@ export default function InscricaoExtensaoPage() {
                         {etapa.numero}
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-2 dark:text-white">{etapa.titulo}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">{etapa.descricao}</p>
+                      <p className="text-sm text-gray-600 dark:text-[#d8cfc4]">{etapa.descricao}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -75,7 +75,7 @@ export default function InscricaoExtensaoPage() {
                     {documentos.map((doc, index) => (
                       <li key={index} className="flex items-center">
                         <FileText className="w-5 h-5 text-primary mr-3" />
-                        <span className="text-gray-700 dark:text-gray-200">{doc}</span>
+                        <span className="text-gray-700 dark:text-[#E4D9CC]">{doc}</span>
                       </li>
                     ))}
                   </ul>
@@ -92,7 +92,7 @@ export default function InscricaoExtensaoPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-4 text-gray-600 dark:text-gray-300">
+                  <ul className="space-y-4 text-gray-600 dark:text-[#d8cfc4]">
                     <li>
                       <p className="font-medium">Presencial</p>
                       <p className="text-sm">Na tesouraria da Faculdade</p>

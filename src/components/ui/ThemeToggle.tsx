@@ -15,7 +15,7 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <button
-        className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+        className="p-2 rounded-md text-gray-700 dark:text-[#d8cfc4] hover:bg-gray-100 dark:hover:bg-[#332a22] transition-colors"
         aria-label="Alternar tema"
       >
         <Sun className="w-5 h-5" />
@@ -26,7 +26,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+      className="p-2 rounded-md text-gray-700 dark:text-[#d8cfc4] hover:bg-gray-100 dark:hover:bg-[#332a22] transition-colors"
       aria-label={theme === 'dark' ? 'Mudar para modo claro' : 'Mudar para modo escuro'}
     >
       {theme === 'dark' ? (

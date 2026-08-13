@@ -73,7 +73,7 @@ export default function FAQPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pl-9">
-                    <p className="text-gray-600 dark:text-gray-200 text-justify">{faq.resposta}</p>
+                    <p className="text-gray-600 dark:text-[#E4D9CC] text-justify">{faq.resposta}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -81,7 +81,7 @@ export default function FAQPage() {
             
             <div className="mt-12 bg-primary/5 rounded-lg p-6 text-center">
               <h3 className="font-semibold text-primary mb-2">Não encontrou a sua dúvida?</h3>
-              <p className="text-gray-600 dark:text-gray-200 mb-4 text-justify">
+              <p className="text-gray-600 dark:text-[#E4D9CC] mb-4 text-justify">
                 Entre em contacto connosco pelo email{' '}
                 <a href="mailto:admissoes@FCH.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
                   admissoes@FCH.edu

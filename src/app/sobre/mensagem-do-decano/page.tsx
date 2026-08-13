@@ -47,7 +47,7 @@ export default function MensagemDecanoPage() {
               </div>
               <div className="relative mt-8 max-w-sm border-l-2 border-primary pl-4">
                 <p className="text-lg font-bold text-gray-900 dark:text-white">{decano.nome}</p>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{decano.titulo}</p>
+                <p className="mt-1 text-sm text-gray-600 dark:text-[#d8cfc4]">{decano.titulo}</p>
               </div>
             </div>
 
@@ -57,9 +57,9 @@ export default function MensagemDecanoPage() {
                 {lede}
               </p>
 
-              <div className="mt-8 space-y-6 border-t border-gray-200 pt-8 dark:border-gray-700">
+              <div className="mt-8 space-y-6 border-t border-gray-200 pt-8 dark:border-[#332a22]">
                 {corpo.map((paragrafo, index) => (
-                  <p key={index} className="text-gray-700 dark:text-gray-200 leading-relaxed text-justify">
+                  <p key={index} className="text-gray-700 dark:text-[#E4D9CC] leading-relaxed text-justify">
                     {paragrafo}
                   </p>
                 ))}

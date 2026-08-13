@@ -50,21 +50,21 @@ export default async function EventosPage() {
                         className="object-cover"
                       />
                     ) : (
-                      <div className="bg-gray-200 dark:bg-gray-700 h-full flex items-center justify-center">
-                        <span className="text-gray-500 dark:text-gray-300">Sem imagem</span>
+                      <div className="bg-gray-200 dark:bg-[#332a22] h-full flex items-center justify-center">
+                        <span className="text-gray-500 dark:text-[#d8cfc4]">Sem imagem</span>
                       </div>
                     )}
                   </div>
                   <CardHeader>
-                    <div className="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-200 mb-2">
+                    <div className="flex items-center space-x-2 text-sm text-gray-700 dark:text-[#E4D9CC] mb-2">
                       <Calendar className="w-4 h-4" />
                       <span>{new Date(evento.data).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
                     </div>
                     <CardTitle className="text-lg">{evento.titulo}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">{evento.descricao}</p>
-                    <div className="space-y-2 text-sm text-gray-500 dark:text-gray-300 mb-4">
+                    <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4">{evento.descricao}</p>
+                    <div className="space-y-2 text-sm text-gray-500 dark:text-[#d8cfc4] mb-4">
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-2" />
                         {evento.hora}
@@ -106,20 +106,20 @@ export default async function EventosPage() {
                         className="object-cover opacity-75"
                       />
                     ) : (
-                      <div className="bg-gray-200 dark:bg-gray-700 h-full flex items-center justify-center">
-                        <span className="text-gray-500 dark:text-gray-300">Sem imagem</span>
+                      <div className="bg-gray-200 dark:bg-[#332a22] h-full flex items-center justify-center">
+                        <span className="text-gray-500 dark:text-[#d8cfc4]">Sem imagem</span>
                       </div>
                     )}
                   </div>
                   <CardHeader>
-                    <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-300 mb-2">
+                    <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-[#d8cfc4] mb-2">
                       <Calendar className="w-4 h-4" />
                       <span>{new Date(evento.data).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
                     </div>
                     <CardTitle className="text-lg">{evento.titulo}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 dark:text-gray-200 text-sm">{evento.descricao}</p>
+                    <p className="text-gray-600 dark:text-[#E4D9CC] text-sm">{evento.descricao}</p>
                   </CardContent>
                 </Card>
               ))}

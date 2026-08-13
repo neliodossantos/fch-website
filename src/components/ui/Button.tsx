@@ -3,15 +3,15 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded-full text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900 disabled:opacity-50 disabled:pointer-events-none',
+  'inline-flex items-center justify-center rounded-full text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#151312] disabled:opacity-50 disabled:pointer-events-none',
   {
     variants: {
       variant: {
         default: 'bg-primary text-white hover:bg-primary-dark dark:bg-primary dark:hover:bg-primary-dark',
-        secondary: 'bg-white text-gray-900 border border-gray-200 hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600',
-        accent: 'bg-accent text-white hover:bg-accent/90 dark:bg-gray-700 dark:hover:bg-gray-600',
+        secondary: 'bg-white text-gray-900 border border-gray-200 hover:bg-gray-100 dark:border-[#4a3c30] dark:bg-[#332a22] dark:text-[#F5F0EA] dark:hover:bg-[#4a3c30]',
+        accent: 'bg-accent text-white hover:bg-accent/90 dark:bg-[#332a22] dark:hover:bg-[#4a3c30]',
         outline: 'border border-primary text-primary hover:bg-primary hover:text-white dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-white',
-        ghost: 'hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300',
+        ghost: 'text-gray-700 hover:bg-gray-100 dark:text-[#d8cfc4] dark:hover:bg-[#332a22]',
         link: 'rounded-none underline-offset-4 hover:underline text-primary dark:text-primary',
       },
       size: {

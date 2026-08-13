@@ -73,14 +73,14 @@ export default function ServicosLabPage() {
                   <CardTitle className="text-lg">{servico.titulo}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 text-sm mb-4 dark:text-gray-300">{servico.descricao}</p>
-                  <div className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                  <p className="text-gray-600 text-sm mb-4 dark:text-[#d8cfc4]">{servico.descricao}</p>
+                  <div className="space-y-2 text-sm text-gray-500 dark:text-[#b8ab9c]">
                     <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500" />
+                      <Clock className="w-4 h-4 mr-2 text-gray-400 dark:text-[#9c8d7d]" />
                       {servico.horario}
                     </div>
                     <div className="flex items-center">
-                      <Users className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500" />
+                      <Users className="w-4 h-4 mr-2 text-gray-400 dark:text-[#9c8d7d]" />
                       {servico.publico}
                     </div>
                   </div>
@@ -90,7 +90,7 @@ export default function ServicosLabPage() {
           </div>
 
           <div className="text-center">
-            <p className="text-gray-600 mb-4 dark:text-gray-300">
+            <p className="text-gray-600 mb-4 dark:text-[#d8cfc4]">
               Interessado em algum dos nossos serviços?
             </p>
             <Link href="/laboratorio-psicologia/marcacao">

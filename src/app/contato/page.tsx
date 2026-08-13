@@ -60,7 +60,7 @@ export default function ContatoPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-gray-600 dark:text-[#d8cfc4]">
                       Av. Pedro de Castro Van-Dúnem, 24<br />
                       Palanca, Kilamba Kiaxi<br />
                       C.P. 2064, Luanda - Angola
@@ -71,14 +71,14 @@ export default function ContatoPage() {
                 <Card>
                   <CardHeader>
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                      <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-[#332a22] flex items-center justify-center">
+                        <Phone className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC]" />
                       </div>
                       <CardTitle>Telefones</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                    <ul className="space-y-2 text-gray-600 dark:text-[#d8cfc4]">
                       <li><strong>Laboratório de Psicologia:</strong> +244 923 820 314</li>
                       <li><strong>Coordenação de Estágios:</strong> +244 928 001 050</li>
                       <li><strong>Secretaria de Pós-Graduações:</strong> +244 927 609 890</li>
@@ -89,14 +89,14 @@ export default function ContatoPage() {
                 <Card>
                   <CardHeader>
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
-                        <Mail className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                      <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-[#332a22] flex items-center justify-center">
+                        <Mail className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC]" />
                       </div>
                       <CardTitle>Email</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                    <ul className="space-y-2 text-gray-600 dark:text-[#d8cfc4]">
                       <li><strong>Geral:</strong> <a href="mailto:fch@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">fch@ucan.edu</a></li>
                       <li><strong>Laboratório de Psicologia:</strong> <a href="mailto:laboratorio.psicologia@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">laboratorio.psicologia@ucan.edu</a></li>
                       <li><strong>Estágios:</strong> <a href="mailto:arieth.andrade@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">arieth.andrade@ucan.edu</a></li>
@@ -115,7 +115,7 @@ export default function ContatoPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                    <ul className="space-y-2 text-gray-600 dark:text-[#d8cfc4]">
                       <li><strong>Segunda a Sexta:</strong> 08:00 - 16:00</li>
                       <li><strong>Secretaria de Pós-Graduações:</strong> 08:00 - 16:30 (pausa 13:00-14:00)</li>
                       <li><strong>Sábado e Domingo:</strong> Fechado</li>
@@ -132,12 +132,12 @@ export default function ContatoPage() {
                       <table className="w-full text-sm">
                         <thead>
                           <tr className="border-b">
-                            <th className="text-left py-2 px-2 font-semibold text-gray-700 dark:text-gray-200">Programa</th>
-                            <th className="text-left py-2 px-2 font-semibold text-gray-700 dark:text-gray-200">Email</th>
-                            <th className="text-left py-2 px-2 font-semibold text-gray-700 dark:text-gray-200">Telefone</th>
+                            <th className="text-left py-2 px-2 font-semibold text-gray-700 dark:text-[#E4D9CC]">Programa</th>
+                            <th className="text-left py-2 px-2 font-semibold text-gray-700 dark:text-[#E4D9CC]">Email</th>
+                            <th className="text-left py-2 px-2 font-semibold text-gray-700 dark:text-[#E4D9CC]">Telefone</th>
                           </tr>
                         </thead>
-                        <tbody className="text-gray-600 dark:text-gray-300">
+                        <tbody className="text-gray-600 dark:text-[#d8cfc4]">
                           <tr className="border-b last:border-b-0">
                             <td className="py-2 px-2">Especialização em Gestão do Ensino Superior</td>
                             <td className="py-2 px-2">eges@ucan.edu</td>
@@ -174,7 +174,7 @@ export default function ContatoPage() {
                       <CheckCircle2 className="h-7 w-7 text-green-600 dark:text-green-400" />
                     </span>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white">Mensagem enviada</h3>
-                    <p className="mt-2 max-w-xs text-sm text-gray-600 dark:text-gray-300">
+                    <p className="mt-2 max-w-xs text-sm text-gray-600 dark:text-[#d8cfc4]">
                       Obrigado pelo contacto. A nossa equipa responde o mais brevemente possível.
                     </p>
                     <Button variant="outline" className="mt-6" onClick={() => setIsSubmitted(false)}>

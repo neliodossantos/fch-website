@@ -95,8 +95,8 @@ export default async function EventoDetalhePage({ params }: Props) {
                     className="w-full h-auto max-h-[420px] object-cover"
                   />
                 ) : (
-                  <div className="bg-gray-200 dark:bg-gray-700 h-64 flex items-center justify-center">
-                    <span className="text-gray-500 dark:text-gray-300">
+                  <div className="bg-gray-200 dark:bg-[#332a22] h-64 flex items-center justify-center">
+                    <span className="text-gray-500 dark:text-[#d8cfc4]">
                       Sem imagem disponível
                     </span>
                   </div>
@@ -121,10 +121,10 @@ export default async function EventoDetalhePage({ params }: Props) {
 
               {/* Event Description */}
               <div className="prose prose-lg dark:prose-invert max-w-none">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-[#F5F0EA] mb-4">
                   Sobre o Evento
                 </h2>
-                <p className="text-gray-700 dark:text-gray-200 whitespace-pre-line">
+                <p className="text-gray-700 dark:text-[#E4D9CC] whitespace-pre-line">
                   {evento.descricao}
                 </p>
               </div>
@@ -132,8 +132,8 @@ export default async function EventoDetalhePage({ params }: Props) {
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 sticky top-8">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+              <div className="bg-gray-50 dark:bg-[#1f1a16] rounded-lg p-6 sticky top-8">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-[#F5F0EA] mb-4">
                   Detalhes do Evento
                 </h3>
 
@@ -151,10 +151,10 @@ export default async function EventoDetalhePage({ params }: Props) {
                   <div className="flex items-start">
                     <Calendar className="w-5 h-5 text-primary mr-3 mt-0.5" />
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-300">
+                      <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">
                         Data
                       </p>
-                      <p className="text-gray-900 dark:text-gray-100 capitalize">
+                      <p className="text-gray-900 dark:text-[#F5F0EA] capitalize">
                         {formattedDate}
                       </p>
                     </div>
@@ -165,10 +165,10 @@ export default async function EventoDetalhePage({ params }: Props) {
                     <div className="flex items-start">
                       <Clock className="w-5 h-5 text-primary mr-3 mt-0.5" />
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-300">
+                        <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">
                           Horário
                         </p>
-                        <p className="text-gray-900 dark:text-gray-100">
+                        <p className="text-gray-900 dark:text-[#F5F0EA]">
                           {evento.hora}
                         </p>
                       </div>
@@ -180,10 +180,10 @@ export default async function EventoDetalhePage({ params }: Props) {
                     <div className="flex items-start">
                       <MapPin className="w-5 h-5 text-primary mr-3 mt-0.5" />
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-300">
+                        <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">
                           Local
                         </p>
-                        <p className="text-gray-900 dark:text-gray-100">
+                        <p className="text-gray-900 dark:text-[#F5F0EA]">
                           {evento.local}
                         </p>
                       </div>
@@ -191,7 +191,7 @@ export default async function EventoDetalhePage({ params }: Props) {
                   )}
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-[#332a22]">
                   <Button className="w-full" variant="default">
                     Inscrever-se
                   </Button>

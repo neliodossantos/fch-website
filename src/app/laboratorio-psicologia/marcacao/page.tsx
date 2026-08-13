@@ -31,7 +31,7 @@ export default function MarcacaoPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+                  <ul className="space-y-3 text-gray-600 dark:text-[#d8cfc4]">
                     <li>
                       <strong>Telefone:</strong> +244 923 820 314
                     </li>
@@ -49,14 +49,14 @@ export default function MarcacaoPage() {
               <Card className="mb-6">
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-[#332a22] flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC]" />
                     </div>
                     <CardTitle>Horário de Funcionamento</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2 text-gray-600 dark:text-gray-300">
+                  <div className="space-y-2 text-gray-600 dark:text-[#d8cfc4]">
                     <div className="flex justify-between">
                       <span>Horário geral</span>
                       <span>Seg-Sex, 08h00-16h00</span>
@@ -84,14 +84,14 @@ export default function MarcacaoPage() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-[#332a22] flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC]" />
                     </div>
                     <CardTitle>Localização</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600 dark:text-[#d8cfc4]">
                     Av. Pedro de Castro Van-Dúnem, 24<br />
                     Palanca, Kilamba Kiaxi<br />
                     C.P. 2064, Luanda - Angola
@@ -111,7 +111,7 @@ export default function MarcacaoPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4 text-gray-600 dark:text-gray-300">
+                  <div className="space-y-4 text-gray-600 dark:text-[#d8cfc4]">
                     <div>
                       <h4 className="font-medium text-gray-900 dark:text-white mb-1">Atendimento 100% Gratuito</h4>
                       <p className="text-sm">
@@ -144,7 +144,7 @@ export default function MarcacaoPage() {
                   </div>
 
                   <div className="mt-6 p-4 bg-primary/5 dark:bg-primary/10 rounded-lg">
-                    <p className="text-sm text-gray-700 dark:text-gray-200">
+                    <p className="text-sm text-gray-700 dark:text-[#E4D9CC]">
                       <strong>Emergências:</strong> Em caso de urgência psicológica ou de risco
                       iminente, procure o serviço de emergência do hospital mais próximo.
                     </p>

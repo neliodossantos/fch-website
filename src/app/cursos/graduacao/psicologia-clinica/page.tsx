@@ -42,7 +42,7 @@ export default function PsicologiaClinicaPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <SectionTitle title="Sobre o Curso" />
-              <p className="text-gray-700 dark:text-gray-200 mb-8 leading-relaxed text-justify">
+              <p className="text-gray-700 dark:text-[#E4D9CC] mb-8 leading-relaxed text-justify">
                 O curso de Psicologia foi criado pelo Decreto Executivo n.º 496/15 e é ministrado pela
                 Faculdade de Ciências Humanas desde 2007, conferindo o grau de Licenciatura em
                 Psicologia, na opção Clínica. Com duração de cinco anos, a formação combina uma sólida
@@ -54,7 +54,7 @@ export default function PsicologiaClinicaPage() {
               </p>
 
               <SectionTitle title="Saídas Profissionais" />
-              <ul className="text-gray-700 dark:text-gray-200 space-y-2 mb-8">
+              <ul className="text-gray-700 dark:text-[#E4D9CC] space-y-2 mb-8">
                 <li>• Promoção da saúde mental em dispositivos e organizações de Psicologia Clínica</li>
                 <li>• Saúde Comunitária</li>
                 <li>• Docência</li>
@@ -67,7 +67,7 @@ export default function PsicologiaClinicaPage() {
                 {locaisAtuacao.map((local, index) => (
                   <span
                     key={index}
-                    className="text-sm bg-primary/10 text-primary dark:bg-gray-700 dark:text-gray-200 px-3 py-1 rounded-full"
+                    className="text-sm bg-primary/10 text-primary dark:bg-[#332a22] dark:text-[#E4D9CC] px-3 py-1 rounded-full"
                   >
                     {local}
                   </span>
@@ -83,36 +83,36 @@ export default function PsicologiaClinicaPage() {
                     <div className="flex items-center">
                       <Clock className="w-5 h-5 text-primary mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-300">Duração</p>
-                        <p className="font-medium dark:text-gray-200">{curso.duracao}</p>
+                        <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">Duração</p>
+                        <p className="font-medium dark:text-[#E4D9CC]">{curso.duracao}</p>
                       </div>
                     </div>
                     <div className="flex items-center">
                       <User className="w-5 h-5 text-primary mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-300">Chefia do Departamento</p>
-                        <p className="font-medium dark:text-gray-200">{curso.coordenador}</p>
+                        <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">Chefia do Departamento</p>
+                        <p className="font-medium dark:text-[#E4D9CC]">{curso.coordenador}</p>
                       </div>
                     </div>
                     <div className="flex items-center">
                       <BookOpen className="w-5 h-5 text-primary mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-300">Grau</p>
-                        <p className="font-medium dark:text-gray-200">Licenciatura</p>
+                        <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">Grau</p>
+                        <p className="font-medium dark:text-[#E4D9CC]">Licenciatura</p>
                       </div>
                     </div>
                     <div className="flex items-center">
                       <Briefcase className="w-5 h-5 text-primary mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-300">Regime</p>
-                        <p className="font-medium dark:text-gray-200">Presencial</p>
+                        <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">Regime</p>
+                        <p className="font-medium dark:text-[#E4D9CC]">Presencial</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-6 pt-6 border-t">
-                    <p className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-3">Prova de Ingresso</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">Língua Portuguesa e Conhecimentos Gerais</p>
+                    <p className="text-sm font-medium text-gray-700 dark:text-[#E4D9CC] mb-3">Prova de Ingresso</p>
+                    <p className="text-sm text-gray-600 dark:text-[#d8cfc4]">Língua Portuguesa e Conhecimentos Gerais</p>
                   </div>
 
                   <div className="mt-6 space-y-3">

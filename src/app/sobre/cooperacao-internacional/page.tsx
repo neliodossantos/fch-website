@@ -33,7 +33,7 @@ export default function CooperacaoInternacionalPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <p className="text-gray-700 mb-12 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 mb-12 leading-relaxed dark:text-[#E4D9CC]">
               A Faculdade participa activamente em programas de cooperação e mobilidade académica que
               promovem o intercâmbio de estudantes, docentes e investigadores. Destaca-se o protocolo
               de cooperação com a Universidade Federal Fluminense (Brasil), que tem possibilitado
@@ -47,7 +47,7 @@ export default function CooperacaoInternacionalPage() {
               <CardContent className="pt-6">
                 <div className="flex items-start gap-3">
                   <Globe2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-700 dark:text-gray-200">
+                  <p className="text-gray-700 dark:text-[#E4D9CC]">
                     Desde {estudantesRecebidos.desde}, a Faculdade já recebeu {estudantesRecebidos.total} estudantes
                     da {estudantesRecebidos.instituicao}, no curso de {estudantesRecebidos.curso}.
                   </p>
@@ -56,7 +56,7 @@ export default function CooperacaoInternacionalPage() {
             </Card>
 
             <SectionTitle title="Mobilidade de Estudantes da FCH" />
-            <p className="text-gray-700 mb-4 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 mb-4 leading-relaxed dark:text-[#E4D9CC]">
               Em acto recíproco, no ano lectivo 2024/2025, dois estudantes finalistas da FCH/UCAN foram
               enviados para a Universidade Federal Fluminense:
             </p>
@@ -64,15 +64,15 @@ export default function CooperacaoInternacionalPage() {
               {estudantesEnviados.map((estudante) => (
                 <Card key={estudante.nome}>
                   <CardContent className="pt-6">
-                    <p className="font-semibold text-gray-900 dark:text-gray-100">{estudante.nome}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{estudante.curso}</p>
+                    <p className="font-semibold text-gray-900 dark:text-[#F5F0EA]">{estudante.nome}</p>
+                    <p className="text-sm text-gray-600 dark:text-[#d8cfc4]">{estudante.curso}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
             <SectionTitle title="Mobilidade Docente" />
-            <p className="text-gray-700 leading-relaxed dark:text-gray-200">
+            <p className="text-gray-700 leading-relaxed dark:text-[#E4D9CC]">
               No ano lectivo 2025/2026, está prevista a ida da Dra. Edvalda Mendes para a Universidade
               do Minho.
             </p>

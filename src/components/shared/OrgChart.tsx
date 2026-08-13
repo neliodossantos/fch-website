@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect, useRef } from 'react'
 import { Mail } from 'lucide-react'
 import { Avatar } from '@/components/shared/Avatar'
 
@@ -29,8 +32,8 @@ function PersonCard({ node, isRoot }: { node: OrgPersonNode; isRoot?: boolean })
     <div
       className={
         isRoot
-          ? 'relative flex flex-col items-center rounded-2xl border border-gray-200 bg-white px-7 py-6 text-center shadow-sm dark:border-gray-700 dark:bg-gray-800'
-          : 'flex w-36 flex-col items-center rounded-2xl border border-gray-200 bg-white px-3 py-4 text-center shadow-sm transition-shadow hover:shadow-lg dark:border-gray-700 dark:bg-gray-800'
+          ? 'relative flex flex-col items-center rounded-2xl border border-gray-200 bg-white px-7 py-6 text-center shadow-sm dark:border-[#332a22] dark:bg-[#1f1a16]'
+          : 'flex w-36 flex-col items-center rounded-2xl border border-gray-200 bg-white px-3 py-4 text-center shadow-sm transition-shadow hover:shadow-lg dark:border-[#332a22] dark:bg-[#1f1a16]'
       }
     >
       {isRoot && (
@@ -46,12 +49,12 @@ function PersonCard({ node, isRoot }: { node: OrgPersonNode; isRoot?: boolean })
         {node.nome}
       </p>
       {node.cargo && (
-        <p className={isRoot ? 'mt-1 text-sm font-medium text-primary-dark dark:text-primary-light' : 'mt-0.5 text-xs text-gray-500 dark:text-gray-300'}>
+        <p className={isRoot ? 'mt-1 text-sm font-medium text-primary-dark dark:text-primary-light' : 'mt-0.5 text-xs text-gray-500 dark:text-[#d8cfc4]'}>
           {node.cargo}
         </p>
       )}
       {isRoot && node.email && (
-        <div className="mt-3 flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-300">
+        <div className="mt-3 flex items-center gap-1.5 text-xs text-gray-500 dark:text-[#d8cfc4]">
           <Mail className="h-3.5 w-3.5" />
           {node.email}
         </div>
@@ -108,8 +111,17 @@ function TreeNode({ node, isRoot }: { node: OrgNode; isRoot?: boolean }) {
 }
 
 export function OrgChart({ root }: { root: OrgNode }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (el) {
+      el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2
+    }
+  }, [])
+
   return (
-    <div className="org-tree overflow-x-auto pb-4">
+    <div ref={containerRef} className="org-tree overflow-x-auto pb-4">
       <ul className="min-w-max">
         <TreeNode node={root} isRoot />
       </ul>

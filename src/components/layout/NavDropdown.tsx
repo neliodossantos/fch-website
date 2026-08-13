@@ -4,7 +4,7 @@ import { NavItem } from '@/types'
 
 function NavMenuList({ items }: { items: NavItem[] }) {
   return (
-    <div className="w-64 rounded-xl border border-gray-200 bg-white py-2 shadow-xl dark:border-gray-700 dark:bg-gray-800">
+    <div className="w-64 rounded-xl border border-gray-200 bg-white py-2 shadow-xl dark:border-[#332a22] dark:bg-[#1f1a16]">
       {items.map(item => {
         const hasChildren = Boolean(item.children && item.children.length > 0)
 
@@ -13,7 +13,7 @@ function NavMenuList({ items }: { items: NavItem[] }) {
             <Link
               key={item.href}
               href={item.href}
-              className="block px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-primary/10 hover:text-primary-dark dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary-light"
+              className="block px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-primary/10 hover:text-primary-dark dark:text-[#E4D9CC] dark:hover:bg-[#332a22] dark:hover:text-primary-light"
             >
               {item.title}
             </Link>
@@ -24,7 +24,7 @@ function NavMenuList({ items }: { items: NavItem[] }) {
           <div key={item.href} className="group/l2 relative">
             <Link
               href={item.href}
-              className="flex items-center justify-between gap-2 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-primary/10 hover:text-primary-dark dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary-light"
+              className="flex items-center justify-between gap-2 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-primary/10 hover:text-primary-dark dark:text-[#E4D9CC] dark:hover:bg-[#332a22] dark:hover:text-primary-light"
             >
               {item.title}
               <ChevronRight className="h-3.5 w-3.5 flex-shrink-0" />

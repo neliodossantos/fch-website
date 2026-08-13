@@ -48,15 +48,15 @@ export default function AdmissoesPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
-            <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
+            <p className="text-lg text-gray-700 dark:text-[#E4D9CC] leading-relaxed mb-6">
               A Faculdade de Ciências Humanas recebe candidaturas de estudantes que
               desejam ingressar nos cursos de graduação (Psicologia e Línguas e Administração) e
               pós-graduação. O processo de admissão à graduação inclui provas de ingresso em Língua
               Portuguesa e Conhecimentos Gerais.
             </p>
-            <div className="bg-primary/10 dark:bg-gray-800 rounded-lg p-6">
+            <div className="bg-primary/10 dark:bg-[#1f1a16] rounded-lg p-6">
               <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Requisitos Gerais de Graduação</h3>
-              <p className="text-gray-600 dark:text-gray-200">
+              <p className="text-gray-600 dark:text-[#E4D9CC]">
                 Ter concluído o ensino médio ou equivalente, possuir os documentos originais que
                 atestam essa conclusão, apresentar o Bilhete de Identidade e ser aprovado nos exames
                 de admissão.
@@ -77,7 +77,7 @@ export default function AdmissoesPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">{section.description}</p>
+                    <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4">{section.description}</p>
                     <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
                       Ver mais <ArrowRight className="ml-2 w-4 h-4" />
                     </span>
@@ -87,13 +87,13 @@ export default function AdmissoesPage() {
             ))}
           </div>
           
-          <div className="bg-primary dark:bg-gray-800 text-white rounded-lg p-8 text-center">
+          <div className="bg-primary dark:bg-[#1f1a16] text-white rounded-lg p-8 text-center">
             <h3 className="text-2xl font-bold mb-4">Pronto para começar?</h3>
-            <p className="mb-6 text-white dark:text-gray-100">
+            <p className="mb-6 text-white dark:text-[#F5F0EA]">
               Inicie sua jornada académica na FCH. Escolha seu curso e prepare sua candidatura.
             </p>
             <Link href="/cursos">
-              <span className="inline-flex items-center px-6 py-3 bg-white text-primary dark:bg-gray-700 dark:text-white rounded-md hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors font-medium">
+              <span className="inline-flex items-center px-6 py-3 bg-white text-primary dark:bg-[#332a22] dark:text-white rounded-md hover:bg-gray-100 dark:hover:bg-[#4a3c30] transition-colors font-medium">
                 Ver Cursos Disponíveis
               </span>
             </Link>

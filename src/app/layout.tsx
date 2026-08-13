@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+      <body className="min-h-screen flex flex-col bg-white dark:bg-[#151312] text-gray-900 dark:text-[#F5F0EA] transition-colors">
         <ThemeProvider>
           <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>

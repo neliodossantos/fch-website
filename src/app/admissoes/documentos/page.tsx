@@ -51,7 +51,7 @@ export default function DocumentosPage() {
                     {docsGraduacao.map((doc, index) => (
                       <li key={index} className="flex items-start">
                         <FileText className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-200">{doc}</span>
+                        <span className="text-gray-700 dark:text-[#E4D9CC]">{doc}</span>
                       </li>
                     ))}
                   </ul>
@@ -66,8 +66,8 @@ export default function DocumentosPage() {
                   <ul className="space-y-3">
                     {docsPosgraduacao.map((doc, index) => (
                       <li key={index} className="flex items-start">
-                        <FileText className="w-5 h-5 text-gray-700 dark:text-gray-200 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-200">{doc}</span>
+                        <FileText className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC] mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700 dark:text-[#E4D9CC]">{doc}</span>
                       </li>
                     ))}
                   </ul>

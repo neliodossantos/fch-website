@@ -27,7 +27,7 @@ export default async function NoticiasPage() {
                 <Link
                   key={noticia.id}
                   href={`/noticias/${noticia.slug}`}
-                  className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
+                  className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-[#332a22] dark:bg-[#151312]"
                 >
                   {noticia.imagem_url && (
                     <div className="relative mb-4 h-40 w-full overflow-hidden rounded-xl">
@@ -39,7 +39,7 @@ export default async function NoticiasPage() {
                     {new Date(noticia.data_publicacao).toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' })}
                   </div>
                   <h2 className="mt-3 text-lg font-bold text-gray-900 dark:text-white">{noticia.titulo}</h2>
-                  <p className="mt-2 line-clamp-3 text-sm text-gray-600 dark:text-gray-300">{noticia.resumo}</p>
+                  <p className="mt-2 line-clamp-3 text-sm text-gray-600 dark:text-[#d8cfc4]">{noticia.resumo}</p>
                   <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary-dark dark:text-primary-light">
                     Ler notícia <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                   </span>
@@ -47,7 +47,7 @@ export default async function NoticiasPage() {
               ))}
             </div>
           ) : (
-            <p className="text-center text-gray-500 dark:text-gray-400">Sem notícias disponíveis.</p>
+            <p className="text-center text-gray-500 dark:text-[#b8ab9c]">Sem notícias disponíveis.</p>
           )}
         </div>
       </section>

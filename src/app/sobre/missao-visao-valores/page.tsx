@@ -57,11 +57,11 @@ export default function MissaoVisaoValoresPage() {
           
           <div className="max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 dark:bg-gray-700 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 dark:bg-[#332a22] mb-4">
                 <Heart className="w-8 h-8 text-primary" />
               </div>
               <h2 className="text-3xl font-bold text-primary mb-4">Nossos Valores</h2>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-[#d8cfc4]">
                 A actuação da Faculdade de Ciências Humanas está alinhada com os valores institucionais
                 da Universidade Católica de Angola, devendo estar presentes em todos os seus programas,
                 actividades e na sua actuação.

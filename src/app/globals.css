@@ -32,16 +32,18 @@ body {
   }
 
   .dark {
-    --background: #111827;
-    --foreground: #F9FAFB;
+    --background: #151312;
+    --foreground: #F5F0EA;
     --primary: #F5A623;
+    --primary-dark: #E39A16;
+    --primary-light: #FFD35A;
   }
 
   * {
-    @apply border-gray-200 dark:border-gray-700;
+    @apply border-gray-200 dark:border-[#332a22];
   }
   body {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors antialiased;
+    @apply bg-white text-gray-900 transition-colors antialiased dark:bg-[#151312] dark:text-[#F5F0EA];
   }
 }
 
@@ -55,12 +57,14 @@ body {
   }
 
   .section-heading {
-    @apply mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl;
+    @apply mt-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-[#F5F0EA] sm:text-4xl;
   }
 }
 
 /* Organograma: técnica clássica de árvore CSS (ul/li aninhados + pseudo-elementos como conectores) */
 @layer components {
+  .org-tree { outline: 3px solid red; }
+  .org-tree li { outline: 1px solid lime; }
   .org-tree ul {
     display: flex;
     justify-content: center;

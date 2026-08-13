@@ -15,7 +15,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md border-b-4 border-primary">
+    <header className="sticky top-0 z-50 bg-white dark:bg-[#1f1a16] shadow-md border-b-4 border-primary">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -36,7 +36,7 @@ export function Header() {
               <div key={item.href} className="relative group">
                 <Link
                   href={item.href}
-                  className="whitespace-nowrap px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary-dark dark:hover:text-primary-light hover:bg-primary/10 dark:hover:bg-gray-700 rounded-md inline-flex items-center transition-colors"
+                  className="whitespace-nowrap px-3 py-2 text-sm font-medium text-gray-700 dark:text-[#E4D9CC] hover:text-primary-dark dark:hover:text-primary-light hover:bg-primary/10 dark:hover:bg-[#332a22] rounded-md inline-flex items-center transition-colors"
                 >
                   {item.title}
                   {item.children && <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />}
@@ -58,7 +58,7 @@ export function Header() {
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
+              className="p-2 text-gray-700 dark:text-[#E4D9CC] hover:bg-gray-100 dark:hover:bg-[#332a22] rounded-md"
               aria-label="Menu"
               aria-expanded={isMobileMenuOpen}
             >

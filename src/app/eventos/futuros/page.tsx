@@ -42,8 +42,8 @@ export default async function EventosFuturosPage() {
                         className="object-cover"
                       />
                     ) : (
-                      <div className="bg-gray-200 dark:bg-gray-700 h-full flex items-center justify-center">
-                        <span className="text-gray-500 dark:text-gray-300">Sem imagem</span>
+                      <div className="bg-gray-200 dark:bg-[#332a22] h-full flex items-center justify-center">
+                        <span className="text-gray-500 dark:text-[#d8cfc4]">Sem imagem</span>
                       </div>
                     )}
                   </div>
@@ -58,15 +58,15 @@ export default async function EventosFuturosPage() {
                         {evento.tipo.charAt(0).toUpperCase() + evento.tipo.slice(1)}
                       </span>
                     </div>
-                    <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-[#b8ab9c] mb-2">
                       <Calendar className="w-4 h-4" />
                       <span>{new Date(evento.data).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
                     </div>
                     <CardTitle className="text-lg">{evento.titulo}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 text-sm mb-4 dark:text-gray-300">{evento.descricao}</p>
-                    <div className="space-y-2 text-sm text-gray-500 mb-4 dark:text-gray-400">
+                    <p className="text-gray-600 text-sm mb-4 dark:text-[#d8cfc4]">{evento.descricao}</p>
+                    <div className="space-y-2 text-sm text-gray-500 mb-4 dark:text-[#b8ab9c]">
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-2" />
                         {evento.hora}
@@ -87,8 +87,8 @@ export default async function EventosFuturosPage() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-500 text-lg dark:text-gray-400">Não há eventos programados no momento.</p>
-              <p className="text-gray-400 dark:text-gray-500">Volte em breve para conferir as novidades.</p>
+              <p className="text-gray-500 text-lg dark:text-[#b8ab9c]">Não há eventos programados no momento.</p>
+              <p className="text-gray-400 dark:text-[#9c8d7d]">Volte em breve para conferir as novidades.</p>
             </div>
           )}
         </div>

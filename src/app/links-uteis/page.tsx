@@ -56,9 +56,9 @@ export default function LinksUteisPage() {
                   <a href={link.url} className="flex items-center justify-between group">
                     <div>
                       <h3 className="font-medium text-gray-900 group-hover:text-primary dark:text-white">{link.titulo}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{link.descricao}</p>
+                      <p className="text-sm text-gray-500 dark:text-[#b8ab9c]">{link.descricao}</p>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-gray-500" />
+                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-[#9c8d7d]" />
                   </a>
                 </CardContent>
               </Card>
@@ -73,9 +73,9 @@ export default function LinksUteisPage() {
                   <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group">
                     <div>
                       <h3 className="font-medium text-gray-900 group-hover:text-primary dark:text-white">{link.titulo}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{link.descricao}</p>
+                      <p className="text-sm text-gray-500 dark:text-[#b8ab9c]">{link.descricao}</p>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-gray-500" />
+                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-[#9c8d7d]" />
                   </a>
                 </CardContent>
               </Card>
@@ -90,9 +90,9 @@ export default function LinksUteisPage() {
                   <a href={link.url} className="flex items-center justify-between group">
                     <div>
                       <h3 className="font-medium text-gray-900 group-hover:text-primary dark:text-white">{link.titulo}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{link.descricao}</p>
+                      <p className="text-sm text-gray-500 dark:text-[#b8ab9c]">{link.descricao}</p>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-gray-500" />
+                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-[#9c8d7d]" />
                   </a>
                 </CardContent>
               </Card>
@@ -107,9 +107,9 @@ export default function LinksUteisPage() {
                   <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group">
                     <div>
                       <h3 className="font-medium text-gray-900 group-hover:text-primary dark:text-white">{link.titulo}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{link.descricao}</p>
+                      <p className="text-sm text-gray-500 dark:text-[#b8ab9c]">{link.descricao}</p>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-gray-500" />
+                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary dark:text-[#9c8d7d]" />
                   </a>
                 </CardContent>
               </Card>

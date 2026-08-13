@@ -52,7 +52,7 @@ export default function CandidaturaPage() {
                     {requisitos.map((req, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-200">{req}</span>
+                        <span className="text-gray-700 dark:text-[#E4D9CC]">{req}</span>
                       </li>
                     ))}
                   </ul>
@@ -66,7 +66,7 @@ export default function CandidaturaPage() {
                     {documentos.map((doc, index) => (
                       <li key={index} className="flex items-start">
                         <FileText className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-200">{doc}</span>
+                        <span className="text-gray-700 dark:text-[#E4D9CC]">{doc}</span>
                       </li>
                     ))}
                   </ul>
@@ -82,7 +82,7 @@ export default function CandidaturaPage() {
                       <CardTitle className="text-base">{etapa.titulo}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">{etapa.descricao}</p>
+                      <p className="text-sm text-gray-600 dark:text-[#d8cfc4]">{etapa.descricao}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -100,27 +100,27 @@ export default function CandidaturaPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Ano do estágio</p>
-                      <p className="text-gray-600 dark:text-gray-400">5º ano do curso de Psicologia</p>
+                      <p className="text-sm font-medium text-gray-700 dark:text-[#d8cfc4]">Ano do estágio</p>
+                      <p className="text-gray-600 dark:text-[#b8ab9c]">5º ano do curso de Psicologia</p>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Duração</p>
-                      <p className="text-gray-600 dark:text-gray-400">3 meses (288 horas)</p>
+                      <p className="text-sm font-medium text-gray-700 dark:text-[#d8cfc4]">Duração</p>
+                      <p className="text-gray-600 dark:text-[#b8ab9c]">3 meses (288 horas)</p>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Regime</p>
-                      <p className="text-gray-600 dark:text-gray-400">Presencial e obrigatório</p>
+                      <p className="text-sm font-medium text-gray-700 dark:text-[#d8cfc4]">Regime</p>
+                      <p className="text-gray-600 dark:text-[#b8ab9c]">Presencial e obrigatório</p>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Acompanhamento</p>
-                      <p className="text-gray-600 dark:text-gray-400">Supervisão de docente da UCAN e orientação de profissional da instituição parceira</p>
+                      <p className="text-sm font-medium text-gray-700 dark:text-[#d8cfc4]">Acompanhamento</p>
+                      <p className="text-gray-600 dark:text-[#b8ab9c]">Supervisão de docente da UCAN e orientação de profissional da instituição parceira</p>
                     </div>
                   </div>
 
                   <div className="mt-6 p-4 bg-primary/5 dark:bg-primary/10 rounded-lg">
                     <div className="flex items-start">
                       <Info className="w-5 h-5 text-primary mr-2 flex-shrink-0" />
-                      <p className="text-sm text-gray-700 dark:text-gray-200">
+                      <p className="text-sm text-gray-700 dark:text-[#E4D9CC]">
                         A Faculdade tem também apostado na implementação de estágio profissional para
                         o curso de Línguas e Administração.
                       </p>
@@ -128,8 +128,8 @@ export default function CandidaturaPage() {
                   </div>
 
                   <div className="mt-6 pt-6 border-t">
-                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Horário de Atendimento</p>
-                    <div className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm font-medium text-gray-700 dark:text-[#d8cfc4] mb-3">Horário de Atendimento</p>
+                    <div className="space-y-1 text-sm text-gray-600 dark:text-[#b8ab9c]">
                       <div className="flex justify-between"><span>3ª Feira</span><span>08h–15h</span></div>
                       <div className="flex justify-between"><span>5ª Feira</span><span>8h–16h</span></div>
                       <div className="flex justify-between"><span>6ª Feira</span><span>8h–11h</span></div>

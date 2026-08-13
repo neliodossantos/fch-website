@@ -2,7 +2,7 @@ import { MapPin, Globe } from 'lucide-react'
 
 export function TopBar() {
   return (
-    <div className="bg-primary dark:bg-gray-900 text-white dark:text-gray-100 py-2 hidden md:block">
+    <div className="bg-primary dark:bg-[#151312] text-white dark:text-[#F5F0EA] py-2 hidden md:block">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between text-xs sm:text-sm">
           {/* Lado Esquerdo - Informações */}

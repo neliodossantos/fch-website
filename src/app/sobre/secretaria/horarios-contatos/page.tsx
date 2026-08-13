@@ -48,14 +48,14 @@ export default function HorariosContactosPage() {
                         index < horarios.length - 1 ? 'border-b border-gray-100' : ''
                       }`}
                     >
-                      <span className="font-medium text-gray-700 dark:text-gray-200">{item.dia}</span>
-                      <span className={item.horario === 'Fechado' ? 'text-gray-400 dark:text-gray-500' : 'text-gray-600 dark:text-gray-200'}>
+                      <span className="font-medium text-gray-700 dark:text-[#E4D9CC]">{item.dia}</span>
+                      <span className={item.horario === 'Fechado' ? 'text-gray-400 dark:text-[#9c8d7d]' : 'text-gray-600 dark:text-[#E4D9CC]'}>
                         {item.horario}
                       </span>
                     </div>
                   ))}
                 </div>
-                <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">
+                <p className="mt-4 text-sm text-gray-500 dark:text-[#9c8d7d]">
                   * Horários especiais durante feriados e períodos de férias académicas.
                 </p>
               </CardContent>
@@ -65,14 +65,14 @@ export default function HorariosContactosPage() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-[#332a22] flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC]" />
                     </div>
                     <CardTitle>Telefones</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-200">
+                  <ul className="space-y-2 text-gray-600 dark:text-[#E4D9CC]">
                     <li><strong>Secretaria de Pós-Graduações:</strong> +244 927 609 890</li>
                     <li><strong>Laboratório de Psicologia:</strong> +244 923 820 314</li>
                     <li><strong>Coordenação de Estágios:</strong> +244 928 001 050</li>
@@ -83,14 +83,14 @@ export default function HorariosContactosPage() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-gray-700 flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 dark:bg-[#332a22] flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-gray-700 dark:text-[#E4D9CC]" />
                     </div>
                     <CardTitle>Email</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-200">
+                  <ul className="space-y-2 text-gray-600 dark:text-[#E4D9CC]">
                     <li>
                       <strong>Geral:</strong>{' '}
                       <a href="mailto:fch@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
@@ -117,7 +117,7 @@ export default function HorariosContactosPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-200">
+                  <p className="text-gray-600 dark:text-[#E4D9CC]">
                     Av. Pedro de Castro Van-Dúnem, 24<br />
                     Palanca, Kilamba Kiaxi<br />
                     C.P. 2064, Luanda - Angola
