@@ -1,9 +1,10 @@
 'use client'
 
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Mail, MapPin, Phone, Clock, Send } from 'lucide-react'
+import { CheckCircle2, Mail, MapPin, Phone, Clock, Send } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
@@ -19,6 +20,7 @@ const contactSchema = z.object({
 type ContactForm = z.infer<typeof contactSchema>
 
 export default function ContatoPage() {
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const {
     register,
     handleSubmit,
@@ -31,7 +33,7 @@ export default function ContatoPage() {
   const onSubmit = async (_data: ContactForm) => {
     // Simular envio
     await new Promise(resolve => setTimeout(resolve, 1000))
-    alert('Mensagem enviada com sucesso! Entraremos em contacto em breve.')
+    setIsSubmitted(true)
     reset()
   }
 
@@ -166,49 +168,66 @@ export default function ContatoPage() {
 
             <div>
               <Card>
-                <CardHeader>
-                  <CardTitle>Envie-nos uma mensagem</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                    <Input
-                      label="Nome completo"
-                      placeholder="Seu nome"
-                      error={errors.nome?.message}
-                      {...register('nome')}
-                    />
-                    <Input
-                      type="email"
-                      label="Email"
-                      placeholder="seu@email.com"
-                      error={errors.email?.message}
-                      {...register('email')}
-                    />
-                    <Input
-                      label="Assunto"
-                      placeholder="Assunto da mensagem"
-                      error={errors.assunto?.message}
-                      {...register('assunto')}
-                    />
-                    <Textarea
-                      label="Mensagem"
-                      placeholder="Escreva sua mensagem..."
-                      rows={5}
-                      error={errors.mensagem?.message}
-                      {...register('mensagem')}
-                    />
-                    <Button type="submit" disabled={isSubmitting} className="w-full">
-                      {isSubmitting ? (
-                        'Enviando...'
-                      ) : (
-                        <>
-                          <Send className="w-4 h-4 mr-2" />
-                          Enviar Mensagem
-                        </>
-                      )}
+                {isSubmitted ? (
+                  <CardContent className="flex flex-col items-center py-14 text-center">
+                    <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
+                      <CheckCircle2 className="h-7 w-7 text-green-600 dark:text-green-400" />
+                    </span>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">Mensagem enviada</h3>
+                    <p className="mt-2 max-w-xs text-sm text-gray-600 dark:text-gray-300">
+                      Obrigado pelo contacto. A nossa equipa responde o mais brevemente possível.
+                    </p>
+                    <Button variant="outline" className="mt-6" onClick={() => setIsSubmitted(false)}>
+                      Enviar outra mensagem
                     </Button>
-                  </form>
-                </CardContent>
+                  </CardContent>
+                ) : (
+                  <>
+                    <CardHeader>
+                      <CardTitle>Envie-nos uma mensagem</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                        <Input
+                          label="Nome completo"
+                          placeholder="Seu nome"
+                          error={errors.nome?.message}
+                          {...register('nome')}
+                        />
+                        <Input
+                          type="email"
+                          label="Email"
+                          placeholder="seu@email.com"
+                          error={errors.email?.message}
+                          {...register('email')}
+                        />
+                        <Input
+                          label="Assunto"
+                          placeholder="Assunto da mensagem"
+                          error={errors.assunto?.message}
+                          {...register('assunto')}
+                        />
+                        <Textarea
+                          label="Mensagem"
+                          placeholder="Escreva sua mensagem..."
+                          rows={5}
+                          error={errors.mensagem?.message}
+                          {...register('mensagem')}
+                        />
+                        <Button type="submit" disabled={isSubmitting} className="w-full">
+                          {isSubmitting ? (
+                            'Enviando...'
+                          ) : (
+                            <>
+                              <Send className="w-4 h-4 mr-2" />
+                              Enviar Mensagem
+                            </>
+                          )}
+                        </Button>
+                      </form>
+                    </CardContent>
+                  </>
+                )}
               </Card>
             </div>
           </div>

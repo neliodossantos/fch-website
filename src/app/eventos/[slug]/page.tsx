@@ -91,7 +91,8 @@ export default async function EventoDetalhePage({ params }: Props) {
                     alt={evento.titulo}
                     width={800}
                     height={400}
-                    className="w-full h-auto object-cover"
+                    unoptimized
+                    className="w-full h-auto max-h-[420px] object-cover"
                   />
                 ) : (
                   <div className="bg-gray-200 dark:bg-gray-700 h-64 flex items-center justify-center">

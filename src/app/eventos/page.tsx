@@ -46,6 +46,7 @@ export default async function EventosPage() {
                         src={evento.imagem_url}
                         alt={evento.titulo}
                         fill
+                        unoptimized
                         className="object-cover"
                       />
                     ) : (
@@ -101,6 +102,7 @@ export default async function EventosPage() {
                         src={evento.imagem_url}
                         alt={evento.titulo}
                         fill
+                        unoptimized
                         className="object-cover opacity-75"
                       />
                     ) : (

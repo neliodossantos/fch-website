@@ -73,7 +73,7 @@ export default async function NoticiaDetalhePage({ params }: Props) {
                 width={800}
                 height={400}
                 unoptimized
-                className="h-auto w-full object-cover"
+                className="h-auto w-full max-h-[420px] object-cover"
               />
             </div>
           )}

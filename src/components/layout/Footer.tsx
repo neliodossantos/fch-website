@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from 'lucide-react'
-import logo from './FCH.png'
+import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react'
 import { NewsletterForm } from './NewsletterForm'
 import { BackToTopButton } from './BackToTopButton'
+
+const logo = '/images/logo/FCH.png'
 
 const quickLinks = [
   { href: '/cursos', label: 'Cursos' },
@@ -23,8 +24,8 @@ const resourceLinks = [
 ]
 
 const socialLinks = [
-  { href: '#', label: 'Facebook', Icon: Facebook },
-  { href: '#', label: 'Instagram', Icon: Instagram },
+  { href: 'https://www.facebook.com/ucan', label: 'Facebook', Icon: Facebook },
+  { href: 'https://www.instagram.com/ucan', label: 'Instagram', Icon: Instagram },
 ]
 
 export function Footer() {
@@ -46,6 +47,8 @@ export function Footer() {
               <a
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 className="flex h-8 w-8 items-center justify-center rounded-xl border-none bg-primary text-white transition-colors hover:bg-primary-dark"
               >
@@ -90,9 +93,8 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
                 <span className="text-sm text-gray-600 dark:text-gray-200">
-                  Av. Pedro de Castro
-                  Van-Dúnem, 24
-                  Palanca, Kilamba Kiaxi
+                  Av. Pedro de Castro Van-Dúnem, 24<br />
+                  Palanca, Kilamba Kiaxi<br />
                   C.P. 2064, Luanda
                 </span>
               </li>

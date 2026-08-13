@@ -38,6 +38,7 @@ export default async function EventosRealizadosPage() {
                         src={evento.imagem_url}
                         alt={evento.titulo}
                         fill
+                        unoptimized
                         className="object-cover opacity-75"
                       />
                     ) : (

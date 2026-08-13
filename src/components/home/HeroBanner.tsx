@@ -1,8 +1,9 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, Brain,  Users } from 'lucide-react'
-import banner from './PRINCIPAL-5.png'
+import { ArrowRight, BookOpen, Brain } from 'lucide-react'
 import { getHeroBanner } from '@/lib/queries'
+import { HeroBannerImage } from './HeroBannerImage'
+
+const banner = '/images/home/principal.png'
 
 export async function HeroBanner() {
   const cmsImage = await getHeroBanner()
@@ -32,22 +33,26 @@ export async function HeroBanner() {
           </div>
           <div className="mt-10 flex flex-wrap gap-7 border-t border-gray-900/15 pt-6 text-gray-900">
             <div><strong className="block text-2xl font-extrabold">20+</strong><span className="text-sm">anos de excelência</span></div>
-            <div><strong className="block text-2xl font-extrabold">5</strong><span className="text-sm">programas de formação</span></div>
+            <div><strong className="block text-2xl font-extrabold">7</strong><span className="text-sm">programas de formação</span></div>
             <div><strong className="block text-2xl font-extrabold">1</strong><span className="text-sm">comunidade FCH</span></div>
           </div>
         </div>
 
         <div className="relative mx-auto w-full max-w-xl lg:mx-0">
           <div className="relative aspect-[4/4.6] overflow-hidden rounded-[2rem] bg-gray-200 shadow-2xl shadow-gray-900/20 lg:ml-auto">
-            <Image src={image} alt={cmsImage?.alt || 'Estudantes da Faculdade de Ciências Humanas'} fill unoptimized={Boolean(cmsImage)} className="object-cover" priority />
+            <HeroBannerImage
+              src={image}
+              fallbackSrc={banner}
+              alt={cmsImage?.alt || 'Estudantes da Faculdade de Ciências Humanas'}
+              unoptimized={Boolean(cmsImage)}
+            />
             <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-gray-950/75 to-transparent" />
-            <p className="absolute hidden bottom-7 left-7 right-7 text-xl font-lighter leading-tight text-white sm:text-xl">Ensinar, aprender pesquisar para um futuro mais humano.</p>
           </div>
           <div className="absolute -bottom-5 -left-3 hidden items-center gap-3 rounded-2xl bg-white p-4 shadow-xl sm:flex lg:-left-10">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-primary"><BookOpen className="h-5 w-5 text-gray-950" /></span>
             <span className="text-sm font-semibold text-gray-800">Ensinar, aprender<br /> e pesquisar para um futuro mais humano.</span>
           </div>
-          <div className="absolute -right-24 top-8 hidden rounded-2xl bg-gray-50 py-2 px-4 text-white shadow-xl lg:block">
+          <div className="absolute -right-4 top-8 hidden rounded-2xl bg-gray-50 py-2 px-4 text-white shadow-xl lg:block 2xl:-right-16">
             <Brain className="mb-2 h-5 w-5 mx-auto text-primary" /><span className="text-xs text-black font-semibold uppercase tracking-wider">Conhecimento<br />com propósito</span>
           </div>
         </div>

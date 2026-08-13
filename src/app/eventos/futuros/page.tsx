@@ -38,6 +38,7 @@ export default async function EventosFuturosPage() {
                         src={evento.imagem_url}
                         alt={evento.titulo}
                         fill
+                        unoptimized
                         className="object-cover"
                       />
                     ) : (
