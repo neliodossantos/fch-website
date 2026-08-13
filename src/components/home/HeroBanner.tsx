@@ -1,19 +1,46 @@
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Brain } from 'lucide-react'
 import { getHeroBanner } from '@/lib/queries'
-import { HeroBannerImage } from './HeroBannerImage'
+import { HeroCarousel } from './HeroCarousel'
 
-const banner = '/images/home/principal.png'
+const slideImages = [
+  {
+    src: '/images/home/slide/image1.png',
+    alt: 'Estudantes da Faculdade de Ciências Humanas',
+  },
+  {
+    src: '/images/home/slide/image4.jpeg',
+    alt: 'Estudantes em atividade na Universidade Católica de Angola',
+  },
+  {
+    src: '/images/home/slide/image5.jpeg',
+    alt: 'Comunidade académica da Faculdade de Ciências Humanas',
+  },
+  {
+    src: '/images/home/slide/image6.jpeg',
+    alt: 'Momento de convívio da comunidade universitária',
+  },
+]
 
 export async function HeroBanner() {
   const cmsImage = await getHeroBanner()
-  const image = cmsImage?.url || banner
+  const slides = cmsImage
+    ? [
+        {
+          src: cmsImage.url,
+          fallbackSrc: slideImages[0].src,
+          alt: cmsImage.alt || 'Estudantes da Faculdade de Ciências Humanas',
+          unoptimized: true,
+        },
+        ...slideImages,
+      ]
+    : slideImages
 
   return (
     <section className="relative overflow-hidden bg-[#f7f7f5]">
       <div className="absolute left-0 top-0 h-full w-full bg-primary lg:w-[58%]" />
       <div className="relative container mx-auto grid min-h-[590px] items-center gap-10 px-5 py-14 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-16">
-        <div className="max-w-xl">
+        <div className="max-w-xl motion-safe:animate-[hero-content-in_700ms_ease-out_both]">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-gray-800">
             Universidade Católica de Angola
           </p>
@@ -39,14 +66,8 @@ export async function HeroBanner() {
         </div>
 
         <div className="relative mx-auto w-full max-w-xl lg:mx-0">
-          <div className="relative aspect-[4/4.6] overflow-hidden rounded-[2rem] bg-gray-200 shadow-2xl shadow-gray-900/20 lg:ml-auto">
-            <HeroBannerImage
-              src={image}
-              fallbackSrc={banner}
-              alt={cmsImage?.alt || 'Estudantes da Faculdade de Ciências Humanas'}
-              unoptimized={Boolean(cmsImage)}
-            />
-            <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-gray-950/75 to-transparent" />
+          <div className="relative aspect-[4/4.6] overflow-hidden rounded-[2rem] bg-gray-200 shadow-2xl shadow-gray-900/20 motion-safe:animate-[hero-image-in_900ms_cubic-bezier(0.16,1,0.3,1)_both] lg:ml-auto">
+            <HeroCarousel slides={slides} />
           </div>
           <div className="absolute -bottom-5 -left-3 hidden items-center gap-3 rounded-2xl bg-white p-4 shadow-xl sm:flex lg:-left-10">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-primary"><BookOpen className="h-5 w-5 text-gray-950" /></span>
