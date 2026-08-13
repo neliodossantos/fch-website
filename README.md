@@ -68,7 +68,7 @@ FCH_API_URL=http://localhost:3005/api
 NEXT_PUBLIC_FCH_API_URL=http://localhost:3005/api
 ```
 
-Aceda a [http://localhost:3000/admin](http://localhost:3000/admin) para gerir secções, posts, notícias e acordos. A dashboard permite criar, editar, publicar, apagar e adicionar/remover imagens de cada conteúdo.
+Aceda a [http://localhost:3000/admin](http://localhost:3000/admin) para gerir destaques, notícias e eventos. Notícias (`/admin/noticias`) e Eventos (`/admin/eventos`) têm editor de página inteira próprio, com categoria/autor/tags/SEO (notícias) ou datas/local/organizadores/agenda (eventos), galeria de imagens, vídeo, secções com texto/imagens/vídeo reordenáveis por arrastar, e pré-visualização antes de publicar.
 
 ### Scripts Disponíveis
 

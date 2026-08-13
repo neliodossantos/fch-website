@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { Field, Check } from '../AdminFormControls'
 import { TagInput } from '../shared/TagInput'
 import { MediaGallery, MediaAdmin } from '../shared/MediaGallery'
@@ -70,7 +71,10 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
   return (
     <div className="space-y-6">
       <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
-        <h2 className="mb-5 text-xl font-bold">{id ? 'Editar notícia' : 'Nova notícia'}</h2>
+        <div className="mb-5 flex items-center justify-between">
+          <h2 className="text-xl font-bold">{id ? 'Editar notícia' : 'Nova notícia'}</h2>
+          {id && <Link href={`/admin/noticias/${id}/preview`} target="_blank" className="text-sm font-semibold text-primary-dark hover:underline">Pré-visualizar →</Link>}
+        </div>
         {error && <p className="mb-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">{error}</p>}
         {notice && <p className="mb-4 rounded-lg bg-green-50 p-3 text-sm text-green-700">{notice}</p>}
         <form onSubmit={save} className="space-y-4">

@@ -2,6 +2,7 @@
 
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { Plus, Trash2 } from 'lucide-react'
 import { Field, Check } from '../AdminFormControls'
 import { TagInput } from '../shared/TagInput'
@@ -78,7 +79,10 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
   return (
     <div className="space-y-6">
       <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
-        <h2 className="mb-5 text-xl font-bold">{id ? 'Editar evento' : 'Novo evento'}</h2>
+        <div className="mb-5 flex items-center justify-between">
+          <h2 className="text-xl font-bold">{id ? 'Editar evento' : 'Novo evento'}</h2>
+          {id && <Link href={`/admin/eventos/${id}/preview`} target="_blank" className="text-sm font-semibold text-primary-dark hover:underline">Pré-visualizar →</Link>}
+        </div>
         {error && <p className="mb-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">{error}</p>}
         {notice && <p className="mb-4 rounded-lg bg-green-50 p-3 text-sm text-green-700">{notice}</p>}
         <form onSubmit={save} className="space-y-4">
