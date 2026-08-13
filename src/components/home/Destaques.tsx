@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, BookOpen, CalendarDays, BriefcaseBusiness, FlaskConical, Users, Brain, type LucideIcon } from 'lucide-react'
-import { getDestaques } from '@/lib/queries'
+import { getDestaques, type HighlightDisplay } from '@/lib/queries'
 
 const iconMap: Record<string, LucideIcon> = {
   'book-open': BookOpen,
@@ -12,7 +12,7 @@ const iconMap: Record<string, LucideIcon> = {
   'brain': Brain,
 }
 
-const FALLBACK_DESTAQUES = [
+const FALLBACK_DESTAQUES: HighlightDisplay[] = [
   { id: 'cursos', icon: 'book-open', title: 'Cursos', description: 'Licenciaturas e mestrados para construir o seu percurso.', href: '/cursos' },
   { id: 'eventos', icon: 'calendar-days', title: 'Eventos', description: 'Debates, conferências e experiências que aproximam ideias.', href: '/eventos' },
   { id: 'extensao', icon: 'users', title: 'Extensão', description: 'Formação contínua para a comunidade e profissionais.', href: '/extensao' },
