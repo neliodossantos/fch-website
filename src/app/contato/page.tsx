@@ -97,10 +97,10 @@ export default function ContatoPage() {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-gray-600 dark:text-[#d8cfc4]">
-                      <li><strong>Geral:</strong> <a href="mailto:fch@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">fch@ucan.edu</a></li>
-                      <li><strong>Laboratório de Psicologia:</strong> <a href="mailto:laboratorio.psicologia@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">laboratorio.psicologia@ucan.edu</a></li>
-                      <li><strong>Estágios:</strong> <a href="mailto:arieth.andrade@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">arieth.andrade@ucan.edu</a></li>
-                      <li><strong>Pós-Graduações:</strong> <a href="mailto:yola.filipe@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">yola.filipe@ucan.edu</a></li>
+                      <li><strong>Geral:</strong> <a href="mailto:fch@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-primary">fch@ucan.edu</a></li>
+                      <li><strong>Laboratório de Psicologia:</strong> <a href="mailto:laboratorio.psicologia@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-primary">laboratorio.psicologia@ucan.edu</a></li>
+                      <li><strong>Estágios:</strong> <a href="mailto:arieth.andrade@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-primary">arieth.andrade@ucan.edu</a></li>
+                      <li><strong>Pós-Graduações:</strong> <a href="mailto:yola.filipe@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-primary">yola.filipe@ucan.edu</a></li>
                     </ul>
                   </CardContent>
                 </Card>

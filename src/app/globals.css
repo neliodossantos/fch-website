@@ -22,6 +22,30 @@ body {
   to { opacity: 1; transform: translateX(0) scale(1); }
 }
 
+@keyframes lightbox-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lightbox-media-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @layer base {
   :root {
     --primary: #F5A623;
@@ -63,6 +87,82 @@ body {
 
 /* Organograma: técnica clássica de árvore CSS (ul/li aninhados + pseudo-elementos como conectores) */
 @layer components {
+  /* O painel administrativo usa componentes de formulário próprios; estas regras
+     completam o tema escuro para estados, listas e controlos nativos. */
+  .dark .admin-shell {
+    color: #F5F0EA;
+  }
+
+  .dark .admin-shell .bg-white {
+    background-color: #211d1a;
+  }
+
+  .dark .admin-shell .bg-gray-50,
+  .dark .admin-shell .bg-gray-100,
+  .dark .admin-shell .bg-slate-100 {
+    background-color: #2b2521;
+  }
+
+  .dark .admin-shell .text-gray-900,
+  .dark .admin-shell .text-gray-800 {
+    color: #F5F0EA;
+  }
+
+  .dark .admin-shell .text-gray-700,
+  .dark .admin-shell .text-gray-600,
+  .dark .admin-shell .text-gray-500 {
+    color: #d8cfc4;
+  }
+
+  .dark .admin-shell .text-gray-400 {
+    color: #aaa097;
+  }
+
+  .dark .admin-shell input,
+  .dark .admin-shell select,
+  .dark .admin-shell textarea {
+    color: #F5F0EA;
+    border-color: #4a4038;
+  }
+
+  .dark .admin-shell option {
+    background-color: #211d1a;
+    color: #F5F0EA;
+  }
+
+  .dark .admin-shell input[type='file'] {
+    color: #d8cfc4;
+  }
+
+  .dark .admin-shell .bg-red-50 {
+    background-color: #3b1d1d;
+  }
+
+  .dark .admin-shell .border-red-100 {
+    border-color: #7f3030;
+  }
+
+  .dark .admin-shell .text-red-700 {
+    color: #fca5a5;
+  }
+
+  .dark .admin-shell .bg-green-50 {
+    background-color: #193326;
+  }
+
+  .dark .admin-shell .text-green-700 {
+    color: #86efac;
+  }
+
+  .dark .admin-shell .bg-amber-50,
+  .dark .admin-shell .hover\:bg-amber-50:hover {
+    background-color: #443116;
+  }
+
+  .dark .admin-shell .hover\:bg-red-50:hover {
+    background-color: #3b1d1d;
+  }
+
   .org-tree { outline: 3px solid red; }
   .org-tree li { outline: 1px solid lime; }
   .org-tree ul {

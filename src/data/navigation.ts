@@ -1,6 +1,28 @@
 import { NavItem } from '@/types'
+import { Locale, localizePath } from '@/lib/i18n'
+
+const aboutNavigationItem: NavItem = {
+  title: 'Sobre',
+  href: '/sobre',
+  children: [
+    { title: 'História', href: '/sobre/historia' },
+    { title: 'Missão, Visão e Valores', href: '/sobre/missao-visao-valores' },
+    { title: 'Estrutura Organizacional', href: '/sobre/estrutura-organizacional' },
+    { title: 'Direção', href: '/sobre/direcao' },
+    { title: 'Mensagem do Decano', href: '/sobre/mensagem-do-decano' },
+    { title: 'Desfile Académico', href: '/desfile-academico' },
+    { title: 'Cooperação Internacional', href: '/sobre/cooperacao-internacional' },
+    { title: 'Perspectivas de Desenvolvimento', href: '/sobre/perspectivas-desenvolvimento' },
+    { title: 'Secretaria', href: '/sobre/secretaria', children: [
+      { title: 'Serviços', href: '/sobre/secretaria/servicos' },
+      { title: 'Formulários', href: '/sobre/secretaria/formularios' },
+      { title: 'Horários e Contactos', href: '/sobre/secretaria/horarios-Contactos' },
+    ] },
+  ],
+}
 
 export const navigationItems: NavItem[] = [
+  aboutNavigationItem,
   {
     title: 'Ensino',
     href: '/cursos',
@@ -68,24 +90,6 @@ export const navigationItems: NavItem[] = [
     ],
   },
   {
-    title: 'Sobre',
-    href: '/sobre',
-    children: [
-      { title: 'História', href: '/sobre/historia' },
-      { title: 'Missão, Visão e Valores', href: '/sobre/missao-visao-valores' },
-      { title: 'Estrutura Organizacional', href: '/sobre/estrutura-organizacional' },
-      { title: 'Direção', href: '/sobre/direcao' },
-      { title: 'Mensagem do Decano', href: '/sobre/mensagem-do-decano' },
-      { title: 'Cooperação Internacional', href: '/sobre/cooperacao-internacional' },
-      { title: 'Perspectivas de Desenvolvimento', href: '/sobre/perspectivas-desenvolvimento' },
-      { title: 'Secretaria', href: '/sobre/secretaria', children: [
-        { title: 'Serviços', href: '/sobre/secretaria/servicos' },
-        { title: 'Formulários', href: '/sobre/secretaria/formularios' },
-        { title: 'Horários e Contactos', href: '/sobre/secretaria/horarios-Contactos' },
-      ] },
-    ],
-  },
-  {
     title: 'Admissões',
     href: '/admissoes',
     children: [
@@ -100,3 +104,18 @@ export const navigationItems: NavItem[] = [
     href: '/contato',
   },
 ]
+
+const englishLabels: Record<string, string> = {
+  'Ensino': 'Academics', 'Graduação': 'Undergraduate', 'Pós-Graduação': 'Graduate Studies', 'Psicologia do Trabalho e das Organizações': 'Work and Organizational Psychology', 'Psicologia Clínica': 'Clinical Psychology', 'Línguas e Administração': 'Languages and Administration', 'Especialização em Gestão do Ensino Superior': 'Higher Education Management Specialization', 'Capacitação Pedagógica': 'Pedagogical Training', 'Gestão de Pessoas 360º': 'People Management 360º', 'Consulta Psicológica': 'Psychological Consultation', 'Investigação': 'Research', 'Projetos': 'Projects', 'Investigadores': 'Researchers', 'Publicações': 'Publications', 'Extensão': 'Extension', 'Cursos Complementares': 'Complementary Courses', 'Laboratório de Psicologia': 'Psychology Laboratory', 'Estágios': 'Internships', 'Supervisores': 'Supervisors', 'Parceiros': 'Partners', 'Docentes': 'Faculty', 'Eventos': 'Events', 'Eventos Futuros': 'Upcoming Events', 'Eventos Realizados': 'Past Events', 'Associação de Estudantes': 'Student Association', 'Membros': 'Members', 'Contactos': 'Contacts', 'Sobre': 'About', 'História': 'History', 'Missão, Visão e Valores': 'Mission, Vision and Values', 'Estrutura Organizacional': 'Organizational Structure', 'Direção': 'Leadership', 'Mensagem do Decano': "Dean's Message", 'Desfile Académico': 'Academic Parade', 'Cooperação Internacional': 'International Cooperation', 'Perspectivas de Desenvolvimento': 'Development Perspectives', 'Secretaria': 'Secretariat', 'Serviços': 'Services', 'Formulários': 'Forms', 'Horários e Contactos': 'Hours and Contacts', 'Admissões': 'Admissions', 'Requisitos': 'Requirements', 'Documentos': 'Documents', 'Taxas': 'Fees', 'Contacto': 'Contact',
+}
+
+export function getNavigationItems(locale: Locale): NavItem[] {
+  if (locale === 'pt') return navigationItems
+  const translate = (items: NavItem[]): NavItem[] => items.map(item => ({
+    ...item,
+    title: englishLabels[item.title] || item.title,
+    href: localizePath(item.href, 'en'),
+    children: item.children ? translate(item.children) : undefined,
+  }))
+  return translate(navigationItems)
+}

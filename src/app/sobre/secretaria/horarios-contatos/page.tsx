@@ -93,13 +93,13 @@ export default function HorariosContactosPage() {
                   <ul className="space-y-2 text-gray-600 dark:text-[#E4D9CC]">
                     <li>
                       <strong>Geral:</strong>{' '}
-                      <a href="mailto:fch@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
+                      <a href="mailto:fch@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-primary">
                         fch@ucan.edu
                       </a>
                     </li>
                     <li>
                       <strong>Pós-Graduações:</strong>{' '}
-                      <a href="mailto:yola.filipe@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
+                      <a href="mailto:yola.filipe@ucan.edu" className="text-primary hover:text-primary-dark dark:hover:text-primary">
                         yola.filipe@ucan.edu
                       </a>
                     </li>

@@ -32,7 +32,7 @@ export default function ExtensaoPage() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <BookOpen className="w-6 h-6 text-primary" />
                   </div>
-                  <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
+                  <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-primary-light transition-colors">
                     Cursos Complementares
                   </CardTitle>
                 </CardHeader>
@@ -40,7 +40,7 @@ export default function ExtensaoPage() {
                   <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4 text-justify">
                     Cursos de curta duração em diversas áreas das Ciências Humanas.
                   </p>
-                  <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                  <span className="text-primary dark:text-primary-light text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                     Ver cursos <ArrowRight className="ml-2 w-4 h-4" />
                   </span>
                 </CardContent>
@@ -53,7 +53,7 @@ export default function ExtensaoPage() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 dark:bg-[#332a22] flex items-center justify-center mb-4">
                     <Award className="w-6 h-6 text-primary dark:text-white" />
                   </div>
-                  <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
+                  <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-primary-light transition-colors">
                     Laboratório de Psicologia
                   </CardTitle>
                 </CardHeader>
@@ -61,7 +61,7 @@ export default function ExtensaoPage() {
                   <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4 text-justify">
                     Formação prática, investigação e prestação de serviços psicológicos gratuitos à comunidade.
                   </p>
-                  <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                  <span className="text-primary dark:text-primary-light text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                     Saber mais <ArrowRight className="ml-2 w-4 h-4" />
                   </span>
                 </CardContent>
@@ -74,7 +74,7 @@ export default function ExtensaoPage() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <BookOpen className="w-6 h-6 text-primary" />
                   </div>
-                  <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
+                  <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-primary-light transition-colors">
                     Estágios
                   </CardTitle>
                 </CardHeader>
@@ -82,7 +82,7 @@ export default function ExtensaoPage() {
                   <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4 text-justify">
                     Informações sobre os estágios disponíveis e processos relacionados.
                   </p>
-                  <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                  <span className="text-primary dark:text-primary-light text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                     Ver estágios <ArrowRight className="ml-2 w-4 h-4" />
                   </span>
                 </CardContent>

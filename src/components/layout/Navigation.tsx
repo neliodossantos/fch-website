@@ -31,7 +31,7 @@ export function Navigation({ items = navigationItems, className }: NavigationPro
         <div className="flex items-center justify-between">
           <Link
             href={item.href}
-            className={`block py-2 text-gray-700 dark:text-[#d8cfc4] hover:text-primary dark:hover:text-blue-400 ${
+            className={`block py-2 text-gray-700 dark:text-[#d8cfc4] hover:text-primary dark:hover:text-primary-light ${
               level === 0 ? 'font-medium' : 'text-sm'
             }`}
           >
@@ -40,7 +40,7 @@ export function Navigation({ items = navigationItems, className }: NavigationPro
           {hasChildren && (
             <button
               onClick={() => toggleItem(item.href)}
-              className="p-1 text-gray-500 dark:text-[#d8cfc4] hover:text-primary dark:hover:text-blue-400"
+              className="p-1 text-gray-500 dark:text-[#d8cfc4] hover:text-primary dark:hover:text-primary-light"
               aria-label={isOpen ? 'Fechar submenu' : 'Abrir submenu'}
             >
               {isOpen ? (

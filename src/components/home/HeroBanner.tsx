@@ -9,15 +9,15 @@ const slideImages = [
     alt: 'Estudantes da Faculdade de Ciências Humanas',
   },
   {
-    src: '/images/home/slide/image4.jpeg',
+    src: '/images/home/slide/image4.jpg',
     alt: 'Estudantes em atividade na Universidade Católica de Angola',
   },
   {
-    src: '/images/home/slide/image5.jpeg',
+    src: '/images/home/slide/image5.jpg',
     alt: 'Comunidade académica da Faculdade de Ciências Humanas',
   },
   {
-    src: '/images/home/slide/image6.jpeg',
+    src: '/images/home/slide/image6.png',
     alt: 'Momento de convívio da comunidade universitária',
   },
 ]

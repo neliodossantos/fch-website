@@ -14,7 +14,7 @@ const direcao = [
     titulacao: 'Doutor em Filosofia',
     email: 'nlando.faustino@ucan.edu',
     areas: ['Filosofia Política', 'Ciências da Educação'],
-    foto_url: '/images/decana/decano.jpeg',
+    foto_url: '/images/decana/decano.png',
   },
   {
     nome: 'Dr.ª Evanilse Diogo',

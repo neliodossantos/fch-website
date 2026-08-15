@@ -4,22 +4,28 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, ChevronDown } from 'lucide-react'
-import { navigationItems } from '@/data/navigation'
+import { getNavigationItems } from '@/data/navigation'
 import { MobileMenu } from './MobileMenu'
 import { NavDropdown } from './NavDropdown'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import { LanguageToggle } from '@/components/ui/LanguageToggle'
+import { getLocale, localizePath } from '@/lib/i18n'
+import { usePathname } from 'next/navigation'
 
 const logo = '/images/logo/FCH.png'
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const locale = getLocale(pathname)
+  const navigationItems = getNavigationItems(locale)
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-[#1f1a16] shadow-md border-b-4 border-primary">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href={localizePath('/', locale)} className="flex items-center">
             <Image
               src={logo}
               alt="Logo UCAN - Faculdade de Ciências Humanas"
@@ -44,17 +50,19 @@ export function Header() {
                 <NavDropdown item={item} align={index < 4 ? 'left' : 'right'} />
               </div>
             ))}
+            <LanguageToggle />
             <ThemeToggle />
             <Link
-              href="/contato"
+              href={localizePath('/contato', locale)}
               className="ml-4 px-4 py-2 bg-primary text-white text-sm font-bold rounded-full hover:bg-primary-dark transition-colors"
             >
-              Contacto
+              {locale === 'en' ? 'Contact' : 'Contacto'}
             </Link>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center xl:hidden">
+            <LanguageToggle />
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -69,7 +77,7 @@ export function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+      <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} items={navigationItems} locale={locale} />
     </header>
   )
 }

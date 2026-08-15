@@ -1,4 +1,5 @@
 import { apiGet, resolveMediaUrl } from '@/lib/api'
+import type { SectionData } from '@/components/shared/SectionsRenderer'
 
 type ApiNoticia = {
   id: string
@@ -10,6 +11,7 @@ type ApiNoticia = {
   featured?: boolean
   videoUrl?: string
   media?: { url: string }[]
+  sections?: SectionData[]
 }
 
 function mapApiNoticia(noticia: ApiNoticia) {
@@ -22,6 +24,8 @@ function mapApiNoticia(noticia: ApiNoticia) {
     imagem_url: resolveMediaUrl(noticia.media?.[0]?.url) || null,
     video_url: resolveMediaUrl(noticia.videoUrl) || null,
     data_publicacao: noticia.publishedAt || new Date().toISOString(),
+    featured: Boolean(noticia.featured),
+    sections: noticia.sections || [],
   }
 }
 

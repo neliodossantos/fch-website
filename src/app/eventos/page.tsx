@@ -32,12 +32,12 @@ export default async function EventosPage() {
           <div className="mb-16">
             <div className="flex items-center justify-between mb-8">
               <SectionTitle title="Próximos Eventos" className="mb-0" />
-              <Link href="/eventos/futuros" className="text-primary dark:text-blue-400 hover:text-primary-dark dark:hover:text-blue-300 font-medium inline-flex items-center">
+              <Link href="/eventos/futuros" className="text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary font-medium inline-flex items-center">
                 Ver todos <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {eventosFuturos.slice(0, 3).map((evento) => (
+              {eventosFuturos.slice(0, 2).map((evento) => (
                 <Card key={evento.id} className="h-full hover:shadow-lg transition-shadow overflow-hidden">
                   {/* Event Image */}
                   <div className="relative h-48 w-full">
@@ -88,7 +88,7 @@ export default async function EventosPage() {
           <div>
             <div className="flex items-center justify-between mb-8">
               <SectionTitle title="Eventos Realizados" className="mb-0" />
-              <Link href="/eventos/realizados" className="text-primary dark:text-blue-400 hover:text-primary-dark dark:hover:text-blue-300 font-medium inline-flex items-center">
+              <Link href="/eventos/realizados" className="text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary font-medium inline-flex items-center">
                 Ver todos <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>

@@ -15,6 +15,11 @@ export function slugify(value: string): string {
 
 export async function adminRequest<T>(token: string, path: string, options: RequestInit = {}): Promise<T> {
   const response = await fetch(`${API_URL}${path}`, { ...options, headers: { Authorization: `Bearer ${token}`, ...(options.headers || {}) } })
+  if (response.status === 401) {
+    localStorage.removeItem(TOKEN_KEY)
+    window.location.href = '/admin'
+    throw new Error('Sessão expirada. Inicie sessão novamente.')
+  }
   const data = await response.json().catch(() => null)
   if (!response.ok) throw new Error(Array.isArray(data?.message) ? data.message.join(', ') : data?.message || 'Não foi possível concluir a operação.')
   return data as T

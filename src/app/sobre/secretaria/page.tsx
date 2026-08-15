@@ -57,13 +57,13 @@ export default function SecretariaPage() {
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                       <section.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <CardTitle className="text-lg group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                    <CardTitle className="text-lg group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                       {section.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4 text-justify">{section.description}</p>
-                    <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                    <span className="text-primary dark:text-primary-light text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                       Aceder <ArrowRight className="ml-2 w-4 h-4" />
                     </span>
                   </CardContent>

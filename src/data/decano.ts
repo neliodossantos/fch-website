@@ -9,7 +9,7 @@ export interface Decano {
 export const decano: Decano = {
   nome: 'Nlando Matondo Faustino',
   titulo: 'Decano da Faculdade de Ciências Humanas',
-  foto_url: '/images/decana/decano.jpeg',
+  foto_url: '/images/decana/decano.png',
   saudacaoFinal: 'Bem-vindo ao mundo das humanidades.',
   mensagem: [
     'A quantos se dignarem visitar a página da nossa amada Faculdade de Ciências Humanas endereçamos as nossas boas-vindas, na expectativa de que se sintam acolhidos no coração das Humanidades da Universidade Católica de Angola.',

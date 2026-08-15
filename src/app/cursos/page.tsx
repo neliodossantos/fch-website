@@ -32,14 +32,14 @@ export default function CursosPage() {
                 <Link key={curso.id} href={`/cursos/graduacao/${curso.slug}`}>
                   <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group">
                     <CardHeader>
-                      <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
+                      <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-primary-light transition-colors">
                         {curso.nome}
                       </CardTitle>
                       {curso.duracao && <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">Duração: {curso.duracao}</p>}
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4 line-clamp-3">{curso.descricao}</p>
-                      <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                      <span className="text-primary dark:text-primary-light text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                         Ver detalhes <ArrowRight className="ml-2 w-4 h-4" />
                       </span>
                     </CardContent>
@@ -50,7 +50,7 @@ export default function CursosPage() {
             <div className="mt-6 text-center">
               <Link
                 href="/cursos/graduacao"
-                className="inline-flex items-center text-primary dark:text-blue-400 hover:text-primary-dark dark:hover:text-blue-300 font-medium"
+                className="inline-flex items-center text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary font-medium"
               >
                 Ver todos os cursos de graduação <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
@@ -67,14 +67,14 @@ export default function CursosPage() {
                 <Link key={curso.id} href={`/cursos/pos-graduacao/${curso.slug}`}>
                   <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group border-gray-200 dark:border-[#332a22]">
                     <CardHeader>
-                      <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
+                      <CardTitle className="text-lg group-hover:text-primary dark:group-hover:text-primary-light transition-colors">
                         {curso.nome}
                       </CardTitle>
                       {curso.duracao && <p className="text-sm text-gray-500 dark:text-[#d8cfc4]">Duração: {curso.duracao}</p>}
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-600 dark:text-[#E4D9CC] text-sm mb-4 line-clamp-3">{curso.descricao}</p>
-                      <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                      <span className="text-primary dark:text-primary-light text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                         Ver detalhes <ArrowRight className="ml-2 w-4 h-4" />
                       </span>
                     </CardContent>
@@ -85,7 +85,7 @@ export default function CursosPage() {
             <div className="mt-6 text-center">
               <Link
                 href="/cursos/pos-graduacao"
-                className="inline-flex items-center text-primary dark:text-blue-400 hover:text-primary-dark dark:hover:text-blue-300 font-medium"
+                className="inline-flex items-center text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary font-medium"
               >
                 Ver todos os mestrados <ArrowRight className="ml-2 w-4 h-4" />
               </Link>

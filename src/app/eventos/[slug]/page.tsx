@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, Calendar, Clock, MapPin } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
+import { SectionsRenderer } from '@/components/shared/SectionsRenderer'
 import { Button } from '@/components/ui/Button'
 import { getEventoBySlug, getEventos } from '@/lib/queries/eventos'
 
@@ -74,7 +75,7 @@ export default async function EventoDetalhePage({ params }: Props) {
         <div className="container mx-auto px-4">
           <Link
             href="/eventos"
-            className="inline-flex items-center text-primary hover:text-primary-dark dark:text-blue-400 dark:hover:text-blue-300 mb-8"
+            className="inline-flex items-center text-primary hover:text-primary-dark dark:text-primary-light dark:hover:text-primary mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Voltar aos eventos
@@ -128,6 +129,12 @@ export default async function EventoDetalhePage({ params }: Props) {
                   {evento.descricao}
                 </p>
               </div>
+
+              {evento.sections.length > 0 && (
+                <div className="mt-10">
+                  <SectionsRenderer sections={evento.sections} />
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}

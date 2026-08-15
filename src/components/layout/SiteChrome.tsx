@@ -9,7 +9,7 @@ import { Footer } from './Footer'
 export function SiteChrome({ children }: { children: ReactNode }) {
   const pathname = usePathname()
 
-  if (pathname.startsWith('/admin')) {
+  if (pathname.startsWith('/admin') || pathname.startsWith('/en/admin')) {
     return <main className="flex-grow">{children}</main>
   }
 

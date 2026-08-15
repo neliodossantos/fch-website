@@ -4,9 +4,9 @@
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, CalendarDays } from 'lucide-react'
 import { useAdminToken, adminRequest, resolveMediaUrl } from '../../../shared/adminApi'
-import { SectionsRenderer } from '../../../shared/SectionsRenderer'
+import { SectionsRenderer } from '@/components/shared/SectionsRenderer'
 import type { ContentAdmin } from '../../NoticiaForm'
 
 export default function PreviewNoticiaPage() {
@@ -23,19 +23,37 @@ export default function PreviewNoticiaPage() {
   }, [token, id])
 
   if (!token) return null
-  if (error) return <p className="rounded-lg bg-red-50 p-3 text-sm text-red-700">{error}</p>
-  if (!item) return <p className="text-gray-500">A carregar…</p>
+  if (error) return <p className="rounded-lg bg-red-50 p-3 text-sm text-red-700 dark:bg-[#3b1d1d] dark:text-[#fca5a5]">{error}</p>
+  if (!item) return <p className="text-gray-500 dark:text-[#9c8d7d]">A carregar…</p>
 
   return (
-    <article className="mx-auto max-w-3xl rounded-2xl bg-white p-8 shadow-sm dark:bg-gray-900">
-      <Link href={`/admin/noticias/${item.id}/editar`} className="mb-6 inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary-dark"><ArrowLeft size={16} /> Voltar ao editor</Link>
-      {!item.published && <p className="mb-3 inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">Rascunho — ainda não publicado</p>}
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{item.title}</h1>
-      {item.author && <p className="mt-2 text-sm text-gray-500">Por {item.author}</p>}
-      {item.excerpt && <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">{item.excerpt}</p>}
-      {item.media[0] && <img src={resolveMediaUrl(item.media[0].url)} alt={item.title} className="mt-6 w-full rounded-xl object-cover" style={{ maxHeight: 420 }} />}
-      {item.body && <p className="mt-6 whitespace-pre-line text-gray-700 dark:text-gray-300">{item.body}</p>}
-      <div className="mt-8"><SectionsRenderer sections={item.sections} /></div>
-    </article>
+    <section className="rounded-2xl bg-white py-10 shadow-sm dark:bg-[#151312]">
+      <div className="container mx-auto max-w-3xl px-4">
+        <Link href={`/admin/noticias/${item.id}/editar`} className="mb-8 inline-flex items-center text-primary hover:text-primary-dark dark:text-primary-light dark:hover:text-primary">
+          <ArrowLeft className="mr-2 h-4 w-4" /> Voltar ao editor
+        </Link>
+
+        {!item.published && <p className="mb-4 inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700 dark:bg-[#443116] dark:text-[#fcd34d]">Rascunho — ainda não publicado</p>}
+
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">{item.title}</h1>
+
+        {item.media[0] && (
+          <div className="mb-8 mt-6 overflow-hidden rounded-lg">
+            <img src={resolveMediaUrl(item.media[0].url)} alt={item.title} className="h-auto max-h-[420px] w-full object-cover" />
+          </div>
+        )}
+
+        <div className="mb-6 flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-[#b8ab9c]">
+          <span className="inline-flex items-center gap-2"><CalendarDays className="h-4 w-4" /> {item.author ? `Por ${item.author}` : 'Rascunho'}</span>
+        </div>
+
+        <div className="prose prose-lg dark:prose-invert max-w-none">
+          {item.excerpt && <p className="text-gray-600 dark:text-[#d8cfc4]">{item.excerpt}</p>}
+          {item.body && <p className="whitespace-pre-line text-gray-700 dark:text-[#E4D9CC]">{item.body}</p>}
+        </div>
+
+        <div className="mt-8"><SectionsRenderer sections={item.sections} /></div>
+      </div>
+    </section>
   )
 }

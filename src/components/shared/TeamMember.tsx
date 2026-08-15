@@ -22,7 +22,7 @@ export function TeamMember({ nome, cargo, titulacao, areas, email, foto_url, dep
         <div className="flex h-20 items-center justify-center">
           <Avatar src={foto_url} name={nome} size="md" className="!h-20 !w-20 ring-2 ring-primary/20" />
         </div>
-        <h3 className="mt-5 min-h-12 text-center text-lg font-bold text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-blue-400">
+        <h3 className="mt-5 min-h-12 text-center text-lg font-bold text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary-light">
           {nome}
         </h3>
         <div className="min-h-16">
@@ -51,7 +51,7 @@ export function TeamMember({ nome, cargo, titulacao, areas, email, foto_url, dep
             {slug ? (
               <span>{email}</span>
             ) : (
-              <a href={`mailto:${email}`} className="hover:text-primary dark:hover:text-blue-400">{email}</a>
+              <a href={`mailto:${email}`} className="hover:text-primary dark:hover:text-primary-light">{email}</a>
             )}
           </div>
         )}

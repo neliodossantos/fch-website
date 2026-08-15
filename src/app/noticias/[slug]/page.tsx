@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, CalendarDays } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
+import { SectionsRenderer } from '@/components/shared/SectionsRenderer'
 import { getNoticiaBySlug, getNoticias } from '@/lib/queries/noticias'
 
 export const revalidate = 60
@@ -59,7 +60,7 @@ export default async function NoticiaDetalhePage({ params }: Props) {
         <div className="container mx-auto max-w-3xl px-4">
           <Link
             href="/noticias"
-            className="mb-8 inline-flex items-center text-primary hover:text-primary-dark dark:text-blue-400 dark:hover:text-blue-300"
+            className="mb-8 inline-flex items-center text-primary hover:text-primary-dark dark:text-primary-light dark:hover:text-primary"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Voltar às notícias
@@ -102,6 +103,12 @@ export default async function NoticiaDetalhePage({ params }: Props) {
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="whitespace-pre-line text-gray-700 dark:text-[#E4D9CC]">{noticia.conteudo || noticia.resumo}</p>
           </div>
+
+          {noticia.sections.length > 0 && (
+            <div className="mt-10">
+              <SectionsRenderer sections={noticia.sections} />
+            </div>
+          )}
         </div>
       </section>
     </>

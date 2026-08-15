@@ -31,17 +31,17 @@ export function MediaGallery({ items, onUpload, onRemove }: { items: MediaAdmin[
 
   return (
     <div>
-      {error && <p className="mb-2 rounded-lg bg-red-50 p-2 text-xs text-red-700">{error}</p>}
+      {error && <p className="mb-2 rounded-lg bg-red-50 p-2 text-xs text-red-700 dark:bg-[#3b1d1d] dark:text-[#fca5a5]">{error}</p>}
       <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
         {items.map(item => (
-          <div key={item.id} className="group relative overflow-hidden rounded-lg border bg-gray-100">
+          <div key={item.id} className="group relative overflow-hidden rounded-lg border bg-gray-100 dark:border-[#332a22] dark:bg-[#1f1a16]">
             <img src={resolveMediaUrl(item.url)} alt={item.alt || ''} className="h-24 w-full object-cover" />
             <button type="button" onClick={() => handleRemove(item.id)} className="absolute right-1 top-1 rounded-full bg-red-600 p-1 text-white opacity-90 hover:bg-red-700"><Trash2 size={13} /></button>
           </div>
         ))}
       </div>
       <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple onChange={handleFiles} disabled={uploading} className="mt-3 block w-full text-sm" />
-      {uploading && <p className="mt-1 text-xs text-gray-500">A enviar imagens…</p>}
+      {uploading && <p className="mt-1 text-xs text-gray-500 dark:text-[#9c8d7d]">A enviar imagens…</p>}
     </div>
   )
 }

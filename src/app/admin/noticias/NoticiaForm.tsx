@@ -9,6 +9,7 @@ import { MediaGallery, MediaAdmin } from '../shared/MediaGallery'
 import { VideoField } from '../shared/VideoField'
 import { SectionsEditor, SectionAdmin } from '../shared/SectionsEditor'
 import { adminRequest, slugify } from '../shared/adminApi'
+import { toast } from '@/components/ui/Toast'
 
 type NewsCategory = 'institucional' | 'investigacao' | 'academico' | 'comunidade'
 const CATEGORIES: { value: NewsCategory; label: string }[] = [
@@ -52,9 +53,10 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
     try {
       const payload = { type: 'news', title: form.title, slug: form.slug, excerpt: form.excerpt, body: form.body, category: form.category || null, author: form.author, tags: form.tags, metaTitle: form.metaTitle, metaDescription: form.metaDescription, videoUrl: form.videoUrl, featured: form.featured, published: form.published }
       const saved = await adminRequest<{ id: string }>(token, `/content${id ? `/${id}` : ''}`, { method: id ? 'PATCH' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-      setNotice(id ? 'Notícia actualizada.' : 'Notícia criada. Já pode adicionar imagens e secções.')
+      const message = id ? 'Notícia actualizada.' : 'Notícia criada. Já pode adicionar imagens e secções.'
+      setNotice(message); toast.success(message)
       if (!id) { setId(saved.id); router.replace(`/admin/noticias/${saved.id}/editar`) }
-    } catch (err) { setError(err instanceof Error ? err.message : 'Erro ao guardar.') } finally { setBusy(false) }
+    } catch (err) { const message = err instanceof Error ? err.message : 'Erro ao guardar.'; setError(message); toast.error(message) } finally { setBusy(false) }
   }
 
   const uploadCover = async (file: File) => {
@@ -70,7 +72,7 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
+      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-[#151312]">
         <div className="mb-5 flex items-center justify-between">
           <h2 className="text-xl font-bold">{id ? 'Editar notícia' : 'Nova notícia'}</h2>
           {id && <Link href={`/admin/noticias/${id}/preview`} target="_blank" className="text-sm font-semibold text-primary-dark hover:underline">Pré-visualizar →</Link>}
@@ -87,7 +89,7 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
           <Field label="Resumo"><textarea value={form.excerpt} onChange={e => update('excerpt', e.target.value)} rows={3} /></Field>
           <Field label="Conteúdo principal"><textarea value={form.body} onChange={e => update('body', e.target.value)} rows={6} /></Field>
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-200">Tags</label>
+            <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-[#E4D9CC]">Tags</label>
             <TagInput value={form.tags} onChange={value => update('tags', value)} placeholder="Escreva e prima Enter" />
           </div>
           <VideoField token={token} value={form.videoUrl} onChange={value => update('videoUrl', value)} />
@@ -103,12 +105,12 @@ export function NoticiaForm({ token, item }: { token: string; item?: ContentAdmi
         </form>
       </section>
 
-      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
+      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-[#151312]">
         <h3 className="mb-1 text-lg font-bold">Galeria de capa</h3>
         {!id ? <p className="text-sm text-gray-500">Guarde a notícia antes de adicionar imagens.</p> : <MediaGallery items={media} onUpload={uploadCover} onRemove={removeCover} />}
       </section>
 
-      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
+      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-[#151312]">
         <h3 className="mb-4 text-lg font-bold">Secções</h3>
         {!id ? <p className="text-sm text-gray-500">Guarde a notícia antes de adicionar secções.</p> : <SectionsEditor token={token} ownerType="content" ownerId={id} sections={sections} onChange={setSections} />}
       </section>

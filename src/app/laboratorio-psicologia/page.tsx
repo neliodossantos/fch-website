@@ -51,7 +51,7 @@ export default function LaboratorioPsicologiaPage() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Heart className="w-6 h-6 text-primary" />
                   </div>
-                  <CardTitle className="text-lg group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                  <CardTitle className="text-lg group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                     Serviços
                   </CardTitle>
                 </CardHeader>
@@ -59,7 +59,7 @@ export default function LaboratorioPsicologiaPage() {
                   <p className="text-gray-600 dark:text-[#d8cfc4] text-sm mb-4">
                     Conheça os serviços de atendimento psicológico e de extensão oferecidos.
                   </p>
-                  <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                  <span className="text-primary dark:text-primary-light text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                     Ver serviços <ArrowRight className="ml-2 w-4 h-4" />
                   </span>
                 </CardContent>
@@ -72,7 +72,7 @@ export default function LaboratorioPsicologiaPage() {
                   <div className="w-12 h-12 rounded-lg bg-secondary/10 dark:bg-[#332a22] flex items-center justify-center mb-4">
                     <Calendar className="w-6 h-6 text-gray-700 dark:text-[#E4D9CC]" />
                   </div>
-                  <CardTitle className="text-lg group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                  <CardTitle className="text-lg group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                     Marcação
                   </CardTitle>
                 </CardHeader>
@@ -80,7 +80,7 @@ export default function LaboratorioPsicologiaPage() {
                   <p className="text-gray-600 dark:text-[#d8cfc4] text-sm mb-4">
                     Contactos e horários para agendar um atendimento.
                   </p>
-                  <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                  <span className="text-primary dark:text-primary-light text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                     Marcar atendimento <ArrowRight className="ml-2 w-4 h-4" />
                   </span>
                 </CardContent>

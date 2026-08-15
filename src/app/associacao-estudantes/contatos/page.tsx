@@ -73,7 +73,7 @@ export default function ContactosAEPage() {
                     </li>
                     <li className="flex items-center">
                       <Mail className="w-4 h-4 mr-2 text-gray-400 dark:text-[#9c8d7d]" />
-                      <a href="mailto:ae@FCH.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
+                      <a href="mailto:ae@FCH.edu" className="text-primary hover:text-primary-dark dark:hover:text-primary">
                         ae@FCH.edu
                       </a>
                     </li>

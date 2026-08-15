@@ -31,7 +31,7 @@ export default function NoticiasListPage() {
 
   if (!token) return null
   return (
-    <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
+    <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-[#151312]">
       <div className="mb-5 flex items-center justify-between">
         <div><h2 className="text-xl font-bold">Notícias</h2><p className="text-sm text-gray-500">{items.length} notícia(s)</p></div>
         <Link href="/admin/noticias/novo" className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-bold text-white hover:bg-primary-dark"><Plus size={16} /> Nova notícia</Link>
@@ -44,7 +44,7 @@ export default function NoticiasListPage() {
               <div className="min-w-0 flex-1">
                 <div className="mb-1 flex flex-wrap gap-2">
                   <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-primary-dark dark:bg-amber-950/30 dark:text-primary-light">{labels[item.type as 'news' | 'post']}</span>
-                  {!item.published && <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs text-amber-700">Rascunho</span>}
+                  {!item.published && <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs text-amber-700 dark:bg-[#443116] dark:text-[#fcd34d]">Rascunho</span>}
                   <span className="text-xs text-gray-400">{item.media?.length || 0} foto(s)</span>
                 </div>
                 <h3 className="truncate font-semibold">{item.title}</h3>

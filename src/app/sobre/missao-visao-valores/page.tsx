@@ -40,12 +40,12 @@ export default function MissaoVisaoValoresPage() {
             <Card className="bg-gray-200/50 text-white border-0">
               <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 rounded-full bg-black dark:bg-white/10 flex items-center justify-center mr-4">
                     <Eye className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-2xl text-black font-bold">Visão</h2>
+                  <h2 className="text-2xl text-black dark:text-white font-bold">Visão</h2>
                 </div>
-                <p className="text-black leading-relaxed">
+                <p className="text-black dark:text-gray-200 leading-relaxed">
                   Afirmar-se como uma referência nacional e internacional nos domínios das Ciências
                   Humanas e Sociais, distinguindo-se pela qualidade do ensino, pela excelência da
                   investigação científica, pela inovação pedagógica, pela relevância social dos seus

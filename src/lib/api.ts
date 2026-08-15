@@ -18,3 +18,8 @@ export function resolveMediaUrl(url?: string | null): string | undefined {
   if (!url) return undefined
   return url.startsWith('http') ? url : `${apiOrigin}${url}`
 }
+
+/** Distingue vídeo de imagem numa galeria mista, pela extensão do ficheiro. */
+export function isVideoUrl(url: string): boolean {
+  return /\.(mp4|webm|mov|m4v)$/i.test(url)
+}

@@ -25,7 +25,7 @@ export default function EventosListPage() {
 
   if (!token) return null
   return (
-    <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
+    <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-[#151312]">
       <div className="mb-5 flex items-center justify-between">
         <div><h2 className="text-xl font-bold">Eventos</h2><p className="text-sm text-gray-500">{items.length} evento(s)</p></div>
         <Link href="/admin/eventos/novo" className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-bold text-white hover:bg-primary-dark"><Plus size={16} /> Novo evento</Link>

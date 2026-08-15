@@ -11,6 +11,7 @@ import { VideoField } from '../shared/VideoField'
 import type { SectionAdmin } from '../shared/SectionsEditor'
 import { SectionsEditor } from '../shared/SectionsEditor'
 import { adminRequest, slugify } from '../shared/adminApi'
+import { toast } from '@/components/ui/Toast'
 
 export type AgendaItem = { time?: string; title: string; description?: string }
 export type EventoAdmin = {
@@ -60,9 +61,10 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
       const payload = { title: form.title, slug: form.slug, description: form.description, date: form.date, endDate: form.endDate || null, time: form.time, location: form.location, type: form.type, imageUrl: nextImageUrl || undefined, videoUrl: form.videoUrl, organizer: form.organizer, externalUrl: form.externalUrl, additionalInfo: form.additionalInfo, agenda: form.agenda, featured: form.featured, published: form.published }
       const saved = await adminRequest<{ id: string }>(token, `/eventos${id ? `/${id}` : ''}`, { method: id ? 'PATCH' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       setImageUrl(nextImageUrl); setSelectedImage(null)
-      setNotice(id ? 'Evento actualizado.' : 'Evento criado. Já pode adicionar galeria e secções.')
+      const message = id ? 'Evento actualizado.' : 'Evento criado. Já pode adicionar galeria e secções.'
+      setNotice(message); toast.success(message)
       if (!id) { setId(saved.id); router.replace(`/admin/eventos/${saved.id}/editar`) }
-    } catch (err) { setError(err instanceof Error ? err.message : 'Erro ao guardar.') } finally { setBusy(false) }
+    } catch (err) { const message = err instanceof Error ? err.message : 'Erro ao guardar.'; setError(message); toast.error(message) } finally { setBusy(false) }
   }
 
   const uploadGalleryImage = async (file: File) => {
@@ -78,7 +80,7 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
+      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-[#151312]">
         <div className="mb-5 flex items-center justify-between">
           <h2 className="text-xl font-bold">{id ? 'Editar evento' : 'Novo evento'}</h2>
           {id && <Link href={`/admin/eventos/${id}/preview`} target="_blank" className="text-sm font-semibold text-primary-dark hover:underline">Pré-visualizar →</Link>}
@@ -99,7 +101,7 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
           </div>
           <Field label="Tipo"><select value={form.type} onChange={e => update('type', e.target.value)}><option value="conferencia">Conferência</option><option value="seminario">Seminário</option><option value="workshop">Workshop</option><option value="cultural">Cultural</option></select></Field>
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-200">Organizadores</label>
+            <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-[#E4D9CC]">Organizadores</label>
             <TagInput value={form.organizer} onChange={value => update('organizer', value)} placeholder="Escreva e prima Enter" />
           </div>
           <Field label="Link externo (inscrições, etc.)"><input value={form.externalUrl} onChange={e => update('externalUrl', e.target.value)} placeholder="https://..." /></Field>
@@ -111,13 +113,13 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
           </Field>
 
           <div>
-            <span className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-200">Agenda / Programa</span>
+            <span className="mb-2 block text-sm font-medium text-gray-700 dark:text-[#E4D9CC]">Agenda / Programa</span>
             <div className="space-y-2">
               {form.agenda.map((row, index) => (
                 <div key={index} className="grid grid-cols-[100px_1fr_1fr_auto] gap-2">
-                  <input value={row.time || ''} onChange={e => updateAgendaRow(index, { time: e.target.value })} placeholder="09h00" className="rounded-lg border bg-white p-2 text-sm dark:bg-gray-800" />
-                  <input value={row.title} onChange={e => updateAgendaRow(index, { title: e.target.value })} placeholder="Título" className="rounded-lg border bg-white p-2 text-sm dark:bg-gray-800" required />
-                  <input value={row.description || ''} onChange={e => updateAgendaRow(index, { description: e.target.value })} placeholder="Descrição (opcional)" className="rounded-lg border bg-white p-2 text-sm dark:bg-gray-800" />
+                  <input value={row.time || ''} onChange={e => updateAgendaRow(index, { time: e.target.value })} placeholder="09h00" className="rounded-lg border bg-white p-2 text-sm dark:bg-[#1f1a16]" />
+                  <input value={row.title} onChange={e => updateAgendaRow(index, { title: e.target.value })} placeholder="Título" className="rounded-lg border bg-white p-2 text-sm dark:bg-[#1f1a16]" required />
+                  <input value={row.description || ''} onChange={e => updateAgendaRow(index, { description: e.target.value })} placeholder="Descrição (opcional)" className="rounded-lg border bg-white p-2 text-sm dark:bg-[#1f1a16]" />
                   <button type="button" onClick={() => removeAgendaRow(index)} className="rounded-lg p-2 text-red-600 hover:bg-red-50"><Trash2 size={16} /></button>
                 </div>
               ))}
@@ -133,12 +135,12 @@ export function EventoForm({ token, item }: { token: string; item?: EventoAdmin 
         </form>
       </section>
 
-      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
+      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-[#151312]">
         <h3 className="mb-1 text-lg font-bold">Galeria</h3>
         {!id ? <p className="text-sm text-gray-500">Guarde o evento antes de adicionar imagens.</p> : <MediaGallery items={media} onUpload={uploadGalleryImage} onRemove={removeGalleryImage} />}
       </section>
 
-      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-900">
+      <section className="rounded-2xl bg-white p-6 shadow-sm dark:bg-[#151312]">
         <h3 className="mb-4 text-lg font-bold">Secções</h3>
         {!id ? <p className="text-sm text-gray-500">Guarde o evento antes de adicionar secções.</p> : <SectionsEditor token={token} ownerType="event" ownerId={id} sections={sections} onChange={setSections} />}
       </section>

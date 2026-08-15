@@ -1,3 +1,5 @@
+import type { SectionData } from '@/components/shared/SectionsRenderer'
+
 export interface Professor {
   id: string
   nome: string
@@ -85,6 +87,7 @@ export interface Evento {
   video_url?: string
   featured?: boolean
   created_at: string
+  sections?: SectionData[]
 }
 
 export interface Noticia {

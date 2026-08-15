@@ -70,13 +70,13 @@ export default function EstagiosPage() {
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                       <section.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <CardTitle className="text-lg group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                    <CardTitle className="text-lg group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                       {section.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 text-sm mb-4 dark:text-[#d8cfc4]">{section.description}</p>
-                    <span className="text-primary dark:text-blue-400 text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-blue-300 transition-colors">
+                    <span className="text-primary dark:text-primary-light text-sm font-medium inline-flex items-center group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">
                       Saber mais <ArrowRight className="ml-2 w-4 h-4" />
                     </span>
                   </CardContent>

@@ -4,13 +4,13 @@ import { Dispatch, SetStateAction, useState } from 'react'
 import { DndContext, DragEndEvent, PointerSensor, closestCenter, useSensor, useSensors } from '@dnd-kit/core'
 import { SortableContext, arrayMove, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import { GripVertical, Plus, Trash2 } from 'lucide-react'
+import { GripVertical, LayoutGrid, Plus, Trash2, GalleryHorizontal } from 'lucide-react'
 import { Field } from '../AdminFormControls'
 import { MediaGallery, MediaAdmin } from './MediaGallery'
 import { VideoField } from './VideoField'
 import { adminRequest } from './adminApi'
 
-export type SectionAdmin = { id: string; title?: string; text?: string; order: number; videoUrl?: string; caption?: string; media: MediaAdmin[] }
+export type SectionAdmin = { id: string; title?: string; text?: string; order: number; videoUrl?: string; caption?: string; media: MediaAdmin[]; mediaLayout?: 'grid' | 'slider' }
 
 export function SectionsEditor({ token, ownerType, ownerId, sections, onChange }: { token: string; ownerType: 'content' | 'event'; ownerId: string; sections: SectionAdmin[]; onChange: Dispatch<SetStateAction<SectionAdmin[]>> }) {
   const [error, setError] = useState('')
@@ -40,7 +40,7 @@ export function SectionsEditor({ token, ownerType, ownerId, sections, onChange }
     } catch (err) { setError(err instanceof Error ? err.message : 'Erro ao criar secção.') }
   }
 
-  const updateSection = async (id: string, patch: Partial<Pick<SectionAdmin, 'title' | 'text' | 'videoUrl' | 'caption'>>) => {
+  const updateSection = async (id: string, patch: Partial<Pick<SectionAdmin, 'title' | 'text' | 'videoUrl' | 'caption' | 'mediaLayout'>>) => {
     onChange(current => current.map(section => section.id === id ? { ...section, ...patch } : section))
     try { await adminRequest(token, `/sections/${id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(patch) }) }
     catch (err) { setError(err instanceof Error ? err.message : 'Erro ao guardar secção.') }
@@ -80,11 +80,11 @@ export function SectionsEditor({ token, ownerType, ownerId, sections, onChange }
   )
 }
 
-function SectionCard({ token, section, index, onUpdate, onRemove, onUpload, onRemoveMedia }: { token: string; section: SectionAdmin; index: number; onUpdate: (patch: Partial<Pick<SectionAdmin, 'title' | 'text' | 'videoUrl' | 'caption'>>) => void; onRemove: () => void; onUpload: (file: File) => Promise<void>; onRemoveMedia: (mediaId: string) => Promise<void> }) {
+function SectionCard({ token, section, index, onUpdate, onRemove, onUpload, onRemoveMedia }: { token: string; section: SectionAdmin; index: number; onUpdate: (patch: Partial<Pick<SectionAdmin, 'title' | 'text' | 'videoUrl' | 'caption' | 'mediaLayout'>>) => void; onRemove: () => void; onUpload: (file: File) => Promise<void>; onRemoveMedia: (mediaId: string) => Promise<void> }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: section.id })
   const style = { transform: CSS.Transform.toString(transform), transition, opacity: isDragging ? 0.5 : 1 }
   return (
-    <div ref={setNodeRef} style={style} className="rounded-xl border bg-gray-50 p-4 dark:bg-gray-800/50">
+    <div ref={setNodeRef} style={style} className="rounded-xl border bg-gray-50 p-4 dark:bg-[#1f1a16]/50">
       <div className="flex items-start gap-3">
         <button type="button" {...attributes} {...listeners} className="mt-2 cursor-grab touch-none text-gray-400 hover:text-gray-600" title="Arrastar para reordenar"><GripVertical size={18} /></button>
         <div className="flex-1 space-y-3">
@@ -97,7 +97,27 @@ function SectionCard({ token, section, index, onUpdate, onRemove, onUpload, onRe
           <Field label="Legenda"><input defaultValue={section.caption || ''} onBlur={e => onUpdate({ caption: e.target.value })} /></Field>
           <VideoField token={token} value={section.videoUrl || ''} onChange={value => onUpdate({ videoUrl: value })} />
           <div>
-            <span className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200">Imagens</span>
+            <div className="mb-1 flex items-center justify-between">
+              <span className="block text-sm font-medium text-gray-700 dark:text-[#E4D9CC]">Imagens</span>
+              <div className="flex items-center overflow-hidden rounded-lg border border-gray-200 dark:border-[#332a22]">
+                <button
+                  type="button"
+                  onClick={() => onUpdate({ mediaLayout: 'grid' })}
+                  title="Mostrar em bloco"
+                  className={`flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold transition-colors ${(section.mediaLayout ?? 'grid') === 'grid' ? 'bg-primary text-white' : 'text-gray-500 hover:bg-gray-100 dark:text-[#9c8d7d] dark:hover:bg-[#332a22]'}`}
+                >
+                  <LayoutGrid size={14} /> Bloco
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onUpdate({ mediaLayout: 'slider' })}
+                  title="Mostrar em slider"
+                  className={`flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold transition-colors ${section.mediaLayout === 'slider' ? 'bg-primary text-white' : 'text-gray-500 hover:bg-gray-100 dark:text-[#9c8d7d] dark:hover:bg-[#332a22]'}`}
+                >
+                  <GalleryHorizontal size={14} /> Slider
+                </button>
+              </div>
+            </div>
             <MediaGallery items={section.media} onUpload={onUpload} onRemove={onRemoveMedia} />
           </div>
         </div>

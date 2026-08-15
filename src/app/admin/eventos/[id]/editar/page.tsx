@@ -19,7 +19,7 @@ export default function EditarEventoPage() {
   }, [token, id])
 
   if (!token) return null
-  if (error) return <p className="rounded-lg bg-red-50 p-3 text-sm text-red-700">{error}</p>
-  if (!item) return <p className="text-gray-500">A carregar…</p>
+  if (error) return <p className="rounded-lg bg-red-50 p-3 text-sm text-red-700 dark:bg-[#3b1d1d] dark:text-[#fca5a5]">{error}</p>
+  if (!item) return <p className="text-gray-500 dark:text-[#9c8d7d]">A carregar…</p>
   return <EventoForm token={token} item={item} />
 }

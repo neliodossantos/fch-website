@@ -20,7 +20,7 @@ export const docentes: Docente[] = [
     nome: 'Nlando Matondo Faustino',
     titulo: 'Doutor em Filosofia',
     departamento: 'Decanato',
-    foto_url: '/images/decana/decano.jpeg',
+    foto_url: '/images/decana/decano.png',
     formacao: [
       'Doutoramento em Filosofia, especialidade Filosofia Política — Universidade de Évora, Portugal (2022)',
       'Diploma de Estudos Avançados em Filosofia Política — Universidade de Évora (2019)',

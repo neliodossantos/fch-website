@@ -100,7 +100,7 @@ export default function PublicacoesPage() {
                         href={artigo.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:text-primary-dark dark:hover:text-blue-300 flex-shrink-0"
+                        className="text-primary hover:text-primary-dark dark:hover:text-primary flex-shrink-0"
                       >
                         <ExternalLink className="w-4 h-4" />
                       </a>

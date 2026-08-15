@@ -1,7 +1,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, BookOpen, CalendarDays, BriefcaseBusiness, FlaskConical, Users, Brain, type LucideIcon } from 'lucide-react'
-import { getDestaques, type HighlightDisplay } from '@/lib/queries'
+
+interface Destaque {
+  id: string
+  icon: string
+  title: string
+  description: string
+  href: string
+  imageUrl?: string
+  videoUrl?: string
+}
 
 const iconMap: Record<string, LucideIcon> = {
   'book-open': BookOpen,
@@ -12,7 +21,7 @@ const iconMap: Record<string, LucideIcon> = {
   'brain': Brain,
 }
 
-const FALLBACK_DESTAQUES: HighlightDisplay[] = [
+const DESTAQUES: Destaque[] = [
   { id: 'cursos', icon: 'book-open', title: 'Cursos', description: 'Licenciaturas e mestrados para construir o seu percurso.', href: '/cursos' },
   { id: 'eventos', icon: 'calendar-days', title: 'Eventos', description: 'Debates, conferências e experiências que aproximam ideias.', href: '/eventos' },
   { id: 'extensao', icon: 'users', title: 'Extensão', description: 'Formação contínua para a comunidade e profissionais.', href: '/extensao' },
@@ -21,9 +30,8 @@ const FALLBACK_DESTAQUES: HighlightDisplay[] = [
   { id: 'laboratorio', icon: 'brain', title: 'Laboratório', description: 'Apoio, avaliação e acompanhamento em Psicologia.', href: '/laboratorio-psicologia' },
 ]
 
-export async function Destaques() {
-  const apiDestaques = await getDestaques()
-  const destaques = apiDestaques.length > 0 ? apiDestaques : FALLBACK_DESTAQUES
+export function Destaques() {
+  const destaques = DESTAQUES
 
   return (
     <section className="bg-white py-20 dark:bg-[#151312] sm:py-24">

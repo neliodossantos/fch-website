@@ -25,7 +25,7 @@ export default function MensagemDecanoPage() {
         <div className="container mx-auto px-4">
           <Link
             href="/sobre/direcao"
-            className="mb-10 inline-flex items-center text-sm font-medium text-primary hover:text-primary-dark dark:text-blue-400 dark:hover:text-blue-300"
+            className="mb-10 inline-flex items-center text-sm font-medium text-primary hover:text-primary-dark dark:text-primary-light dark:hover:text-primary"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Voltar à Direcção
@@ -65,8 +65,8 @@ export default function MensagemDecanoPage() {
                 ))}
               </div>
 
-              <div className="mt-12 rounded-2xl bg-primary px-8 py-10 text-center sm:px-12">
-                <p className="text-xl sm:text-2xl font-bold tracking-tight text-gray-950">
+              <div className="mt-12 rounded-2xl bg-primary px-8 py-4 text-center">
+                <p className="text-lg sm:text-xl font-bold tracking-tight text-gray-950">
                   {decano.saudacaoFinal}
                 </p>
               </div>

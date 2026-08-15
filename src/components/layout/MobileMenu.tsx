@@ -2,13 +2,15 @@
 
 import Link from 'next/link'
 import { ChevronDown, ChevronUp } from 'lucide-react'
-import { navigationItems } from '@/data/navigation'
 import { NavItem } from '@/types'
 import { useState } from 'react'
+import { Locale, localizePath } from '@/lib/i18n'
 
 interface MobileMenuProps {
   isOpen: boolean
   onClose: () => void
+  items: NavItem[]
+  locale: Locale
 }
 
 interface MobileNavItemProps {
@@ -59,22 +61,22 @@ function MobileNavItem({ item, onClose, depth = 0 }: MobileNavItemProps) {
   )
 }
 
-export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose, items, locale }: MobileMenuProps) {
   if (!isOpen) return null
 
   return (
     <div className="xl:hidden bg-white dark:bg-[#1f1a16] border-t border-gray-200 dark:border-[#332a22]">
       <nav className="container mx-auto px-4 py-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
-        {navigationItems.filter(item => item.href !== '/contato').map((item) => (
+        {items.filter(item => item.href !== localizePath('/contato', locale)).map((item) => (
           <MobileNavItem key={item.href} item={item} onClose={onClose} />
         ))}
         <div className="pt-4 space-y-2">
           <Link
-            href="/contato"
+            href={localizePath('/contato', locale)}
             onClick={onClose}
             className="block w-full text-center px-4 py-3 bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-colors"
           >
-            Contacto
+            {locale === 'en' ? 'Contact' : 'Contacto'}
           </Link>
         </div>
       </nav>

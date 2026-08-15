@@ -83,7 +83,7 @@ export default function FAQPage() {
               <h3 className="font-semibold text-primary mb-2">Não encontrou a sua dúvida?</h3>
               <p className="text-gray-600 dark:text-[#E4D9CC] mb-4 text-justify">
                 Entre em contacto connosco pelo email{' '}
-                <a href="mailto:admissoes@FCH.edu" className="text-primary hover:text-primary-dark dark:hover:text-blue-300">
+                <a href="mailto:admissoes@FCH.edu" className="text-primary hover:text-primary-dark dark:hover:text-primary">
                   admissoes@FCH.edu
                 </a>{' '}
                 ou visite a Secretaria.
